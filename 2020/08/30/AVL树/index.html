@@ -6,20 +6,37 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>二叉树的中序遍历 | JCJunBlog</title>
+  <title>AVL树 | JCJunBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="二叉树中序遍历Leetcode 题库连接 概念 遍历顺序：先访问左子树——根节点——右子树，按照这个顺序。      特点：中序遍历对于二叉搜索树具有特殊性，中序遍历出二叉搜索树是按照从小到大的顺序遍历的。  遍历方法">
+  <meta name="description" content="前提二叉搜索树复杂度 二叉搜索树其搜索次数与其树的高度相关 O(h) &#x3D;&#x3D; O(logn)       根据二叉搜索树的添加方法，如果我们按从小到大的顺序添加数据时，二叉搜索树将退化为链表，其高度和添加数据的个数相同，在这种情况下二叉搜索树的优点将不再存在。 为解决这个问题即衍生出了平衡二叉搜索树     平衡二叉搜索树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树的中序遍历">
-<meta property="og:url" content="http://yoursite.com/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/index.html">
+<meta property="og:title" content="AVL树">
+<meta property="og:url" content="http://yoursite.com/2020/08/30/AVL%E6%A0%91/index.html">
 <meta property="og:site_name" content="JCJunBlog">
-<meta property="og:description" content="二叉树中序遍历Leetcode 题库连接 概念 遍历顺序：先访问左子树——根节点——右子树，按照这个顺序。      特点：中序遍历对于二叉搜索树具有特殊性，中序遍历出二叉搜索树是按照从小到大的顺序遍历的。  遍历方法">
+<meta property="og:description" content="前提二叉搜索树复杂度 二叉搜索树其搜索次数与其树的高度相关 O(h) &#x3D;&#x3D; O(logn)       根据二叉搜索树的添加方法，如果我们按从小到大的顺序添加数据时，二叉搜索树将退化为链表，其高度和添加数据的个数相同，在这种情况下二叉搜索树的优点将不再存在。 为解决这个问题即衍生出了平衡二叉搜索树     平衡二叉搜索树">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-27T14:23:29.000Z">
-<meta property="article:modified_time" content="2020-08-29T23:49:55.567Z">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769104530.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769104544.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769963069.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769963123.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769963133.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769963088.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598922672787.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598922672814.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598927128460.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598923408053.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598927128464.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598923408028.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598927128478.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598923408083.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598927128445.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598923408120.jpg">
+<meta property="article:published_time" content="2020-08-29T23:53:17.000Z">
+<meta property="article:modified_time" content="2020-09-01T03:57:47.229Z">
 <meta property="article:author" content="Jia Caijun">
-<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769104530.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JCJunBlog" type="application/atom+xml">
   
@@ -148,14 +165,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-二叉树的中序遍历" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-AVL树" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      二叉树的中序遍历
+      AVL树
     </h1>
   
 
@@ -163,8 +180,8 @@
           |阅读量(<span id="busuanzi_value_page_pv"></span>)
         </span>
         
-        <a href="/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" class="archive-article-date">
-  	<time datetime="2020-08-27T14:23:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-27</time>
+        <a href="/2020/08/30/AVL%E6%A0%91/" class="archive-article-date">
+  	<time datetime="2020-08-29T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-30</time>
 </a>
         
       </header>
@@ -172,31 +189,127 @@
     <div class="article-entry" itemprop="articleBody">
 
       
-        <h1 id="二叉树中序遍历"><a href="#二叉树中序遍历" class="headerlink" title="二叉树中序遍历"></a>二叉树中序遍历</h1><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">Leetcode 题库连接</a></p>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><blockquote>
-<p>遍历顺序：先访问左子树——根节点——右子树，按照这个顺序。   </p>
+        <h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><h2 id="二叉搜索树复杂度"><a href="#二叉搜索树复杂度" class="headerlink" title="二叉搜索树复杂度"></a>二叉搜索树复杂度</h2><blockquote>
+<p>二叉搜索树其搜索次数与其树的高度相关 O(h) == O(logn)    </p>
 </blockquote>
 <blockquote>
-<p>特点：中序遍历对于二叉搜索树具有特殊性，中序遍历出二叉搜索树是按照从小到大的顺序遍历的。</p>
+<p>根据二叉搜索树的添加方法，如果我们按从小到大的顺序添加数据时，二叉搜索树将退化为链表，其高度和添加数据的个数相同，在这种情况下二叉搜索树的优点将不再存在。 为解决这个问题即衍生出了平衡二叉搜索树   </p>
 </blockquote>
-<h2 id="遍历方法"><a href="#遍历方法" class="headerlink" title="遍历方法  "></a>遍历方法  <a id="more"></a></h2><h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><blockquote>
-<p>对于二叉树的遍历，由于树的特性其非常符合递归思想，所以使用递归非常简单。     </p>
-</blockquote>
-<blockquote>
-<p>递归解题思想：思考递归函数解决的问题，将大问题转换为一个更小的同一问题    </p>
+<h2 id="平衡二叉搜索树"><a href="#平衡二叉搜索树" class="headerlink" title="平衡二叉搜索树   "></a>平衡二叉搜索树   <a id="more"></a></h2><h3 id="平衡："><a href="#平衡：" class="headerlink" title="平衡："></a>平衡：</h3><p>当节点数量固定时，左右子树高度越越接近，这颗二叉树就越平衡（高度越低）。</p>
+<h2 id="如何优化二叉搜索树"><a href="#如何优化二叉搜索树" class="headerlink" title="如何优化二叉搜索树"></a>如何优化二叉搜索树</h2><blockquote>
+<p>尽量让二叉搜索树的左右子树保持平衡  </p>
 </blockquote>
 <blockquote>
-<p>本题中：递归函数需要解决的问题是 接受一个节点，遍历左子节点（调用递归函数，遍历left）后，遍历自己，再遍历右子节点（调用递归函数，遍历right）。<br>终止条件：直至找到最后的节点为空</p>
+<p>在节点的添加、删除操作之后，想办法让二叉搜索树恢复平衡（由于恢复平衡的消耗比较大，所以要用尽量少的调整次数达到适度平衡）   </p>
 </blockquote>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">private void inorderTraversal(Note note) &#123;</span><br><span class="line">       if(note &#x3D;&#x3D; null) return;</span><br><span class="line"></span><br><span class="line">       inorderTraversal(note.left);</span><br><span class="line">       System.out.println(note.element);</span><br><span class="line">       inorderTraversal(note.right);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><blockquote>
-<p>迭代遍历树结构，被忽略节点访问顺序为先进后出，所以我们可以借助栈结构，来储存被忽略的父节点。中序遍历则是先访问左节点，所以我们将具有左子节点的节点入栈即可。</p>
-</blockquote>
-<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;Integer&gt; inorderTraversal(TreeNode root) &#123;</span><br><span class="line">       List&lt;Integer&gt; list &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">       if (root &#x3D;&#x3D; null) return list;</span><br><span class="line"></span><br><span class="line">       TreeNode note &#x3D; root;</span><br><span class="line">       Stack&lt;TreeNode&gt; stack &#x3D; new Stack&lt;&gt;();</span><br><span class="line">       while (note !&#x3D; null || !stack.isEmpty())&#123;</span><br><span class="line"></span><br><span class="line">           if (note !&#x3D; null) &#123;</span><br><span class="line">               stack.push(note);</span><br><span class="line">               note &#x3D; note.left;</span><br><span class="line">           &#125; else &#123;</span><br><span class="line">               note &#x3D; stack.pop();</span><br><span class="line">               list.add(note.val);</span><br><span class="line">               note &#x3D; note.right;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       return list;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="AVL树"><a href="#AVL树" class="headerlink" title="AVL树"></a>AVL树</h1><p>AVL树时最早发现的自平衡二叉搜索树之一<br>取名于两位发明者前苏联科学家的名字</p>
+<p>Windows NT 内核中广泛使用</p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="平衡因子（Balance-Factor）"><a href="#平衡因子（Balance-Factor）" class="headerlink" title="平衡因子（Balance Factor）"></a>平衡因子（Balance Factor）</h3><p>某节点的左右子树的高度差</p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769104530.jpg" alt="高度演示"><br>图中显示显示为各个节点的平衡因子</p>
 <blockquote>
-<p>特别注意：右节点的处理是在获取完一次，栈顶中的数据时（即获取了一个父节点），根据中序遍历顺序，则会获取该父节点的右节点，并且将该右节点完全视为一个新的节点，进入循环。</p>
+<p>在AVL树中，各个节点的平衡因子只有可能时1，-1，0<br>就是每个节点的高度差不超过1   </p>
 </blockquote>
+<h2 id="添加导致的失衡"><a href="#添加导致的失衡" class="headerlink" title="添加导致的失衡"></a>添加导致的失衡</h2><p>在向AVL树中添加元素时，会导致该树，失去平衡，我们需要进行进一步维护，使得AVL树恢复平衡。</p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769104544.jpg" alt="添加演示">  </p>
+<p>如上图：我们在灰色原有的基础上添加了 13，这个节点会导致其祖父节点14 的平衡因子失衡，同时也能使其祖先节点失衡。</p>
+<blockquote>
+<p>所以添加失衡最坏情况将会导致所有祖先节点都失衡<br>而父节点，和其他的非祖先节点均不会失衡</p>
+</blockquote>
+<h2 id="添加失衡解决方法（旋转）"><a href="#添加失衡解决方法（旋转）" class="headerlink" title="添加失衡解决方法（旋转）"></a>添加失衡解决方法（旋转）</h2><blockquote>
+<p>由于添加失衡是最底层的高度变化导致的，所以仅让最底层（也就是最先失衡节点）失衡节点的高度平衡，就会使得整个树恢复平衡</p>
+</blockquote>
+<h3 id="LL-右旋转（单旋转）-情况"><a href="#LL-右旋转（单旋转）-情况" class="headerlink" title="LL- 右旋转（单旋转）  情况"></a>LL- 右旋转（单旋转）  情况</h3><p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769963069.jpg" alt="添加-左旋转演示"> </p>
+<pre><code>注： 
+g为最先失衡节点  
+p为失衡节点的最高子节点（添加节点的父节点或祖父系节点)
+n为p的最高子节点（添加节点或添加节点的父系节点）   
+橙色为新添加节点
+T0 - T3 为不确定个数节点
+(添加图下同)</code></pre>
+<blockquote>
+<p>添加节点与失衡节点的关系时(看父节点的子节点方向) left - left 时，即 g (最先失衡节点) 的left为p，p的left为n时。</p>
+</blockquote>
+<blockquote>
+<p>右旋转操作： 被旋转节点g，其左子节点指向其原左子节点的右节点，其原子节点指向被旋转节点，其父节点指向原左子节点。  同时需要维护各个节点的parent属性</p>
+</blockquote>
+<p>我们需要的操作即为： 对g（最先失衡节点）进行右旋转即可</p>
+<h3 id="RR-左旋转（单旋转）-情况"><a href="#RR-左旋转（单旋转）-情况" class="headerlink" title="RR- 左旋转（单旋转） 情况"></a>RR- 左旋转（单旋转） 情况</h3><p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769963123.jpg" alt="添加-右旋转演示">  </p>
+<blockquote>
+<p>添加节点与失衡节点的关系时 right - right 时，即 g的right为p，p的right为n时。   </p>
+</blockquote>
+<blockquote>
+<p>左旋转操作： 被旋转节点g，其右子节点指向其原右子节点的左节点，其原子节点指向被旋转节点，其父节点指向原右子节点。  同时需要维护各个节点的parent属性</p>
+</blockquote>
+<p>我们需要的操作即为： 对g（最先失衡节点）进行左旋转即可</p>
+<h3 id="LR-RR左旋，LL右旋（双旋转）"><a href="#LR-RR左旋，LL右旋（双旋转）" class="headerlink" title="LR- RR左旋，LL右旋（双旋转）"></a>LR- RR左旋，LL右旋（双旋转）</h3><p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769963133.jpg" alt="添加-LR双旋转演示">  </p>
+<blockquote>
+<p>添加节点与失衡节点的关系时 left - right 时，即 g的left为p，p的right为n时。     </p>
+</blockquote>
+<blockquote>
+<p>双旋转操作： 先对失衡节点的子节点（添加节点的父节点或祖父节点）进行旋转使其成为单旋转情况，后再对失衡节点进行单旋转操作（单旋转操作参考上面两种情况）。需要将LR/RL转为LL/RR所以我们选择旋转的p (添加节点的父节点或祖父节点) 的方向直接取决于其为g的什么节点即可。</p>
+</blockquote>
+<p>我们需要的操作：先对p进行左旋转，再对g进行右旋转。</p>
+<h3 id="RL-LL右旋，RR左旋（双旋转）"><a href="#RL-LL右旋，RR左旋（双旋转）" class="headerlink" title="RL- LL右旋，RR左旋（双旋转）"></a>RL- LL右旋，RR左旋（双旋转）</h3><p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769963088.jpg" alt="添加-LR双旋转演示">    </p>
+<blockquote>
+<p>添加节点与失衡节点的关系时 right - left 时，即 g的right为p，p的left为n时。</p>
+</blockquote>
+<p>我们需要的操作：先对p进行右旋转，再对g进行左旋转。</p>
+<h2 id="删除导致的失衡"><a href="#删除导致的失衡" class="headerlink" title="删除导致的失衡"></a>删除导致的失衡</h2><p>从AVL树中删除一个元素，可能会导致该树的失衡</p>
+<blockquote>
+<p>删除只会导致一个节点失衡</p>
+</blockquote>
+<h3 id="情况一"><a href="#情况一" class="headerlink" title="情况一:"></a>情况一:</h3><p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598922672787.jpg" alt="删除失衡演示">    </p>
+<blockquote>
+<p>该情况会导致被删除节点的父节点失衡，而由于其父节点的高度并没有受到影响（导致父节点失衡，说明该父节点的较长子节点肯定不是被删除的节点，高度并不会改变）所以有且仅有该父节点失衡。</p>
+</blockquote>
+<h3 id="情况二："><a href="#情况二：" class="headerlink" title="情况二："></a>情况二：</h3><p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598922672814.jpg" alt="删除失衡演示">    </p>
+<blockquote>
+<p>该情况会导致被删除节点的一个祖先点失衡，该情况的删除导致了其一个子节点的高度发生了改变，所以其平衡受到破坏，但是其节点的高度还是不会改变，所以仅会对一个节点造成失衡。</p>
+</blockquote>
+<h2 id="删除失衡解决方法（旋转）"><a href="#删除失衡解决方法（旋转）" class="headerlink" title="删除失衡解决方法（旋转）"></a>删除失衡解决方法（旋转）</h2><blockquote>
+<p>删除后旋转可能会导致高度变化，使得上面原本平衡的节点失衡，所以可能需要不断向上去调整不断失衡的节点。</p>
+</blockquote>
+<h3 id="LL-右旋转（单旋）"><a href="#LL-右旋转（单旋）" class="headerlink" title="LL- 右旋转（单旋）"></a>LL- 右旋转（单旋）</h3><p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598927128460.jpg" alt="删除-被删除元素">  </p>
+<pre><code>注：
+g代表失衡节点（被删除节点的父节点或祖先节点） 
+p为失衡节点的另一个节点（较高节点）    
+n为p节点的更高的子节点。
+橘色为删除节点
+绿色代表一个能决定旋转后是否变化高度的节点
+(删除图下同)</code></pre>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598923408053.jpg" alt="删除-右旋转演示">  </p>
+<blockquote>
+<p>LL定义和旋转方法同添加（参考添加LL）</p>
+</blockquote>
+<blockquote>
+<p>观察绿色节点，如果绿色节点不存在，当旋转平衡后其高度则会发生改变，从而可能导致父系节点失衡。所以我们需要对整个父系节点进行从底向上（删除节点向上至根节点）遍历进行判断并进行平衡恢复。<br>极端情况下: 所有祖先节点都需要进行恢复平衡的操作 共（logn）次调整。<br>(删除下同)</p>
+</blockquote>
+<h3 id="RR-左旋转（单旋）"><a href="#RR-左旋转（单旋）" class="headerlink" title="RR- 左旋转（单旋）"></a>RR- 左旋转（单旋）</h3><p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598927128464.jpg" alt="删除-被删除元素">  </p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598923408028.jpg" alt="删除-左旋转演示">  </p>
+<blockquote>
+<p>RR定义和旋转方法同添加（参考添加RR）   </p>
+</blockquote>
+<h3 id="LR-RR左旋转，LL右旋转（双旋）"><a href="#LR-RR左旋转，LL右旋转（双旋）" class="headerlink" title="LR- RR左旋转，LL右旋转（双旋）"></a>LR- RR左旋转，LL右旋转（双旋）</h3><p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598927128478.jpg" alt="删除-被删除元素">  </p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598923408083.jpg" alt="删除-左旋转演示">  </p>
+<blockquote>
+<p>LR定义及双旋转方法同添加（参考添加LR）</p>
+</blockquote>
+<h3 id="RL-LL右旋转，RR左旋转（双旋）"><a href="#RL-LL右旋转，RR左旋转（双旋）" class="headerlink" title="RL- LL右旋转，RR左旋转（双旋）"></a>RL- LL右旋转，RR左旋转（双旋）</h3><p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598927128445.jpg" alt="删除-被删除元素">  </p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598923408120.jpg" alt="删除-左旋转演示">  </p>
+<blockquote>
+<p>RL定义及双旋转方法同添加（参考添加RL）</p>
+</blockquote>
+<h2 id="AVL树时间复杂度分析"><a href="#AVL树时间复杂度分析" class="headerlink" title="AVL树时间复杂度分析"></a>AVL树时间复杂度分析</h2><blockquote>
+<p>搜索: O(logn)  </p>
+</blockquote>
+<blockquote>
+<p>添加：O(logn),仅需要O(1)次旋转操作  </p>
+</blockquote>
+<blockquote>
+<p>删除：O(logn),最多需要O(logn)次旋转操作  </p>
+</blockquote>
+<p>优点:<br>AVL树相比普通二叉搜索树其避免了其退化为链表，并且维护了二叉树的高度，大大提高了搜索效率。  </p>
+<p>缺点:<br>AVL树中删除恢复平衡操作中，旋转次数还是相对较多的。</p>
 
       
 
@@ -241,7 +354,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
@@ -253,7 +366,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/92//" class="article-tag-list-link color3">92</a>
+        			<a href="/categories/平衡二叉搜索树//" class="article-tag-list-link color3">平衡二叉搜索树</a>
         		</li>
       		
 		</ul>
@@ -308,7 +421,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/08/30/AVL%E6%A0%91/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -322,18 +435,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/30/AVL%E6%A0%91/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          AVL树
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/26/hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo博客创建</div>
+    <a href="/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">二叉树的中序遍历</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -360,7 +464,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="toc-number">1.</span> <span class="toc-text">二叉树中序遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">遍历方法  </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92"><span class="toc-number">1.2.1.</span> <span class="toc-text">递归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3"><span class="toc-number">1.2.2.</span> <span class="toc-text">迭代</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E6%8F%90"><span class="toc-number">1.</span> <span class="toc-text">前提</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">1.1.</span> <span class="toc-text">二叉搜索树复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91"><span class="toc-number">1.2.</span> <span class="toc-text">平衡二叉搜索树   </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E8%A1%A1%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">平衡：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91"><span class="toc-number">1.3.</span> <span class="toc-text">如何优化二叉搜索树</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AVL%E6%A0%91"><span class="toc-number">2.</span> <span class="toc-text">AVL树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E8%A1%A1%E5%9B%A0%E5%AD%90%EF%BC%88Balance-Factor%EF%BC%89"><span class="toc-number">2.1.1.</span> <span class="toc-text">平衡因子（Balance Factor）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%AF%BC%E8%87%B4%E7%9A%84%E5%A4%B1%E8%A1%A1"><span class="toc-number">2.2.</span> <span class="toc-text">添加导致的失衡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%A4%B1%E8%A1%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%88%E6%97%8B%E8%BD%AC%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">添加失衡解决方法（旋转）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-%E5%8F%B3%E6%97%8B%E8%BD%AC%EF%BC%88%E5%8D%95%E6%97%8B%E8%BD%AC%EF%BC%89-%E6%83%85%E5%86%B5"><span class="toc-number">2.3.1.</span> <span class="toc-text">LL- 右旋转（单旋转）  情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RR-%E5%B7%A6%E6%97%8B%E8%BD%AC%EF%BC%88%E5%8D%95%E6%97%8B%E8%BD%AC%EF%BC%89-%E6%83%85%E5%86%B5"><span class="toc-number">2.3.2.</span> <span class="toc-text">RR- 左旋转（单旋转） 情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-RR%E5%B7%A6%E6%97%8B%EF%BC%8CLL%E5%8F%B3%E6%97%8B%EF%BC%88%E5%8F%8C%E6%97%8B%E8%BD%AC%EF%BC%89"><span class="toc-number">2.3.3.</span> <span class="toc-text">LR- RR左旋，LL右旋（双旋转）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RL-LL%E5%8F%B3%E6%97%8B%EF%BC%8CRR%E5%B7%A6%E6%97%8B%EF%BC%88%E5%8F%8C%E6%97%8B%E8%BD%AC%EF%BC%89"><span class="toc-number">2.3.4.</span> <span class="toc-text">RL- LL右旋，RR左旋（双旋转）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%AF%BC%E8%87%B4%E7%9A%84%E5%A4%B1%E8%A1%A1"><span class="toc-number">2.4.</span> <span class="toc-text">删除导致的失衡</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%83%85%E5%86%B5%E4%B8%80"><span class="toc-number">2.4.1.</span> <span class="toc-text">情况一:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%83%85%E5%86%B5%E4%BA%8C%EF%BC%9A"><span class="toc-number">2.4.2.</span> <span class="toc-text">情况二：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%A4%B1%E8%A1%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%88%E6%97%8B%E8%BD%AC%EF%BC%89"><span class="toc-number">2.5.</span> <span class="toc-text">删除失衡解决方法（旋转）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-%E5%8F%B3%E6%97%8B%E8%BD%AC%EF%BC%88%E5%8D%95%E6%97%8B%EF%BC%89"><span class="toc-number">2.5.1.</span> <span class="toc-text">LL- 右旋转（单旋）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RR-%E5%B7%A6%E6%97%8B%E8%BD%AC%EF%BC%88%E5%8D%95%E6%97%8B%EF%BC%89"><span class="toc-number">2.5.2.</span> <span class="toc-text">RR- 左旋转（单旋）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-RR%E5%B7%A6%E6%97%8B%E8%BD%AC%EF%BC%8CLL%E5%8F%B3%E6%97%8B%E8%BD%AC%EF%BC%88%E5%8F%8C%E6%97%8B%EF%BC%89"><span class="toc-number">2.5.3.</span> <span class="toc-text">LR- RR左旋转，LL右旋转（双旋）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RL-LL%E5%8F%B3%E6%97%8B%E8%BD%AC%EF%BC%8CRR%E5%B7%A6%E6%97%8B%E8%BD%AC%EF%BC%88%E5%8F%8C%E6%97%8B%EF%BC%89"><span class="toc-number">2.5.4.</span> <span class="toc-text">RL- LL右旋转，RR左旋转（双旋）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AVL%E6%A0%91%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">2.6.</span> <span class="toc-text">AVL树时间复杂度分析</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

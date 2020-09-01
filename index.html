@@ -144,6 +144,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-AVL树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/30/AVL%E6%A0%91/">AVL树</a>
+    </h1>
+  
+
+        <span id="busuanzi_container_page_pv">
+          |阅读量(<span id="busuanzi_value_page_pv"></span>)
+        </span>
+        
+        <a href="/2020/08/30/AVL%E6%A0%91/" class="archive-article-date">
+  	<time datetime="2020-08-29T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+
+      
+        <h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><h2 id="二叉搜索树复杂度"><a href="#二叉搜索树复杂度" class="headerlink" title="二叉搜索树复杂度"></a>二叉搜索树复杂度</h2><blockquote>
+<p>二叉搜索树其搜索次数与其树的高度相关 O(h) == O(logn)    </p>
+</blockquote>
+<blockquote>
+<p>根据二叉搜索树的添加方法，如果我们按从小到大的顺序添加数据时，二叉搜索树将退化为链表，其高度和添加数据的个数相同，在这种情况下二叉搜索树的优点将不再存在。 为解决这个问题即衍生出了平衡二叉搜索树   </p>
+</blockquote>
+<h2 id="平衡二叉搜索树"><a href="#平衡二叉搜索树" class="headerlink" title="平衡二叉搜索树   "></a>平衡二叉搜索树
+        
+          <a class="article-more-a" href="/2020/08/30/AVL%E6%A0%91/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/平衡二叉搜索树//" class="article-tag-list-link color3">平衡二叉搜索树</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/30/AVL%E6%A0%91/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-二叉树的中序遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -175,25 +272,10 @@
 <blockquote>
 <p>特点：中序遍历对于二叉搜索树具有特殊性，中序遍历出二叉搜索树是按照从小到大的顺序遍历的。</p>
 </blockquote>
-<h2 id="遍历方法"><a href="#遍历方法" class="headerlink" title="遍历方法"></a>遍历方法</h2><h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><blockquote>
-<p>对于二叉树的遍历，由于树的特性其非常符合递归思想，所以使用递归非常简单。     </p>
-</blockquote>
-<blockquote>
-<p>递归解题思想：思考递归函数解决的问题，将大问题转换为一个更小的同一问题    </p>
-</blockquote>
-<blockquote>
-<p>本题中：递归函数需要解决的问题是 接受一个节点，遍历左子节点（调用递归函数，遍历left）后，遍历自己，再遍历右子节点（调用递归函数，遍历right）。<br>终止条件：直至找到最后的节点为空</p>
-</blockquote>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">private void inorderTraversal(Note note) &#123;</span><br><span class="line">       if(note &#x3D;&#x3D; null) return;</span><br><span class="line"></span><br><span class="line">       inorderTraversal(note.left);</span><br><span class="line">       System.out.println(note.element);</span><br><span class="line">       inorderTraversal(note.right);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><blockquote>
-<p>迭代遍历树结构，被忽略节点访问顺序为先进后出，所以我们可以借助栈结构，来储存被忽略的父节点。中序遍历则是先访问左节点，所以我们将具有左子节点的节点入栈即可。</p>
-</blockquote>
-<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;Integer&gt; inorderTraversal(TreeNode root) &#123;</span><br><span class="line">       List&lt;Integer&gt; list &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">       if (root &#x3D;&#x3D; null) return list;</span><br><span class="line"></span><br><span class="line">       TreeNode note &#x3D; root;</span><br><span class="line">       Stack&lt;TreeNode&gt; stack &#x3D; new Stack&lt;&gt;();</span><br><span class="line">       while (note !&#x3D; null || !stack.isEmpty())&#123;</span><br><span class="line"></span><br><span class="line">           if (note !&#x3D; null) &#123;</span><br><span class="line">               stack.push(note);</span><br><span class="line">               note &#x3D; note.left;</span><br><span class="line">           &#125; else &#123;</span><br><span class="line">               note &#x3D; stack.pop();</span><br><span class="line">               list.add(note.val);</span><br><span class="line">               note &#x3D; note.right;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       return list;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>特别注意：右节点的处理是在获取完一次，栈顶中的数据时（即获取了一个父节点），根据中序遍历顺序，则会获取该父节点的右节点，并且将该右节点完全视为一个新的节点，进入循环。</p>
-</blockquote>
-
+<h2 id="遍历方法"><a href="#遍历方法" class="headerlink" title="遍历方法  "></a>遍历方法
+        
+          <a class="article-more-a" href="/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/#more">more >></a>
+        
       
 
       
@@ -456,11 +538,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客相关</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">博客相关</a>
               </li>
             
             <div class="clearfix"></div>
