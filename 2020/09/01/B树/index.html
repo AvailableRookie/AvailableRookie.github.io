@@ -6,15 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | JCJunBlog</title>
+  <title>B树 | JCJunBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JCJunBlog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="B树是一种平衡多路搜索树，多用于文件系统，数据库的实现B树根据其每个节点最多可拥有子节点个数分为不同阶级B树。     m阶B树的性质">
+<meta property="og:type" content="article">
+<meta property="og:title" content="B树">
+<meta property="og:url" content="http://yoursite.com/2020/09/01/B%E6%A0%91/index.html">
 <meta property="og:site_name" content="JCJunBlog">
+<meta property="og:description" content="B树是一种平衡多路搜索树，多用于文件系统，数据库的实现B树根据其每个节点最多可拥有子节点个数分为不同阶级B树。     m阶B树的性质">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769104530.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209013.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209000.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209033.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209027.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209085.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209082.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209093.jpg">
+<meta property="article:published_time" content="2020-09-01T07:11:03.000Z">
+<meta property="article:modified_time" content="2020-09-09T02:00:21.790Z">
 <meta property="article:author" content="Jia Caijun">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769104530.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JCJunBlog" type="application/atom+xml">
   
@@ -143,35 +157,123 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-B树" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/01/B%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2020-09-01T07:11:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/01/B%E6%A0%91/">B树</a>
+    <h1 class="article-title" itemprop="name">
+      B树
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <span id="busuanzi_container_page_pv">
+          |阅读量(<span id="busuanzi_value_page_pv"></span>)
+        </span>
+        
+        <a href="/2020/09/01/B%E6%A0%91/" class="archive-article-date">
+  	<time datetime="2020-09-01T07:11:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+
+      
+        <h1 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h1><p>是一种平衡多路搜索树，多用于文件系统，数据库的实现<br>B树根据其每个节点最多可拥有子节点个数分为不同阶级B树。</p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769104530.jpg" alt="B树演示">   </p>
+<h2 id="m阶B树的性质"><a href="#m阶B树的性质" class="headerlink" title="m阶B树的性质   "></a>m阶B树的性质   <a id="more"></a></h2><p>假设一个节点储存的元数个数为x<br>子节点个数为 y</p>
+<blockquote>
+<p>根节点： 1 &lt;=  x &lt;= m-1<br>非根节点： (m/2)向上取整 &lt;= x &lt;= m-1<br>如果有子节点，子节点个数y = x+1<br>根节点： 2 &lt;= y &lt;= m<br>比如：m = 3 , 2&lt;= y &lt;= 3 , 因此可以称为（2，3）树，2-3树<br>比如: m = 4 , 2&lt;= y &lt;= 4 , 因此可以称为（2，4）树，2-3-4树</p>
+</blockquote>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209013.jpg" alt="4阶B树">   </p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209000.jpg" alt="5阶B树">   </p>
+<h2 id="B树与二叉搜索树"><a href="#B树与二叉搜索树" class="headerlink" title="B树与二叉搜索树"></a>B树与二叉搜索树</h2><p>B树和二叉搜索树，在逻辑上是等价的  </p>
+<p>二叉树多代节点合并，可以获得一个超级节点（即为B树的一个节点）<br>2代合并的超级节点，最多拥有4个子节点（至少是4阶B树）<br>3代合并的超级节点，最多拥有8个子节点（至少是8阶B树）</p>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>跟二叉搜索树的搜索类似</p>
+<blockquote>
+<p>先在节点内部从小到大开始搜索元素<br>如果命中，搜索结束<br>如果未命中，再去对应的子节点中搜索元素，重复次过程</p>
+</blockquote>
+<h2 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h2><blockquote>
+<p>B树中新添加元素必定是添加到叶子节点</p>
+</blockquote>
+<h3 id="上溢-overflow"><a href="#上溢-overflow" class="headerlink" title="上溢(overflow)"></a>上溢(overflow)</h3><p>当一个B树的子节点元素个数超出了其储存个数，上溢节点的元素个数等于其阶数则需要上溢</p>
+<blockquote>
+<p>唯一一种能让B树长高的情况</p>
+</blockquote>
+<h3 id="添加上溢解决的方法（以五阶B树为例）"><a href="#添加上溢解决的方法（以五阶B树为例）" class="headerlink" title="添加上溢解决的方法（以五阶B树为例）"></a>添加上溢解决的方法（以五阶B树为例）</h3><p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209033.jpg" alt="上溢讲解图"><br>当一个节点中的元素等于5（m）的时候发生上溢</p>
+<p>假设上溢节点最中间元素的位置为 k<br>将[0 ,k-1] 和 [k+1 ,m-1]位置的元素分裂成2个子节点  </p>
+<p>这两个分裂的新子节点个数，必然都不会低于节点最少元素限制（m/2向上取整 - 1）</p>
+<blockquote>
+<p>一次分裂完毕后，有可能导致父节点继续上溢，依旧需要按照上述方法解决<br>最极端情况，有可能一直分裂到根节点</p>
+</blockquote>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209027.jpg" alt="添加上溢">   </p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><blockquote>
+<p>B树中需要删除元素如果是叶子节点中可以直接删除</p>
+</blockquote>
+<blockquote>
+<p>假如删除元素再非叶子节点中 （由于删除非叶子节点元素有可能对其子节点有影响所以其删除类似二叉搜索树）<br> 需要找到前驱或后继元素，覆盖所需要元素的值<br> 再把前驱节点或后续元素删除    </p>
+</blockquote>
+<blockquote>
+<p>非叶子节点的前驱或后继元素所在节点，必定是叶子节点</p>
+</blockquote>
+<blockquote>
+<p>所以真正的删除都发生在叶子节点中 </p>
+</blockquote>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209085.jpg" alt="删除图片">      </p>
+<h3 id="下溢"><a href="#下溢" class="headerlink" title="下溢"></a>下溢</h3><p>B树对节点的最少元素是有限制的，所以当节点中的元素数小于其限制数时就会发生下溢情况（underflow）</p>
+<blockquote>
+<p>唯一能让B树变矮的情况</p>
+</blockquote>
+<h3 id="删除下溢解决方法"><a href="#删除下溢解决方法" class="headerlink" title="删除下溢解决方法"></a>删除下溢解决方法</h3><p>下溢节点的元素数量必然等于  m/2向上取整减2</p>
+<blockquote>
+<p>如果下溢节点临近的兄弟节点，有至少m/2个元素，可以向其借一个元素<br>将父节点的元素b插入到下溢节点的0位置（最小位置）<br>用兄弟节点的最大元素a代替父节点，的元素b<br>这个操作其实就是：旋转</p>
+</blockquote>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209082.jpg" alt="下溢旋转">   </p>
+<blockquote>
+<p>如果下溢节点临近的兄弟节点，只有m/2向上取整减一 个元素，也就是不可以外借给下溢节点，否则其兄弟节点也会发生下溢<br>将父节点的元素b下溢，拿下来和左右子节点合并（下溢节点和其兄弟节点）<br>合并后的节点元素个数等于  m/2向上取整 + m/2向上取整 - 2 ，不超过m-1 </p>
+</blockquote>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209093.jpg" alt="下溢"> </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubaoshou.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixinshou.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -183,7 +285,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -196,164 +298,117 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/09/01/B%E6%A0%91/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/30/AVL%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2020-08-29T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/30/AVL%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AVL树</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/30/AVL%E6%A0%91/">AVL树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/平衡二叉搜索树//" class="article-tag-list-link color3">平衡二叉搜索树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#B%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">B树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#m%E9%98%B6B%E6%A0%91%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.</span> <span class="toc-text">m阶B树的性质   </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91"><span class="toc-number">1.2.</span> <span class="toc-text">B树与二叉搜索树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2"><span class="toc-number">1.3.</span> <span class="toc-text">搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0"><span class="toc-number">1.4.</span> <span class="toc-text">添加</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E6%BA%A2-overflow"><span class="toc-number">1.4.1.</span> <span class="toc-text">上溢(overflow)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%8A%E6%BA%A2%E8%A7%A3%E5%86%B3%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E4%BB%A5%E4%BA%94%E9%98%B6B%E6%A0%91%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="toc-number">1.4.2.</span> <span class="toc-text">添加上溢解决的方法（以五阶B树为例）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4"><span class="toc-number">1.5.</span> <span class="toc-text">删除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E6%BA%A2"><span class="toc-number">1.5.1.</span> <span class="toc-text">下溢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%8B%E6%BA%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.2.</span> <span class="toc-text">删除下溢解决方法</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" class="archive-article-date">
-  	<time datetime="2020-08-27T14:23:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/">二叉树的中序遍历</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/92//" class="article-tag-list-link color3">92</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/26/hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-08-26T02:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-26</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/26/hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA/">hexo博客创建</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客相关</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/初体验//" class="article-tag-list-link color4">初体验</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -386,8 +441,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
