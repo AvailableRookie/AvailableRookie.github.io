@@ -8,14 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>B树 | JCJunBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="B树是一种平衡多路搜索树，多用于文件系统，数据库的实现B树根据其每个节点最多可拥有子节点个数分为不同阶级B树。     m阶B树的性质">
+  <meta name="description" content="B树是一种平衡多路搜索树，多用于文件系统，数据库的实现B树根据其每个节点最多可拥有子节点个数分为不同阶级B树。         m阶B树的性质">
 <meta property="og:type" content="article">
 <meta property="og:title" content="B树">
 <meta property="og:url" content="http://yoursite.com/2020/09/01/B%E6%A0%91/index.html">
 <meta property="og:site_name" content="JCJunBlog">
-<meta property="og:description" content="B树是一种平衡多路搜索树，多用于文件系统，数据库的实现B树根据其每个节点最多可拥有子节点个数分为不同阶级B树。     m阶B树的性质">
+<meta property="og:description" content="B树是一种平衡多路搜索树，多用于文件系统，数据库的实现B树根据其每个节点最多可拥有子节点个数分为不同阶级B树。         m阶B树的性质">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769104530.jpg">
 <meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209013.jpg">
 <meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209000.jpg">
 <meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209033.jpg">
@@ -24,11 +23,11 @@
 <meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209082.jpg">
 <meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209093.jpg">
 <meta property="article:published_time" content="2020-09-01T07:11:03.000Z">
-<meta property="article:modified_time" content="2020-09-09T02:01:29.706Z">
+<meta property="article:modified_time" content="2020-09-09T02:03:28.078Z">
 <meta property="article:author" content="Jia Caijun">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769104530.jpg">
+<meta name="twitter:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209013.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JCJunBlog" type="application/atom+xml">
   
@@ -182,13 +181,12 @@
 
       
         <h1 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h1><p>是一种平衡多路搜索树，多用于文件系统，数据库的实现<br>B树根据其每个节点最多可拥有子节点个数分为不同阶级B树。</p>
-<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1598769104530.jpg" alt="B树演示">   </p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209013.jpg" alt="4阶B树">   </p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209000.jpg" alt="5阶B树">   </p>
 <h2 id="m阶B树的性质"><a href="#m阶B树的性质" class="headerlink" title="m阶B树的性质     "></a>m阶B树的性质     <a id="more"></a></h2><p>假设一个节点储存的元数个数为x<br>子节点个数为 y</p>
 <blockquote>
 <p>根节点： 1 &lt;=  x &lt;= m-1<br>非根节点： (m/2)向上取整 &lt;= x &lt;= m-1<br>如果有子节点，子节点个数y = x+1<br>根节点： 2 &lt;= y &lt;= m<br>比如：m = 3 , 2&lt;= y &lt;= 3 , 因此可以称为（2，3）树，2-3树<br>比如: m = 4 , 2&lt;= y &lt;= 4 , 因此可以称为（2，4）树，2-3-4树</p>
 </blockquote>
-<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209013.jpg" alt="4阶B树">   </p>
-<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209000.jpg" alt="5阶B树">   </p>
 <h2 id="B树与二叉搜索树"><a href="#B树与二叉搜索树" class="headerlink" title="B树与二叉搜索树"></a>B树与二叉搜索树</h2><p>B树和二叉搜索树，在逻辑上是等价的  </p>
 <p>二叉树多代节点合并，可以获得一个超级节点（即为B树的一个节点）<br>2代合并的超级节点，最多拥有4个子节点（至少是4阶B树）<br>3代合并的超级节点，最多拥有8个子节点（至少是8阶B树）</p>
 <h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>跟二叉搜索树的搜索类似</p>
@@ -511,11 +509,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
