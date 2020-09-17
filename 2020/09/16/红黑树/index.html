@@ -6,28 +6,37 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>B树 | JCJunBlog</title>
+  <title>红黑树 | JCJunBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="B树是一种平衡多路搜索树，多用于文件系统，数据库的实现B树根据其每个节点最多可拥有子节点个数分为不同阶级B树。         m阶B树的性质">
+  <meta name="description" content="红黑树红黑树的性质红黑树也是一种自平衡的二叉搜索树（以前也叫做平衡二叉B树-Symmetric Binary B-tree）  红黑树必须满足的以下5条性质  节点是 RED 或者 BLACK 根节点是 BLACK 叶子节点（外部节点，空节点）都是 BLACK RED 节点的子节点都是 BLACK推导：RED 节点parent都是 BLACK从根节点到叶子节点的所有路径上不能有2个连续的 RED">
 <meta property="og:type" content="article">
-<meta property="og:title" content="B树">
-<meta property="og:url" content="http://yoursite.com/2020/09/01/B%E6%A0%91/index.html">
+<meta property="og:title" content="红黑树">
+<meta property="og:url" content="http://yoursite.com/2020/09/16/%E7%BA%A2%E9%BB%91%E6%A0%91/index.html">
 <meta property="og:site_name" content="JCJunBlog">
-<meta property="og:description" content="B树是一种平衡多路搜索树，多用于文件系统，数据库的实现B树根据其每个节点最多可拥有子节点个数分为不同阶级B树。         m阶B树的性质">
+<meta property="og:description" content="红黑树红黑树的性质红黑树也是一种自平衡的二叉搜索树（以前也叫做平衡二叉B树-Symmetric Binary B-tree）  红黑树必须满足的以下5条性质  节点是 RED 或者 BLACK 根节点是 BLACK 叶子节点（外部节点，空节点）都是 BLACK RED 节点的子节点都是 BLACK推导：RED 节点parent都是 BLACK从根节点到叶子节点的所有路径上不能有2个连续的 RED">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209013.jpg">
-<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209000.jpg">
-<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209033.jpg">
-<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209027.jpg">
-<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209085.jpg">
-<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599617993991.jpg">
-<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209093.jpg">
-<meta property="article:published_time" content="2020-09-01T07:11:03.000Z">
-<meta property="article:modified_time" content="2020-09-16T10:42:40.201Z">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400890.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600333161615.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312665.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312680.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312672.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400879.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312655.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400866.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400869.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400857.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400896.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312635.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400916.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312648.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312652.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312658.jpg">
+<meta property="article:published_time" content="2020-09-16T10:41:45.000Z">
+<meta property="article:modified_time" content="2020-09-17T09:29:05.587Z">
 <meta property="article:author" content="Jia Caijun">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209013.jpg">
+<meta name="twitter:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400890.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JCJunBlog" type="application/atom+xml">
   
@@ -156,14 +165,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-B树" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-红黑树" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      B树
+      红黑树
     </h1>
   
 
@@ -171,8 +180,8 @@
           |阅读量(<span id="busuanzi_value_page_pv"></span>)
         </span>
         
-        <a href="/2020/09/01/B%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2020-09-01T07:11:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-01</time>
+        <a href="/2020/09/16/%E7%BA%A2%E9%BB%91%E6%A0%91/" class="archive-article-date">
+  	<time datetime="2020-09-16T10:41:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-16</time>
 </a>
         
       </header>
@@ -180,59 +189,106 @@
     <div class="article-entry" itemprop="articleBody">
 
       
-        <h1 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h1><p>是一种平衡多路搜索树，多用于文件系统，数据库的实现<br>B树根据其每个节点最多可拥有子节点个数分为不同阶级B树。</p>
-<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209013.jpg" alt="4阶B树">   </p>
-<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209000.jpg" alt="5阶B树">   </p>
-<h2 id="m阶B树的性质"><a href="#m阶B树的性质" class="headerlink" title="m阶B树的性质     "></a>m阶B树的性质     <a id="more"></a></h2><p>假设一个节点储存的元素个数为x<br>子节点个数为 y</p>
+        <h1 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h1><h2 id="红黑树的性质"><a href="#红黑树的性质" class="headerlink" title="红黑树的性质"></a>红黑树的性质</h2><p>红黑树也是一种自平衡的二叉搜索树（以前也叫做平衡二叉B树-Symmetric Binary B-tree）</p>
 <blockquote>
-<p>根节点： 1 &lt;=  x &lt;= m-1<br>非根节点： (m/2)向上取整 &lt;= x &lt;= m-1<br>如果有子节点，子节点个数y = x+1<br>根节点： 2 &lt;= y &lt;= m<br>比如：m = 3 , 2&lt;= y &lt;= 3 , 因此可以称为（2，3）树，2-3树<br>比如: m = 4 , 2&lt;= y &lt;= 4 , 因此可以称为（2，4）树，2-3-4树</p>
+<p>红黑树必须满足的以下5条性质</p>
+<ol>
+<li>节点是 RED 或者 BLACK</li>
+<li>根节点是 BLACK</li>
+<li>叶子节点（外部节点，空节点）都是 BLACK</li>
+<li>RED 节点的子节点都是 BLACK<br>推导：<br>RED 节点parent都是 BLACK<br>从根节点到叶子节点的所有路径上不能有2个连续的 RED 节点</li>
+<li>从任一节点到叶子节点的所有路径都包含相同数目的 BLACK 节点</li>
+</ol>
 </blockquote>
-<h2 id="B树与二叉搜索树"><a href="#B树与二叉搜索树" class="headerlink" title="B树与二叉搜索树"></a>B树与二叉搜索树</h2><p>B树和二叉搜索树，在逻辑上是等价的  </p>
-<p>二叉树多代节点合并，可以获得一个超级节点（即为B树的一个节点）<br>2代合并的超级节点，最多拥有4个子节点（至少是4阶B树）<br>3代合并的超级节点，最多拥有8个子节点（至少是8阶B树）</p>
-<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>跟二叉搜索树的搜索类似</p>
-<blockquote>
-<p>先在节点内部从小到大开始搜索元素<br>如果命中，搜索结束<br>如果未命中，再去对应的子节点中搜索元素，重复次过程</p>
-</blockquote>
-<h2 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h2><blockquote>
-<p>B树中新添加元素必定是添加到叶子节点</p>
-</blockquote>
-<h3 id="上溢-overflow"><a href="#上溢-overflow" class="headerlink" title="上溢(overflow)"></a>上溢(overflow)</h3><p>当一个B树的子节点元素个数超出了其储存个数，上溢节点的元素个数等于其阶数则需要上溢</p>
-<blockquote>
-<p>唯一一种能让B树长高的情况</p>
-</blockquote>
-<h3 id="添加上溢解决的方法（以五阶B树为例）"><a href="#添加上溢解决的方法（以五阶B树为例）" class="headerlink" title="添加上溢解决的方法（以五阶B树为例）"></a>添加上溢解决的方法（以五阶B树为例）</h3><p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209033.jpg" alt="上溢讲解图"><br>当一个节点中的元素等于5（m）的时候发生上溢</p>
-<p>假设上溢节点最中间元素的位置为 k<br>将[0 ,k-1] 和 [k+1 ,m-1]位置的元素分裂成2个子节点  </p>
-<p>这两个分裂的新子节点个数，必然都不会低于节点最少元素限制（m/2向上取整 - 1）</p>
-<blockquote>
-<p>一次分裂完毕后，有可能导致父节点继续上溢，依旧需要按照上述方法解决<br>最极端情况，有可能一直分裂到根节点</p>
-</blockquote>
-<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209027.jpg" alt="添加上溢">   </p>
-<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><blockquote>
-<p>B树中需要删除元素如果是叶子节点中可以直接删除</p>
+<a id="more"></a>
+
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400890.jpg" alt="红黑树例图">     </p>
+<h2 id="错误认识"><a href="#错误认识" class="headerlink" title="错误认识"></a>错误认识</h2><p>谨记红黑树的叶子节点（外部节点，空节点）都是 BLACK，其叶子节点是null节点，红黑树在对其路路径上的黑色节点进行计算的时候注意要计算上空节点（BLACK）。</p>
+<p>避免出现误认红黑树情况，例如：  </p>
+<p>错误的红黑树：<br><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600333161615.jpg" alt="错误的红黑树">    </p>
+<p>该图的38元素所在节点的右子节点为null节点，其处有一个分支，但是该分支明显不符合红黑树性质</p>
+<h2 id="红黑树与4阶B树（2-3-4树）的等价变换"><a href="#红黑树与4阶B树（2-3-4树）的等价变换" class="headerlink" title="红黑树与4阶B树（2-3-4树）的等价变换"></a>红黑树与4阶B树（2-3-4树）的等价变换</h2><blockquote>
+<p>红黑树和4阶B树（2-3-4树）具有等价性，学红黑树心中要有B树<br>BlACK 节点与它的RED子节点融合在一起，形成一个B树节点（超级节点）<br>红黑树的BLACK节点个数与4阶B树的节点总个数相等 </p>
 </blockquote>
 <blockquote>
-<p>假如删除元素再非叶子节点中 （由于删除非叶子节点元素有可能对其子节点有影响所以其删除类似二叉搜索树）<br> 需要找到前驱或后继元素，覆盖所需要元素的值<br> 再把前驱节点或后续元素删除    </p>
+<p>红黑树的删除和添加都会类比B树进行操作。</p>
+</blockquote>
+<p>红黑树类比4阶B树：<br><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312665.jpg" alt="红黑树类比4阶B树"> </p>
+<p>类比4阶B树：<br><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312680.jpg" alt="类比4阶B树"></p>
+<h2 id="红黑树的平衡"><a href="#红黑树的平衡" class="headerlink" title="红黑树的平衡"></a>红黑树的平衡</h2><blockquote>
+<p>红黑树的5条性质，即可保证红黑树等价于4阶B树<br>相比AVL树，红黑树的平衡标准较宽松：没有一条路径会大于其他路径的2倍<br>是一种弱平衡、黑节点高度平衡<br>红黑树的最大高度是 2 * log2（n+1），依然是O（logn）级别</p>
+</blockquote>
+<h2 id="红黑树对比AVL树"><a href="#红黑树对比AVL树" class="headerlink" title="红黑树对比AVL树"></a>红黑树对比AVL树</h2><h3 id="AVL树"><a href="#AVL树" class="headerlink" title="AVL树"></a>AVL树</h3><p>平衡标准较为严格：每个左右子树的高度差不超过1<br>最大高度是1.44 * log2（n+2）- 1.328 （100w个节点AVL树最大树高28）<br>搜索、添加、删除都是O（logn）复杂度，其中添加仅需要O（1）次旋转调整、删除最多需要O（logn）次旋转调整</p>
+<h3 id="红黑树-1"><a href="#红黑树-1" class="headerlink" title="红黑树"></a>红黑树</h3><p>平衡标准较为宽松：没有一条路径会大于其他路径的2倍<br>红黑树的最大高度是 2 * log2（n+1）（100w个节点，红黑树最大高度40）<br>搜索、添加、删除都是O（logn）复杂度，其中添加、删除都仅需要O（1）次调整</p>
+<blockquote>
+<p>注意：虽然红黑树中的下溢和上溢操作有可能会多次递归，但是经过统计计算，由于红黑树各个性质约束其最大旋转次数也仅是O（1）级别。 约3次</p>
+</blockquote>
+<h2 id="红黑树的添加"><a href="#红黑树的添加" class="headerlink" title="红黑树的添加"></a>红黑树的添加</h2><blockquote>
+<p>根据红黑树性质添加一个新节点，其必定会添加到最后一行（类比到4阶B树）。<br>如果新添加元素为RED 则仅有第4条性质不一定满足，其他性质一定是满足的，所以把新添加节点设为RED 则有助于添加后的性质修复。</p>
+</blockquote>
+<p>所以其添加一共有下图的12种情况(新添加节点均设为RED)。</p>
+<p>添加12种情况：<br><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312672.jpg" alt="添加12种情况"></p>
+<h1 id="添加后的性质修复（类比4阶B树）"><a href="#添加后的性质修复（类比4阶B树）" class="headerlink" title="添加后的性质修复（类比4阶B树）"></a>添加后的性质修复（类比4阶B树）</h1><h2 id="情况一"><a href="#情况一" class="headerlink" title="情况一"></a>情况一</h2><blockquote>
+<p>有四种情况，可直接满足红黑树的性质4：<br>即当新添加的节点的 parent为BLACK时，既满足了性质4. </p>
+</blockquote>
+<h2 id="情况二"><a href="#情况二" class="headerlink" title="情况二"></a>情况二</h2><blockquote>
+<p>剩下的八种情况则不会直接满足红黑树性质4:<br>并需要具体恢复，其恢复情况如下</p>
 </blockquote>
 <blockquote>
-<p>非叶子节点的前驱或后继元素所在节点，必定是叶子节点</p>
+<p>其中4种情况属于节点非上溢的情况。 </p>
+</blockquote>
+<h3 id="修复性质-单旋转-LL-RR-双旋转-LR-RL"><a href="#修复性质-单旋转-LL-RR-双旋转-LR-RL" class="headerlink" title="修复性质 单旋转-LL/RR    双旋转-LR/RL"></a>修复性质 单旋转-LL/RR    双旋转-LR/RL</h3><blockquote>
+<p>当其uncle节点（父节点的兄弟节不是RED时， 即uncle节点为null，父节点所在的B树类比节点（超级节点）非满元素，添加不会产生上溢）<br>可以直接通过旋转染色，恢复性质。</p>
+</blockquote>
+<h4 id="单旋转-LL-RR-（当新添加节点的父节点和其祖父节点为LL-RR关系）"><a href="#单旋转-LL-RR-（当新添加节点的父节点和其祖父节点为LL-RR关系）" class="headerlink" title="单旋转-LL/RR    （当新添加节点的父节点和其祖父节点为LL/RR关系）"></a>单旋转-LL/RR    （当新添加节点的父节点和其祖父节点为LL/RR关系）</h4><p> parent染成BLACK ， grand染成 RED<br>对grand进行单旋操作。  </p>
+<p>如图： 上图是添加前的，下图是修复后的<br><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400879.jpg" alt="增加旋转LL/RR">  </p>
+<h4 id="双旋转-LR-RL-（当新添加节点的父节点和其祖父节点为LR-RL关系）"><a href="#双旋转-LR-RL-（当新添加节点的父节点和其祖父节点为LR-RL关系）" class="headerlink" title="双旋转-LR/RL     （当新添加节点的父节点和其祖父节点为LR/RL关系）"></a>双旋转-LR/RL     （当新添加节点的父节点和其祖父节点为LR/RL关系）</h4><p>自己染成BLACK,grand 染成RED<br>进行双旋操作。  </p>
+<p>如图： 上图是添加前的，下图是修复后的<br><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312655.jpg" alt="添加旋转LR/RL"></p>
+<h3 id="修复性质-上溢-LL-RR-RL-LR"><a href="#修复性质-上溢-LL-RR-RL-LR" class="headerlink" title="修复性质 上溢 - LL / RR / RL / LR"></a>修复性质 上溢 - LL / RR / RL / LR</h3><blockquote>
+<p>当其uncle节点（父节点的兄弟节点为RED时，即父节点所在的类比B树节点满元素，添加会导致上溢）<br>则需要进行上溢 染色 操作对其进行性质修复 </p>
+</blockquote>
+<h4 id="上溢-LL-RR-RL-LR-统一操作"><a href="#上溢-LL-RR-RL-LR-统一操作" class="headerlink" title="上溢  -LL/RR/RL/LR  统一操作"></a>上溢  -LL/RR/RL/LR  统一操作</h4><p>parent，uncle 染成BLACK<br>grand向上合并  </p>
+<blockquote>
+<p>根据4阶B树上溢情况，当新添加元素后该节点元素为4个时时，需要提取中间一个元素上溢，也就是中间两个都行，但是在红黑树种，这种LL情况，grand本来就是上一层节点的子节点，所以我们对grand进行上溢会更方便   </p>
 </blockquote>
 <blockquote>
-<p>所以真正的删除都发生在叶子节点中 </p>
+<p>由于涉及到向上合并，所以对上一层节点也会造成影响（可能会继续发生上溢），为例简化理解，我们可以将上溢的节点（grand）作为一个新添加到的节点，将其染成RED<br>若上溢持续到根节点，只需将根节点染成BLACK即可</p>
 </blockquote>
-<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209085.jpg" alt="删除图片">      </p>
-<h3 id="下溢"><a href="#下溢" class="headerlink" title="下溢"></a>下溢</h3><p>B树对节点的最少元素是有限制的，所以当节点中的元素数小于其限制数时就会发生下溢情况（underflow）</p>
+<p>上溢LL情况:<br><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400866.jpg" alt="增加上溢LL"></p>
+<p>上溢RR情况：<br><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400869.jpg" alt="增加上溢RR"> </p>
+<p>上溢RL情况：<br><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400857.jpg" alt="增加上溢RL">  </p>
+<p>上溢LR情况：<br><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400896.jpg" alt="增加上溢LR">   </p>
+<h2 id="红黑树的删除"><a href="#红黑树的删除" class="headerlink" title="红黑树的删除"></a>红黑树的删除</h2><p>对比B树，其最后被删除的元素都在叶子节点种，对比红黑树就是在由最后一行黑色节点组成的超级节点中。</p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312635.jpg" alt="删除情况"></p>
+<p>对于删除情况一共由2情况，删除RED节点或BLACK节点。</p>
+<h1 id="删除后性质修复（类比B树）"><a href="#删除后性质修复（类比B树）" class="headerlink" title="删除后性质修复（类比B树）"></a>删除后性质修复（类比B树）</h1><h2 id="情况一-1"><a href="#情况一-1" class="headerlink" title="情况一"></a>情况一</h2><p>最终删除的是RED节点，对红黑树性质没有影响，不需要进行任何修复</p>
+<h2 id="情况二-1"><a href="#情况二-1" class="headerlink" title="情况二"></a>情况二</h2><p>最终删除的是BLACK节点，根据B树性质，其每个节点的最少元素具有一定的要求，在红黑树类比的4阶B树种，最少需要有一个，所以直接删除BLACK节点，则说明其超级节点被直接删除到没有元素，所以可能会产生下溢情况。</p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600319400916.jpg" alt="删除情况"></p>
+<h3 id="删除拥有一共RED子节点的BLACK节点"><a href="#删除拥有一共RED子节点的BLACK节点" class="headerlink" title="删除拥有一共RED子节点的BLACK节点"></a>删除拥有一共RED子节点的BLACK节点</h3><blockquote>
+<p>用以删除的替代子节点是RED（对于红黑树来讲，我们如果删除的BLACK节点但是该节点还具有一个子节点时，其子节点将成为它的替代节点。</p>
+</blockquote>
+<p>将替代的子节点染成BLACK即可保持红黑树性质不变</p>
+<h3 id="删除-BLACK节点是“叶子节点”-兄弟节点为BLACK-可借"><a href="#删除-BLACK节点是“叶子节点”-兄弟节点为BLACK-可借" class="headerlink" title="删除 -BLACK节点是“叶子节点” -兄弟节点为BLACK  -可借"></a>删除 -BLACK节点是“叶子节点” -兄弟节点为BLACK  -可借</h3><blockquote>
+<p>BLACK“叶子节点”被删除后，会导致B树下溢（比如删除88） ，此时根据B树性质，当兄弟节点有多余子节点时可以借给该节点。</p>
+</blockquote>
+<p>如果 兄弟节点 之沙鸥有一个RED 子节点<br>进行旋转操作(单旋或双旋)<br>旋转后的中心节点继承parent的颜色<br>旋转之后的左右节点染为BLACK</p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312648.jpg" alt="删除黑色可借"></p>
+<h3 id="删除-BLACK“叶子节点”-兄弟节点为BLACK-不可借"><a href="#删除-BLACK“叶子节点”-兄弟节点为BLACK-不可借" class="headerlink" title="删除 -BLACK“叶子节点” -兄弟节点为BLACK -不可借"></a>删除 -BLACK“叶子节点” -兄弟节点为BLACK -不可借</h3><blockquote>
+<p>BLACK“叶子节点”被删除后，会导致B树下溢（比如删除88） ，此时根据B树性质，当兄弟节点无多余子节点时，此时黑色节点被删除会产生下溢，其删除节点的父节点下溢到，被删除节点位置。</p>
+</blockquote>
+<p>兄弟节点没有一个RED 子节点<br>将兄弟节点染成RED ,praent染成BLACK </p>
 <blockquote>
-<p>唯一能让B树变矮的情况</p>
+<p>如果parent 也是BLACK 可能会导致祖父节点也下溢。此时我们只需要把父节点当做被删除的节点递归处理即可。</p>
 </blockquote>
-<h3 id="删除下溢解决方法"><a href="#删除下溢解决方法" class="headerlink" title="删除下溢解决方法"></a>删除下溢解决方法</h3><p>下溢节点的元素数量必然等于  m/2向上取整减2</p>
+<p>删除不可借：<br><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312652.jpg" alt="删除不可借"></p>
+<h3 id="删除-BLACK”叶子节点”-兄弟节点为RED"><a href="#删除-BLACK”叶子节点”-兄弟节点为RED" class="headerlink" title="删除 -BLACK”叶子节点” -兄弟节点为RED"></a>删除 -BLACK”叶子节点” -兄弟节点为RED</h3><blockquote>
+<p>BLACK”叶子节点被删除”，需要同上面情况来考虑，能不能借到，根据B树性质，当被删除节点的兄弟节点只要有多余的就可以借，但是在红黑树中，如果其兄弟节点为RED时，我们类比到B树时，其兄弟节点便不再是其兄弟节点，其兄弟节点会是其兄弟节点的子节点。（如图）<br>所以我们需要将其兄弟节点的子节点转换为其兄弟节点。利用旋转操作可完成</p>
+</blockquote>
+<p>如果兄弟节点是RED<br>兄弟节点染成BLACK，parent染成RED，进行旋转操作<br>即可将其兄弟节点的子节点，转换为其子节点。<br>此时就又回到了其兄弟节点是BLACK的情况，同上处理</p>
 <blockquote>
-<p>如果下溢节点临近的兄弟节点，有至少m/2个元素，可以向其借一个元素<br>将父节点的元素b插入到下溢节点的0位置（最小位置）<br>用兄弟节点的最大元素a代替父节点，的元素b<br>这个操作其实就是：旋转<br>注意： 旋转时a的右节点的位置（操作其实同二叉搜索树旋转）</p>
+<p>对其父节点连同兄弟节点的一侧进行旋转操作，即可将其兄弟节点子节点（于其父节点和兄弟节点的关系方向相反的一侧的子节点）指向父节点。</p>
 </blockquote>
-<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599617993991.jpg" alt="下溢旋转">   </p>
-<blockquote>
-<p>如果下溢节点临近的兄弟节点，只有m/2向上取整减一 个元素，也就是不可以外借给下溢节点，否则其兄弟节点也会发生下溢<br>将父节点的元素b下溢，拿下来和左右子节点合并（下溢节点和其兄弟节点）<br>合并后的节点元素个数等于  m/2向上取整 + m/2向上取整 - 2 ，不超过m-1 </p>
-</blockquote>
-<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1599616209093.jpg" alt="下溢"> </p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600332312658.jpg" alt="删除兄弟节点为红色"></p>
 
       
 
@@ -289,7 +345,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/平衡多路搜索树//" class="article-tag-list-link color3">平衡多路搜索树</a>
+        			<a href="/categories/平衡二叉搜索树//" class="article-tag-list-link color3">平衡二叉搜索树</a>
         		</li>
       		
 		</ul>
@@ -344,7 +400,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/09/01/B%E6%A0%91/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/09/16/%E7%BA%A2%E9%BB%91%E6%A0%91/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -358,18 +414,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/09/16/%E7%BA%A2%E9%BB%91%E6%A0%91/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          红黑树
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/30/AVL%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">AVL树</div>
+    <a href="/2020/09/01/B%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">B树</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -396,7 +443,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#B%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">B树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#m%E9%98%B6B%E6%A0%91%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.</span> <span class="toc-text">m阶B树的性质     </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91"><span class="toc-number">1.2.</span> <span class="toc-text">B树与二叉搜索树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2"><span class="toc-number">1.3.</span> <span class="toc-text">搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0"><span class="toc-number">1.4.</span> <span class="toc-text">添加</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E6%BA%A2-overflow"><span class="toc-number">1.4.1.</span> <span class="toc-text">上溢(overflow)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%8A%E6%BA%A2%E8%A7%A3%E5%86%B3%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E4%BB%A5%E4%BA%94%E9%98%B6B%E6%A0%91%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="toc-number">1.4.2.</span> <span class="toc-text">添加上溢解决的方法（以五阶B树为例）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4"><span class="toc-number">1.5.</span> <span class="toc-text">删除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E6%BA%A2"><span class="toc-number">1.5.1.</span> <span class="toc-text">下溢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%8B%E6%BA%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.2.</span> <span class="toc-text">删除下溢解决方法</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">红黑树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.</span> <span class="toc-text">红黑树的性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E8%AE%A4%E8%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text">错误认识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91%E4%B8%8E4%E9%98%B6B%E6%A0%91%EF%BC%882-3-4%E6%A0%91%EF%BC%89%E7%9A%84%E7%AD%89%E4%BB%B7%E5%8F%98%E6%8D%A2"><span class="toc-number">1.3.</span> <span class="toc-text">红黑树与4阶B树（2-3-4树）的等价变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91%E7%9A%84%E5%B9%B3%E8%A1%A1"><span class="toc-number">1.4.</span> <span class="toc-text">红黑树的平衡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AF%B9%E6%AF%94AVL%E6%A0%91"><span class="toc-number">1.5.</span> <span class="toc-text">红黑树对比AVL树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AVL%E6%A0%91"><span class="toc-number">1.5.1.</span> <span class="toc-text">AVL树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91-1"><span class="toc-number">1.5.2.</span> <span class="toc-text">红黑树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91%E7%9A%84%E6%B7%BB%E5%8A%A0"><span class="toc-number">1.6.</span> <span class="toc-text">红黑树的添加</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%90%8E%E7%9A%84%E6%80%A7%E8%B4%A8%E4%BF%AE%E5%A4%8D%EF%BC%88%E7%B1%BB%E6%AF%944%E9%98%B6B%E6%A0%91%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">添加后的性质修复（类比4阶B树）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%83%85%E5%86%B5%E4%B8%80"><span class="toc-number">2.1.</span> <span class="toc-text">情况一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%83%85%E5%86%B5%E4%BA%8C"><span class="toc-number">2.2.</span> <span class="toc-text">情况二</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E6%80%A7%E8%B4%A8-%E5%8D%95%E6%97%8B%E8%BD%AC-LL-RR-%E5%8F%8C%E6%97%8B%E8%BD%AC-LR-RL"><span class="toc-number">2.2.1.</span> <span class="toc-text">修复性质 单旋转-LL&#x2F;RR    双旋转-LR&#x2F;RL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E6%97%8B%E8%BD%AC-LL-RR-%EF%BC%88%E5%BD%93%E6%96%B0%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9%E7%9A%84%E7%88%B6%E8%8A%82%E7%82%B9%E5%92%8C%E5%85%B6%E7%A5%96%E7%88%B6%E8%8A%82%E7%82%B9%E4%B8%BALL-RR%E5%85%B3%E7%B3%BB%EF%BC%89"><span class="toc-number">2.2.1.1.</span> <span class="toc-text">单旋转-LL&#x2F;RR    （当新添加节点的父节点和其祖父节点为LL&#x2F;RR关系）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E6%97%8B%E8%BD%AC-LR-RL-%EF%BC%88%E5%BD%93%E6%96%B0%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9%E7%9A%84%E7%88%B6%E8%8A%82%E7%82%B9%E5%92%8C%E5%85%B6%E7%A5%96%E7%88%B6%E8%8A%82%E7%82%B9%E4%B8%BALR-RL%E5%85%B3%E7%B3%BB%EF%BC%89"><span class="toc-number">2.2.1.2.</span> <span class="toc-text">双旋转-LR&#x2F;RL     （当新添加节点的父节点和其祖父节点为LR&#x2F;RL关系）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E6%80%A7%E8%B4%A8-%E4%B8%8A%E6%BA%A2-LL-RR-RL-LR"><span class="toc-number">2.2.2.</span> <span class="toc-text">修复性质 上溢 - LL &#x2F; RR &#x2F; RL &#x2F; LR</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E6%BA%A2-LL-RR-RL-LR-%E7%BB%9F%E4%B8%80%E6%93%8D%E4%BD%9C"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">上溢  -LL&#x2F;RR&#x2F;RL&#x2F;LR  统一操作</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91%E7%9A%84%E5%88%A0%E9%99%A4"><span class="toc-number">2.3.</span> <span class="toc-text">红黑树的删除</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%90%8E%E6%80%A7%E8%B4%A8%E4%BF%AE%E5%A4%8D%EF%BC%88%E7%B1%BB%E6%AF%94B%E6%A0%91%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">删除后性质修复（类比B树）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%83%85%E5%86%B5%E4%B8%80-1"><span class="toc-number">3.1.</span> <span class="toc-text">情况一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%83%85%E5%86%B5%E4%BA%8C-1"><span class="toc-number">3.2.</span> <span class="toc-text">情况二</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%8B%A5%E6%9C%89%E4%B8%80%E5%85%B1RED%E5%AD%90%E8%8A%82%E7%82%B9%E7%9A%84BLACK%E8%8A%82%E7%82%B9"><span class="toc-number">3.2.1.</span> <span class="toc-text">删除拥有一共RED子节点的BLACK节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4-BLACK%E8%8A%82%E7%82%B9%E6%98%AF%E2%80%9C%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E2%80%9D-%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9%E4%B8%BABLACK-%E5%8F%AF%E5%80%9F"><span class="toc-number">3.2.2.</span> <span class="toc-text">删除 -BLACK节点是“叶子节点” -兄弟节点为BLACK  -可借</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4-BLACK%E2%80%9C%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E2%80%9D-%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9%E4%B8%BABLACK-%E4%B8%8D%E5%8F%AF%E5%80%9F"><span class="toc-number">3.2.3.</span> <span class="toc-text">删除 -BLACK“叶子节点” -兄弟节点为BLACK -不可借</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4-BLACK%E2%80%9D%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E2%80%9D-%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9%E4%B8%BARED"><span class="toc-number">3.2.4.</span> <span class="toc-text">删除 -BLACK”叶子节点” -兄弟节点为RED</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
