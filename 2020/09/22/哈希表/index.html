@@ -6,20 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>二叉树的中序遍历 | JCJunBlog</title>
+  <title>哈希表 | JCJunBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="二叉树中序遍历Leetcode 题库连接 概念 遍历顺序：先访问左子树——根节点——右子树，按照这个顺序。      特点：中序遍历对于二叉搜索树具有特殊性，中序遍历出二叉搜索树是按照从小到大的顺序遍历的。  遍历方法">
+  <meta name="description" content="哈希表哈希表也叫做散列表 哈希表是典型的空间换时间的应用。  时间复杂度 相比其他几种数据结构，在哈希表中进行添加，删除，查找等操作，性能十分之高，不考虑哈希冲突的情况下，仅需一次定位即可完成，时间复杂度为O(1)  哈希表的底层原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树的中序遍历">
-<meta property="og:url" content="http://yoursite.com/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/index.html">
+<meta property="og:title" content="哈希表">
+<meta property="og:url" content="http://yoursite.com/2020/09/22/%E5%93%88%E5%B8%8C%E8%A1%A8/index.html">
 <meta property="og:site_name" content="JCJunBlog">
-<meta property="og:description" content="二叉树中序遍历Leetcode 题库连接 概念 遍历顺序：先访问左子树——根节点——右子树，按照这个顺序。      特点：中序遍历对于二叉搜索树具有特殊性，中序遍历出二叉搜索树是按照从小到大的顺序遍历的。  遍历方法">
+<meta property="og:description" content="哈希表哈希表也叫做散列表 哈希表是典型的空间换时间的应用。  时间复杂度 相比其他几种数据结构，在哈希表中进行添加，删除，查找等操作，性能十分之高，不考虑哈希冲突的情况下，仅需一次定位即可完成，时间复杂度为O(1)  哈希表的底层原理">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-27T14:23:29.000Z">
-<meta property="article:modified_time" content="2020-08-29T23:49:55.567Z">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600781336550.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600781336559.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600781336555.jpg">
+<meta property="og:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600781336566.jpg">
+<meta property="article:published_time" content="2020-09-22T11:26:46.000Z">
+<meta property="article:modified_time" content="2020-09-22T13:41:13.303Z">
 <meta property="article:author" content="Jia Caijun">
-<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600781336550.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JCJunBlog" type="application/atom+xml">
   
@@ -148,14 +153,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-二叉树的中序遍历" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-哈希表" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      二叉树的中序遍历
+      哈希表
     </h1>
   
 
@@ -163,8 +168,8 @@
           |阅读量(<span id="busuanzi_value_page_pv"></span>)
         </span>
         
-        <a href="/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" class="archive-article-date">
-  	<time datetime="2020-08-27T14:23:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-27</time>
+        <a href="/2020/09/22/%E5%93%88%E5%B8%8C%E8%A1%A8/" class="archive-article-date">
+  	<time datetime="2020-09-22T11:26:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-22</time>
 </a>
         
       </header>
@@ -172,31 +177,95 @@
     <div class="article-entry" itemprop="articleBody">
 
       
-        <h1 id="二叉树中序遍历"><a href="#二叉树中序遍历" class="headerlink" title="二叉树中序遍历"></a>二叉树中序遍历</h1><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">Leetcode 题库连接</a></p>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><blockquote>
-<p>遍历顺序：先访问左子树——根节点——右子树，按照这个顺序。   </p>
+        <h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><p>哈希表也叫做散列表</p>
+<p>哈希表是典型的空间换时间的应用。 </p>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><blockquote>
+<p>相比其他几种数据结构，在哈希表中进行添加，删除，查找等操作，性能十分之高，不考虑哈希冲突的情况下，仅需一次定位即可完成，时间复杂度为O(1)</p>
 </blockquote>
+<h2 id="哈希表的底层原理"><a href="#哈希表的底层原理" class="headerlink" title="哈希表的底层原理  "></a>哈希表的底层原理  <a id="more"></a></h2><p>通过哈希函数生成一个key对应的数组index，将一个key映射到一个数组索引上，由于数组特性在搜索时只需要通过哈希函数再次得出需要搜索key的index就可通过索引快速的找到该key对应inedx。</p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600781336550.jpg" alt="哈希表实现原理"> </p>
+<h2 id="哈希冲突-哈希碰撞"><a href="#哈希冲突-哈希碰撞" class="headerlink" title="哈希冲突/哈希碰撞"></a>哈希冲突/哈希碰撞</h2><p>2个不同的key，经过哈希函数计算出相同的结果  </p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><blockquote>
+<ol>
+<li>开放定址法（Open Addressing）<br>  按照一定规则向其他地址探测，直到遇到空桶</li>
+<li>在哈希表法(Re-Hashing)<br> 设计多个哈希函数。</li>
+<li>链地址法（Separate Chaining）<br> 比如通过链表将同一index的元素串起来    </li>
+</ol>
+</blockquote>
+<h3 id="JDK-1-8-的哈希冲突解决方案"><a href="#JDK-1-8-的哈希冲突解决方案" class="headerlink" title="JDK 1.8 的哈希冲突解决方案"></a>JDK 1.8 的哈希冲突解决方案</h3><blockquote>
+<p>JDK1.8 中的哈希表是使用 链表+红黑树的方法解决哈希冲突的<br>默认使用单向链表将元素串起来<br>在添加元素时，可能会由单向链表转为红黑树来存储元素<br>比如当哈希表容量&gt;=64且单向链表的节点数量大于8时<br>当红黑树节点数量少到一定程度时，又会转为单向链表  </p>
+</blockquote>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600781336559.jpg" alt="java解决放按"> </p>
+<h2 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a>哈希函数</h2><p>哈希表中哈希函数的实现步骤 大概如下:  </p>
 <blockquote>
-<p>特点：中序遍历对于二叉搜索树具有特殊性，中序遍历出二叉搜索树是按照从小到大的顺序遍历的。</p>
+<ol>
+<li>先生成key的哈希值（必须是整数）  </li>
+<li>再让key 的哈希值跟数组的大小进行相关运算，生成一个索引值</li>
+</ol>
 </blockquote>
-<h2 id="遍历方法"><a href="#遍历方法" class="headerlink" title="遍历方法  "></a>遍历方法  <a id="more"></a></h2><h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><blockquote>
-<p>对于二叉树的遍历，由于树的特性其非常符合递归思想，所以使用递归非常简单。     </p>
-</blockquote>
+<pre><code>    public int hash(Object key)&#123;
+        return hash_code(key) % table.length
+    &#125;</code></pre>
+<p>为了提高效率，可以使用 &amp; 位运算取代 % 运算（前提: 将数组的长度设计为 2 的幂）  </p>
+<pre><code>    public int hash(Object key)&#123;
+            return hash_code(key) &amp; (table.length -1)
+        &#125;</code></pre>
+<p>2的幂-1 化为二进制是全为1的  </p>
+<p>&amp; 与位运算则是 两个位同为1则结果为1，所以当一方全为1时则结果全由另一方决定，但是长度则由最短的一方决定<br>例如:  </p>
+<pre><code> 010111   //控制结果
+&amp;001111   //控制长度结果
+ 000111</code></pre>
+<p>哈希函数，也叫做散列函数<br>哈希表内部的数组元素，也叫做Bucket（桶），整个数组叫Buckets 或者 Bucket Array</p>
+<h2 id="如何生成key的哈希值"><a href="#如何生成key的哈希值" class="headerlink" title="如何生成key的哈希值"></a>如何生成key的哈希值</h2><p>key的常见种类：整数，浮点数，字符串，自定义对象<br>不同种类的key，哈希值的生成方式不一样，但目标是一致的<br>尽量让每一个key的哈希值都唯一<br>尽量让key的所有信息参与运算  </p>
 <blockquote>
-<p>递归解题思想：思考递归函数解决的问题，将大问题转换为一个更小的同一问题    </p>
+<p>在java中，HashMap的key必须实现hashCode、equals方法，也允许key为null  ，哈希值为32位</p>
 </blockquote>
-<blockquote>
-<p>本题中：递归函数需要解决的问题是 接受一个节点，遍历左子节点（调用递归函数，遍历left）后，遍历自己，再遍历右子节点（调用递归函数，遍历right）。<br>终止条件：直至找到最后的节点为空</p>
-</blockquote>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">private void inorderTraversal(Note note) &#123;</span><br><span class="line">       if(note &#x3D;&#x3D; null) return;</span><br><span class="line"></span><br><span class="line">       inorderTraversal(note.left);</span><br><span class="line">       System.out.println(note.element);</span><br><span class="line">       inorderTraversal(note.right);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><p>整数值当作哈希值<br>比如10的哈希值就是10  </p>
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>将储存的二进制个数转为整数  </p>
+<h3 id="Long-double类型-64位"><a href="#Long-double类型-64位" class="headerlink" title="Long/double类型  64位"></a>Long/double类型  64位</h3><p>需要尽量使用64位数（尽量使用数据所提供的信息使得哈希值尽量唯一） ，计算处一个32位的哈希值 </p>
+<p>java方法：   </p>
+<pre><code>public static int hashCode(long value)&#123;
+    return (int)(value ^ (value &gt;&gt;&gt; 32));
+&#125;
 
-<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><blockquote>
-<p>迭代遍历树结构，被忽略节点访问顺序为先进后出，所以我们可以借助栈结构，来储存被忽略的父节点。中序遍历则是先访问左节点，所以我们将具有左子节点的节点入栈即可。</p>
-</blockquote>
-<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;Integer&gt; inorderTraversal(TreeNode root) &#123;</span><br><span class="line">       List&lt;Integer&gt; list &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">       if (root &#x3D;&#x3D; null) return list;</span><br><span class="line"></span><br><span class="line">       TreeNode note &#x3D; root;</span><br><span class="line">       Stack&lt;TreeNode&gt; stack &#x3D; new Stack&lt;&gt;();</span><br><span class="line">       while (note !&#x3D; null || !stack.isEmpty())&#123;</span><br><span class="line"></span><br><span class="line">           if (note !&#x3D; null) &#123;</span><br><span class="line">               stack.push(note);</span><br><span class="line">               note &#x3D; note.left;</span><br><span class="line">           &#125; else &#123;</span><br><span class="line">               note &#x3D; stack.pop();</span><br><span class="line">               list.add(note.val);</span><br><span class="line">               note &#x3D; note.right;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       return list;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+public static int hashCode(double value)&#123;
+    long bits = doubleToLongBits(value);
+    return (int) (bits ^ (bits &gt;&gt;&gt; 32));
+&#125;</code></pre>
 <blockquote>
-<p>特别注意：右节点的处理是在获取完一次，栈顶中的数据时（即获取了一个父节点），根据中序遍历顺序，则会获取该父节点的右节点，并且将该右节点完全视为一个新的节点，进入循环。</p>
+<p>（&gt;&gt;&gt; 和 ^） 可以使用64bit的高32bit 和低32bit 混合计算出 32bit的哈希值<br>从而充分利用所有信息计算处哈希值</p>
 </blockquote>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600781336555.jpg" alt="计算演示"> </p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>字符串是由若干个字符组成的  </p>
+<blockquote>
+<p>比如字符串jack，由j，a，c，k 四个字符串组成 (字符的本质就是一个整数)<br>因此 jack的哈希值可以表示为 j * n^3  + a * n^2 + c * n^1 + k * n^0<br>等价于[(j * n + a)* n + c] * n + k<br>由于计算机执行加减的效率大于乘除的效率所以我们采用第二种当时来计算。      </p>
+</blockquote>
+<blockquote>
+<p>在JDK中，乘数n 为31.<br>这是因为 31是一个奇素数，JVM会将 31*i 优化成（i &lt;&lt; 5） - i，位运算的效率会比乘法效率快得多，而素数的性质（除了1乘它本身没有其他公因子），又使得其乘以一个数的结果重复率大大降低。</p>
+</blockquote>
+<h3 id="java中自定义对象"><a href="#java中自定义对象" class="headerlink" title="java中自定义对象"></a>java中自定义对象</h3><p>java object类中 具有hashCode 和equals  方法，而要放入哈希表中的自定义对象一定要实现这两个方法。  </p>
+<blockquote>
+<p>hashCode方法则是计算该对象的哈希值的方法，在实际开发中我们可以根据我们的实际需求，来定义计算该类的对象的哈希值的方法。    </p>
+</blockquote>
+<blockquote>
+<p>equals方法的实现，是为了解决哈希冲突时，对象比较问题的方法，在实际开发中我们可以根据需求，来自定义两个对象比较方法，从而实现当两个对象发生哈希冲突时会如何解决。  </p>
+</blockquote>
+<h2 id="哈希表中红黑树的比较方法"><a href="#哈希表中红黑树的比较方法" class="headerlink" title="哈希表中红黑树的比较方法"></a>哈希表中红黑树的比较方法</h2><h3 id="HashMap添加的比较过程"><a href="#HashMap添加的比较过程" class="headerlink" title="HashMap添加的比较过程"></a>HashMap添加的比较过程</h3><blockquote>
+<ol>
+<li>首先我们先根据哈希值的大小进行判断比较(虽然两个元素，计算处来的index一样，并不说明两个元素的哈希值相等，所以此处我们先比较哈希值)。  </li>
+<li>当哈希值相等时，则两个元素可能相等所以我们调用其equals方法，来判断两个对象是否是同一个。  </li>
+<li>如果不是同一个对象，那我们则会判断对象是否实现了比较器接口，如果实现我们再次使用比较器方法来进行判断。 </li>
+<li>如果还没实现比较器，我们则会根据两个对象的内存地址大小来判断其具体的添加位置      </li>
+</ol>
+</blockquote>
+<blockquote>
+<p>注意： 当执行到第四步内存比较时，已经不是一个不确定的比较结果了，因为内存地址的分配是随机的，大小也是随机的，并且每个对象的地址都是不一样的。当equals 判断为相同对象时，内存地址并不会一样，所以我们后面的查找并不能根据内存地址进行比较查找。  </p>
+</blockquote>
+<h3 id="HashMap查找过程"><a href="#HashMap查找过程" class="headerlink" title="HashMap查找过程"></a>HashMap查找过程</h3><blockquote>
+<p>同添加过程的前三种比较方式一样，我们会根据前面的三种选择判断方式进行有选择的查找，但是当三种判断方式都没有找到时，我们并不会使用第四种内存比较方式，而是会使用全扫描方式，对以下的所有数节点进行扫描，来查找。</p>
+</blockquote>
+<h2 id="有序的-LinkedHashMap"><a href="#有序的-LinkedHashMap" class="headerlink" title="有序的 LinkedHashMap"></a>有序的 LinkedHashMap</h2><p>在 HashMap的基础上维护元素的添加顺序,使得遍历的结果是遵从添加顺序的<br>维护每一个节点的指向方向,从而添加一个链表结构.</p>
+<p><img src="https://7465-test-j13ej-1303003911.tcb.qcloud.la/1600781336566.jpg" alt="计算演示"> </p>
 
       
 
@@ -241,7 +310,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
@@ -253,7 +322,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/92//" class="article-tag-list-link color3">92</a>
+        			<a href="/categories/HashMap//" class="article-tag-list-link color3">HashMap</a>
         		</li>
       		
 		</ul>
@@ -308,7 +377,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/09/22/%E5%93%88%E5%B8%8C%E8%A1%A8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -322,18 +391,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/30/AVL%E6%A0%91/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          AVL树
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/26/hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo博客创建</div>
+    <a href="/2020/09/16/%E7%BA%A2%E9%BB%91%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">红黑树</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -360,7 +420,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="toc-number">1.</span> <span class="toc-text">二叉树中序遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">遍历方法  </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92"><span class="toc-number">1.2.1.</span> <span class="toc-text">递归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3"><span class="toc-number">1.2.2.</span> <span class="toc-text">迭代</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text">哈希表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">1.1.</span> <span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9A%84%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">哈希表的底层原理  </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81-%E5%93%88%E5%B8%8C%E7%A2%B0%E6%92%9E"><span class="toc-number">1.3.</span> <span class="toc-text">哈希冲突&#x2F;哈希碰撞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.1.</span> <span class="toc-text">解决方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JDK-1-8-%E7%9A%84%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.3.2.</span> <span class="toc-text">JDK 1.8 的哈希冲突解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.</span> <span class="toc-text">哈希函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90key%E7%9A%84%E5%93%88%E5%B8%8C%E5%80%BC"><span class="toc-number">1.5.</span> <span class="toc-text">如何生成key的哈希值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E6%95%B0"><span class="toc-number">1.5.1.</span> <span class="toc-text">整数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="toc-number">1.5.2.</span> <span class="toc-text">浮点数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Long-double%E7%B1%BB%E5%9E%8B-64%E4%BD%8D"><span class="toc-number">1.5.3.</span> <span class="toc-text">Long&#x2F;double类型  64位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.5.4.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.5.5.</span> <span class="toc-text">java中自定义对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8%E4%B8%AD%E7%BA%A2%E9%BB%91%E6%A0%91%E7%9A%84%E6%AF%94%E8%BE%83%E6%96%B9%E6%B3%95"><span class="toc-number">1.6.</span> <span class="toc-text">哈希表中红黑树的比较方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HashMap%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%AF%94%E8%BE%83%E8%BF%87%E7%A8%8B"><span class="toc-number">1.6.1.</span> <span class="toc-text">HashMap添加的比较过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HashMap%E6%9F%A5%E6%89%BE%E8%BF%87%E7%A8%8B"><span class="toc-number">1.6.2.</span> <span class="toc-text">HashMap查找过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E5%BA%8F%E7%9A%84-LinkedHashMap"><span class="toc-number">1.7.</span> <span class="toc-text">有序的 LinkedHashMap</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
