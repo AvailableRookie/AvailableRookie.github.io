@@ -144,6 +144,54 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2021523pyhton基础-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/23/2021523pyhton%E5%9F%BA%E7%A1%80-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-二叉堆" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -822,6 +870,388 @@
 
 
   
+    <article id="post-2021523python基础-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/">Python基础————上</a>
+    </h1>
+  
+
+        <span id="busuanzi_container_page_pv">
+          |阅读量(<span id="busuanzi_value_page_pv"></span>)
+        </span>
+        
+        <a href="/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/" class="archive-article-date">
+  	<time datetime="2019-12-22T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+
+      
+        <h1 id="语言类型"><a href="#语言类型" class="headerlink" title="语言类型"></a>语言类型</h1><h2 id="python-为解释型语言"><a href="#python-为解释型语言" class="headerlink" title="python 为解释型语言"></a>python 为解释型语言</h2><p>区别与java，python的翻译器没翻译一次就交给cpu执行一次而java则是编译语言，先由编译器将所有的代码编译成操作系统可以运行的可执行文件。  </p>
+<blockquote>
+<p>其缺点是：：每次运行的时候都要解释一遍，在性能上不如编译型语言。</p>
+</blockquote>
+<h1 id="python的优缺点"><a href="#python的优缺点" class="headerlink" title="python的优缺点"></a>python的优缺点</h1><h2 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h2><ol>
+<li>Python的定位是“优雅”, “明确”，“简单”，所以Python程序看上去总是简单易懂，初学者学Python，不但入门容易，而且将来深入下去，可以编写那些非常复杂的程序。</li>
+<li>开发效率非常高，Python有非常强大的第三方库，基本上在计算机上实现的任何功能，Python官方库里都有相应的模块进行支持，直接下载调用后，在基础库的基础上在进行开发，大大降低开发周期，避免重复造轮子。</li>
+<li>高级语言——当你用Python语言编写程序的时候，你无需考虑像如何管理程序使用的内存一类的底层细节。</li>
+<li>可移植性——由于它的开源本质，Python已经被移植在许多平台上。如果在编程时小心的避免使用依赖于系统的特性，那么所有Python程序无需修改就几乎可以在市场上多有的系统平台上运行。</li>
+<li>可扩展性——如果你需要一段关键代码运行得更快或者希望某些算法不公开，可以把部分程序用C或者C++编写，然后在Python程序中使用它们。</li>
+<li>可嵌入性——可以把Python嵌入C/C++程序，从而向你的程序用户提供脚本功能。 </li>
+</ol>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点:"></a>缺点:</h2><ol>
+<li>速度慢，Python的运行速度相比C语言确实慢很多，跟Java比也要慢一些，因此这也是很多所谓的大牛不屑于使用Python的主要原因，但其实这里所指的运行速度慢在大部分情况下用户是无法直接感知到的，必须借助测试工具才能体现出来。</li>
+<li>代码不能加密，因为Python是解释型语言，它的源码都是以明文形式存放的，不过这也不算是一个缺点，因为如果项目要就源码加密，那么在最开始就不该用Python语言。 3. 线程不能利用多CPU问题，这是Python被人诟病最多的一个缺点。GIL即全局解释器锁，是计算机程序设计语言解释器用于同步线程的工具，使得任何时刻仅有一个线程在执行，Python的线程是操作系统的原生线程。在Linux上为pthread，在Window上为Win thread，完全由操作系统调度线程的执行。一个Python解释器进程内有一条主线程，以及多条用户程序的执行线程。即使在多核CPU平台上，由于GIL的存在，所以禁止多线程的并行执行那个。</li>
+</ol>
+<h1 id="python数据类型"><a href="#python数据类型" class="headerlink" title="python数据类型"></a>python数据类型</h1><blockquote>
+<p>弱类型，其原因其实就是py拥有每个类型的常量池，像java中string类，其每个变量的赋值都是在常量池中赋值，并把常量池的地址给变量名（引用），而带来的就是变量就成了一个只放地址的“指针”了，而这个变量即可获得所有类型</p>
+</blockquote>
+<h2 id="数据类型分为：可变数据类型和不可变数据类型"><a href="#数据类型分为：可变数据类型和不可变数据类型" class="headerlink" title="数据类型分为：可变数据类型和不可变数据类型"></a>数据类型分为：可变数据类型和不可变数据类型</h2><p><strong>不可变数据类型</strong>：当该数据类型对应变量的值发生改变时，那么它对应内存地址也会发生改变，这种数据类型就被称为不可变数据类型<br>            也就是说，变量类型是动态的，其实是b变量引用的类型可以改变。<br>            Number(数字类型)包括：int  float  bool布尔  复数（complex）<br>            字符串类型（String）<br>            元组（Tuple）  </p>
+<p><strong>可变数据类型</strong>：当该数据类型对应的变量的值发生改变，但它对应的地址值不会发生改变，这种数据类型叫做可变数据类型<br>            也就是说，变量的数据类型是静态的，就是变量的取值仅有一种类型。<br>            List（列表）[2,4,s,a]<br>            Dictionary（字典）K:V映射集合<br>            Set（集合）   </p>
+<blockquote>
+<p>总结：不可变数据类型变量更改后地址发生改变。<br>不可变数据类型变量更改后地址不发生改变。   </p>
+</blockquote>
+<h1 id="python-在语法上"><a href="#python-在语法上" class="headerlink" title="python 在语法上"></a>python 在语法上</h1><pre><code>    注重缩进，没有花括号，而判断子夫句的依据则是缩进方式
+    注重换行，python没有;而是用换行判断一句语句的结束</code></pre>
+<h2 id="输出语句：print-s-s-s-sep-’’-end-’-n’"><a href="#输出语句：print-s-s-s-sep-’’-end-’-n’" class="headerlink" title="输出语句：print(s+s+s,sep=’’,end=’\n’)"></a>输出语句：print(s+s+s,sep=’’,end=’\n’)</h2><blockquote>
+<p>注意:<br>            “+”只能连接字符串<br>            如果要打印其他类型组合的话可以用格式化输出”%d””%f””%s”<br>            或者format格式化<br>            {}s{}，format(值，值)</p>
+</blockquote>
+<h2 id="输入语句：input-‘同时输出一句话’"><a href="#输入语句：input-‘同时输出一句话’" class="headerlink" title="输入语句：input(‘同时输出一句话’)"></a>输入语句：input(‘同时输出一句话’)</h2><blockquote>
+<p>注意：<br>            接收的input为字符串类型，在接收非字符串类型的时候需要强转<br>            int()<br>            string()<br>            double()</p>
+</blockquote>
+<h2 id="赋值运算："><a href="#赋值运算：" class="headerlink" title="赋值运算："></a>赋值运算：</h2><p>由于其独特的变量储存方式造成其赋值的本质与java不同<br>            其赋值就是地址的赋值</p>
+<h2 id="逻辑运算符："><a href="#逻辑运算符：" class="headerlink" title="逻辑运算符："></a>逻辑运算符：</h2><p>and逻辑与   or逻辑或   not逻辑非</p>
+<h2 id="三目运算符："><a href="#三目运算符：" class="headerlink" title="三目运算符："></a>三目运算符：</h2><p>结果  if   表达式  else  结果<br>真              假</p>
+<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><pre><code>    if 表达式:
+        成立
+    else:
+        不成立
+
+    if 表达式:
+        成立
+    elif 表达式:
+        成立
+    elif 表达式:
+        成立
+    else:
+        不成立：</code></pre>
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><pre><code>    for i in 集合range(1,2)左闭右开:
+        语句
+        break
+    else
+        pass</code></pre>
+<blockquote>
+<p>注意：该for语句与其他语言不同，其判断循环的次数是集合的个数，其i的值是集合里的数值<br>                此处的else代表在for语句循环完以后再执行，而会被break跳出的语句，即for与else为一个语句。<br>                而且，个for语句都只会执行一遍in后面的列表，也就是以后的每次循环都会遵循一开始列表的值<br>                不管在循环过程中该列表变不变。（从而会出现删除列表元素不彻底的情况）</p>
+</blockquote>
+<h2 id="随机数的产生"><a href="#随机数的产生" class="headerlink" title="随机数的产生"></a>随机数的产生</h2><pre><code>    import random
+    random.randint(1,50)    取1-50的数
+    random.random() 小数
+    random.randrange()   左闭右开  底层为range()
+    random.choice(list)  从列表中随机选择
+    random.shuffle(list)  打乱列表顺序</code></pre>
+<p>函数range        从0开始取数：  </p>
+<pre><code>range(1，4)   一到三
+range(1,10,2)  取1，3，5，7，9：
+range(4)   取  0，1，2，3</code></pre>
+<h1 id="python字符串"><a href="#python字符串" class="headerlink" title="python字符串"></a>python字符串</h1><p>  类型转换为字符串：  str()</p>
+<p>  <strong>注意：</strong>  </p>
+<pre><code>        for i in &#39;s&#39;:
+            print(i)</code></pre>
+<blockquote>
+<p>由于弱类型特征，py中字符串就是字符数组，并且右索引，可以直接看成就是字符数组</p>
+</blockquote>
+<h2 id="字符串切片"><a href="#字符串切片" class="headerlink" title="字符串切片"></a>字符串切片</h2><pre><code>s[num]获取指定位置的单个字母
+s[1:5]获取范围内的多个字母    ######（左闭右开）
+s[3:]3以后所有
+s[:3]0开始到第2个
+s[-5:-1]从倒数第一个到倒数第五个
+s[::-1]从后往前输出
+s[5:0:-1]第五个到第一个到输
+s[0:5:1]第0个到第四个
+s[0:5:2]从第一个开始，步长为二（每隔2个取一个）  </code></pre>
+<h2 id="字符串相关函数"><a href="#字符串相关函数" class="headerlink" title="字符串相关函数"></a>字符串相关函数</h2><pre><code>字符串：内致函数
+        capitalize()    返回首字母大写
+        title()        返回字个单词首字母大写
+        istiele()    返回布尔是否所有单词首字母都大写
+        upper()        返回全大写
+        lower()        返回全小写
+
+        len(str)    返回字符串长度
+
+    查找相关
+        find(&#39;要查找位置&#39;，&#39;开始位置&#39;，&#39;结束位置&#39;)
+        find(&#39;R&#39;)        返回值-1没有找到，否则返回所找字符串的开始位置  
+        find(&#39;l&#39;,beg，len)    指定位置开始查找
+        rfind()            从右开始找
+        lfind()
+        index()            同find但如果没找到会报异常
+        rindex()
+        replace(&#39;找&#39;,&#39;需要替换的&#39;)    返回一个
+
+
+        encode(&#39;编码形式&#39;) 编码      返回编码字节
+        decode(&#39;解码形式&#39;) 解码  返回解码
+
+        startswith()        判断是否是xxx开头的
+        endswith()        判断是是否xxx结尾的
+        例如(判断扩展名)
+
+        isalpha()        判断是否是字母
+        isdigit()        判断是否是数字
+
+
+        &#39;连接符&#39;.join(&#39;列表&#39;)            连接一个字符
+
+        join()            把指定字符串或者列表作为整体分别插入该字符串的每两个数中间
+        strip()            返回忽略空格的字符串
+        lstrip()        返回忽略左空格的字符串
+        rstrip()        返回忽略右空格的字符串
+
+        split(&#39;分隔符&#39;)            按指定字符分割到列表，并返回该列表
+        split(&#39;分隔符&#39;，2)        每过两个分隔符切割一下
+
+        count(&#39;&#39;)        求字符串中的某个字符串出现的次数  </code></pre>
+<h1 id="python-集合类型"><a href="#python-集合类型" class="headerlink" title="python 集合类型"></a>python 集合类型</h1><h2 id="列表list"><a href="#列表list" class="headerlink" title="列表list"></a>列表list</h2><p><strong>py中列表可以类型混合</strong></p>
+<pre><code>name = [s,s,s,s,s]        下表0，1，2....&amp;&amp;-1,-2-,3....
+
+直接打印：
+    print(name)
+
+遍历:
+    for i in name:
+        print(i)</code></pre>
+<h3 id="枚举遍历"><a href="#枚举遍历" class="headerlink" title="枚举遍历"></a>枚举遍历</h3><pre><code>enumerate(list)     --该函数返回两个值---&gt; index,value  
+
+for index,value in enumerate(list):     
+    print(index,value)</code></pre>
+<h3 id="判断字符串是否在该列表中："><a href="#判断字符串是否在该列表中：" class="headerlink" title="判断字符串是否在该列表中："></a>判断字符串是否在该列表中：</h3><pre><code>    &#39;s&#39;  in  name            </code></pre>
+<h3 id="删除："><a href="#删除：" class="headerlink" title="删除："></a>删除：</h3><pre><code>    del name[i]</code></pre>
+<blockquote>
+<p>注意：每删除一个列表就自动缩短一个，会引起下标改变所以存在陋删问题<br><strong>解决方法：while</strong>  </p>
+</blockquote>
+<pre><code>i=0；
+while i&lt;l:
+    if &#39;ss&#39; in name:
+        del name[i]
+        l-=1
+        continue
+    i+=1</code></pre>
+<blockquote>
+<p><strong>删除函数：</strong>   </p>
+<p>remove(e)  ：删除指定元素，没有返回值，py默认返回值None如果被删除元素不存在报错。<br>opp()    ：弹栈，没有参数的时候默认弹栈，删除列表中的最后一个元素。并返回删除元素有参数的时候，删除指定的索引元素，并返回删除元素。clear()    ：清除列表</p>
+</blockquote>
+<h3 id="列表切片"><a href="#列表切片" class="headerlink" title="列表切片"></a>列表切片</h3><pre><code>    name[1:2]
+    与字符串切片相似</code></pre>
+<h3 id="列表的增加："><a href="#列表的增加：" class="headerlink" title="列表的增加："></a>列表的增加：</h3><pre><code>    append()  末尾追加
+    extend()    将该字符串拆分合并到指定字符串  或  |将该列表合并到指定列表|
+    insert(1,&#39;内容&#39;)   指定位置插入数据
+
+    列表的嵌套（多维）
+    list[3,4,6,[5,8],8]
+            表示 5 ：
+            list[3][0]</code></pre>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><blockquote>
+<p>反转：reverse()<br>排序：list.sort(reverse = True|False)<br>list_1 = sorted(list)       对所指定的列表进行排序到一个新列表并返回</p>
+</blockquote>
+<h3 id="选择排序法：（直接交换）-list-2-24-2-42-1-25-3"><a href="#选择排序法：（直接交换）-list-2-24-2-42-1-25-3" class="headerlink" title="选择排序法：（直接交换）  list = [2,24,2,42,1,25,3]"></a>选择排序法：（直接交换）  list = [2,24,2,42,1,25,3]</h3><pre><code>list_1 = [1,3,4,2,5,6,6,2]
+for i in range(len(list)):
+    for j in range(i+1,len(list)):
+    if list_1[j]&lt;list_1[i]:
+        list_1[i],list_1[j] = list_1[j],list_1[i]
+print(list_1)</code></pre>
+<h3 id="冒泡排序法："><a href="#冒泡排序法：" class="headerlink" title="冒泡排序法："></a>冒泡排序法：</h3><pre><code>list_2 = [1,25,2,1,5,1,25,2]
+for i in range(len(list_2)-1):
+    for j in range(len(list_2)-1-i):
+    if list_2[j]&gt;list_2[j+1]:
+        list_2[j],list_2[j+1] = list_2[j+1],list_2[j]
+print(list_2)</code></pre>
+<blockquote>
+<p>列表    list()   把能迭代的类型转化成列表类型（整型不能迭代）(for … in  …）语句中也只能放可迭代的</p>
+</blockquote>
+<h2 id="元组tuple"><a href="#元组tuple" class="headerlink" title="元组tuple"></a>元组tuple</h2><blockquote>
+<p>元组里的元素是不可变的   只能实现 查<br>适用于切片查找，sum()求和，len()求长度，max(),min()求最值</p>
+</blockquote>
+<pre><code>list = tuple(list)  可以将元组转化为列表并返回
+tuple.count(2)   查找2元素在元组中出现的个数
+tuple.index(2)     查找2元素在元组中索引值 </code></pre>
+<h3 id="拆包装包（星号分配）（星号分配目标必须在列表或元组中）"><a href="#拆包装包（星号分配）（星号分配目标必须在列表或元组中）" class="headerlink" title="拆包装包（星号分配）（星号分配目标必须在列表或元组中）"></a>拆包装包（星号分配）（星号分配目标必须在列表或元组中）</h3><blockquote>
+<p>装包，系统底层可以实现多个元素赋值给一个*变量，把多个变量包装成一列表储存  </p>
+</blockquote>
+<pre><code>for...in..    可拆包  
+
+
+拆包，*列表可以将列表分为多个变量打印输出
+t1 = (4,7,3)
+*y,a = t1
+print(y)
+print(*y)
+
+    [4, 7]
+    4 7</code></pre>
+<h2 id="字典dict"><a href="#字典dict" class="headerlink" title="字典dict"></a>字典dict</h2><blockquote>
+<p>key：value键值对存在</p>
+</blockquote>
+<pre><code>    dict = &#123;key：value&#125;
+    dict()只能将两两成对元素的列表或元组转换为字典</code></pre>
+<p><strong>in</strong>  可以用于字典操作<br>            用来判断指定key是否在该字典中</p>
+<h3 id="字典的增改"><a href="#字典的增改" class="headerlink" title="字典的增改"></a>字典的增改</h3><pre><code>    dict[key] = value 
+    如果key不存在就把key和value都加入字典
+    如果key已经存在就把value改为新value</code></pre>
+<h3 id="字典的查找（遍历）"><a href="#字典的查找（遍历）" class="headerlink" title="字典的查找（遍历）"></a>字典的查找（遍历）</h3><pre><code>    print(dict[key])  
+    此处注意用简单的key查找的时候如果key不存在则会报错由此有一个内置函数get()它包装处理异常操作。  
+
+    dict.get(key,default)  
+    如果没有key就返回default即自己设置找不到情况下的返回值
+    遍历筛选（key方法）
+
+  例如：
+    dict = &#123;&#39;劳务&#39;:22,&#39;经理&#39;:99&#125;
+    for i in dict:
+        if dict[i] &gt; 60:
+            print(i)</code></pre>
+<blockquote>
+<p>遍历(此方法遍历会出现多空格问题——也就是说，这样遍历虽然有两给变量但是并没有遍历出value，只是将key分解为两个元素输出，如果只用一个变量的话就只能打印输出key的一个符号所以这样遍历只能遍历key)  </p>
+</blockquote>
+<pre><code>        for i,j in dict:
+        print(i,j)
+        劳 务
+        经 理
+        for i in dict:
+        print(i)
+
+        解决办法
+        for i in dict:
+        print(i，dict[i])</code></pre>
+<h3 id="字典函数查找："><a href="#字典函数查找：" class="headerlink" title="字典函数查找："></a>字典函数查找：</h3><pre><code>  items()    values()     keys()    get()↑
+
+    items()  
+    遍历  该函数可以将字典以键值对为单位转化为元组并将其存入列表中——涉及到双**（为遍历提供了方便）
+
+    for key,value in dict.items():
+        print(key) 
+    values()取所以value的值到一个新的列表中  
+    key()取所有key的值到一个新的列表中</code></pre>
+<h3 id="字典的删除"><a href="#字典的删除" class="headerlink" title="字典的删除"></a>字典的删除</h3><pre><code>    del dict[key]   </code></pre>
+<blockquote>
+<p>注意该方法如果没有key的话也会报错</p>
+</blockquote>
+<p><strong>相应的函数为:</strong>  </p>
+<pre><code>    dict.pop(key[,default])   和get()一样
+
+    dict.popitem()    删除字典中最后一个键值对
+
+    dict.clear    清除字典</code></pre>
+<h3 id="字典的常用内置函数"><a href="#字典的常用内置函数" class="headerlink" title="字典的常用内置函数"></a>字典的常用内置函数</h3><pre><code>    dict.update()    
+    两个字典合并，将指定字典与该字典合并  
+
+    dict = dict_1.update(dict_2)
+    dict.fromkeys(列表或元组或集合[,default])    
+    将指定的序列以key的方式储存到一个新字典中并指定统一value，默认为None</code></pre>
+<h2 id="集合set"><a href="#集合set" class="headerlink" title="集合set"></a>集合set</h2><p><strong>不能存在重复元素</strong>  </p>
+<pre><code>    s1 = set()
+    s2 = &#123;2,4,5,1&#125;</code></pre>
+<h3 id="集合的增加"><a href="#集合的增加" class="headerlink" title="集合的增加"></a>集合的增加</h3><pre><code>    add()
+    update(序列)     
+    将指定序列与该集合合并</code></pre>
+<h3 id="集合删除"><a href="#集合删除" class="headerlink" title="集合删除"></a>集合删除</h3><pre><code>    s1.remove()    
+    当没有指定元素时会报错</code></pre>
+<p><strong>相对应的封装函数为</strong>  </p>
+<pre><code>    dicard()
+
+    pop()        
+    随机删除（一般为删除第一个）
+
+    clear()        
+    清楚集合</code></pre>
+<h3 id="集合的差交并"><a href="#集合的差交并" class="headerlink" title="集合的差交并"></a>集合的差交并</h3><blockquote>
+<p>差集就是set_1中和set_2不一样的有什么  </p>
+</blockquote>
+<pre><code>    set = set_1 - set_2
+
+    set=set_1.difference(set_2)</code></pre>
+<blockquote>
+<p>交集就是set_1中和set_2一样的  </p>
+</blockquote>
+<pre><code>    set = set_1 &amp; set_2
+
+    set=set_1.intersection(set_2)</code></pre>
+<blockquote>
+<p>并集就是set_1中和set_2的并集  </p>
+</blockquote>
+<pre><code>    set = set_1 | set_2
+
+    set=set_1.union(set_2)</code></pre>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pyhton</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/语法基础//" class="article-tag-list-link color5">语法基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
 
 
@@ -934,6 +1364,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Pyhton</a>
               </li>
             
             <div class="clearfix"></div>
