@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JCJunBlog</title>
+  <title>Pandas——(上) | JCJunBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="JCJunBlog">
-<meta property="og:url" content="http://yoursite.com/2021/05/23/2021523pyhton%E5%9F%BA%E7%A1%80-2/index.html">
+  <meta name="description" content="pandas入门pandas是基于Numpy数组构建的，特别是基于数组的函数和不使用for循环的数据处理。二者最大的不同是padnas是专门为处理表格和混杂数据设计的，而Numpy更数和处理同意的数字数组数据 导入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pandas——(上)">
+<meta property="og:url" content="http://yoursite.com/2020/02/23/2021523Pandas-1/index.html">
 <meta property="og:site_name" content="JCJunBlog">
+<meta property="og:description" content="pandas入门pandas是基于Numpy数组构建的，特别是基于数组的函数和不使用for循环的数据处理。二者最大的不同是padnas是专门为处理表格和混杂数据设计的，而Numpy更数和处理同意的数字数组数据 导入">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-23T03:59:58.251Z">
-<meta property="article:modified_time" content="2021-05-23T03:59:58.251Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/]YED8[]6NA8MTG]%60QSZ12VX.2houihcv4ek0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E7%A0%B4%E5%9D%8F%E5%B9%B3%E7%BA%A7%E5%85%B3%E7%B3%BB%E7%9A%84method%E9%80%89%E9%A1%B9.n6lhjh8dynk.png">
+<meta property="article:published_time" content="2020-02-22T23:53:17.000Z">
+<meta property="article:modified_time" content="2021-05-23T09:48:10.456Z">
 <meta property="article:author" content="Jia Caijun">
+<meta property="article:tag" content="Pyhton">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/]YED8[]6NA8MTG]%60QSZ12VX.2houihcv4ek0.png">
   
     <link rel="alternative" href="/atom.xml" title="JCJunBlog" type="application/atom+xml">
   
@@ -145,13 +151,275 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-2021523pyhton基础-2" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-2021523Pandas-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Pandas——(上)
+    </h1>
+  
+
+        <span id="busuanzi_container_page_pv">
+          |阅读量(<span id="busuanzi_value_page_pv"></span>)
+        </span>
+        
+        <a href="/2020/02/23/2021523Pandas-1/" class="archive-article-date">
+  	<time datetime="2020-02-22T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
 
       
-        
+        <h1 id="pandas入门"><a href="#pandas入门" class="headerlink" title="pandas入门"></a>pandas入门</h1><p>pandas是基于Numpy数组构建的，特别是基于数组的函数和不使用for循环的数据处理。<br>二者最大的不同是padnas是专门为处理表格和混杂数据设计的，而Numpy更数和处理同意的数字数组数据</p>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入 "></a>导入 <a id="more"></a></h2><pre><code>import pandas as pd
+from pandas import Series,DataFrame  为方便后续使用</code></pre>
+<h2 id="pandas的数据类型："><a href="#pandas的数据类型：" class="headerlink" title="pandas的数据类型："></a>pandas的数据类型：</h2><p>Series<br>Series是一种类死于一维数组的对象，它由一组数据（各种Numpy数据类型）以及一组与之相关的数据标签（即索引）组成</p>
+<p>DataFrame<br>DataFrome是一个表格型的数据结构，它还含有一组有序的列，每列都可以是不同的值类型。 它既有行索引也列索引，它可以被看做由Series组成的字典（共用同一个索引）。</p>
+<h1 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h1><blockquote>
+<p>可以通过Series的values和index属性获取数组表示形式和索引对象 </p>
+</blockquote>
+<p>Series对象本身及其索引都有一个name属性，该属性跟pandas其他的关键功能关系密切  </p>
+<pre><code>    例如：
+        obj1.name = &#39;na&#39;
+        obj1.index.name = &#39;in&#39;
+        obj1
+        Out:
+        in       
+        a        1
+        b        2
+        Name : na , dtype: int64</code></pre>
+<h2 id="Series的创建"><a href="#Series的创建" class="headerlink" title="Series的创建"></a>Series的创建</h2><p>仅由一组数据即可产生最简单的Series  </p>
+<pre><code>    例如：
+        obj1 = pd.Seroes([4,7,-5])</code></pre>
+<p>我们希望所创建的Series带有一个一个可以对各个是据点进行表继的索引  </p>
+<pre><code>    例如：
+        obj2 = pd.Series([4,7,-5],index[&#39;d&#39;,&#39;b&#39;,&#39;c&#39;])</code></pre>
+<p>如果数据被存放在一个Python字典中，也可以直接通过这个字典来创建  Series  </p>
+<pre><code>    例如：
+        obj3 = pd.Series(&#123;&#39;Ohio&#39;: 3500,&#39;Texas&#39;: 71000&#125;)</code></pre>
+<h2 id="Series值的获取"><a href="#Series值的获取" class="headerlink" title="Series值的获取"></a>Series值的获取</h2><p>通过索引的方式选取Series中的当或一组值  </p>
+<pre><code>    例如:
+        obj2[&#39;a&#39;]
+        obj2[[&#39;c&#39;,&#39;a&#39;,&#39;d&#39;]]</code></pre>
+<blockquote>
+<p>Series索引（obj[…]）的⼯作⽅式类似于NumPy数组的索引，只 不过Series的索引值不只是整数</p>
+</blockquote>
+<pre><code>获取值: 
+    ls[&#39;a&#39;].array[0]  </code></pre>
+<blockquote>
+<p>但是需要注意：利⽤标签的切⽚运算与普通的Python切⽚运算不同，其末端是包 含的（利用轴标签（也就是index为非整数型时）的切片与其他切片的不同时   左闭右闭）<br><strong>同Numpy使用切片即为就地更改</strong>    </p>
+</blockquote>
+<h2 id="Serires修改（索引）"><a href="#Serires修改（索引）" class="headerlink" title="Serires修改（索引）"></a>Serires修改（索引）</h2><p>如果传入一个<strong>字典创建时</strong>，则结果Series中的索引就是原字典的键（有序排列）  </p>
+<p>我们可以传入排好序的字典的键以改变顺序  </p>
+<pre><code>    例如：
+        states = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,]
+        obj4 = pd.Series(&#123; &#39;b&#39;:2 ,&#39;a&#39;:3,&#39;f&#39;:4&#125;,index)</code></pre>
+<blockquote>
+<p>在此例子中，obj4中跟states索引相识匹配的那2个值会被找出来并放到相应的位置上，但由于“c”所对应的obj4值找不到，所以其结果就为NaN （即”非数字”（not a number），在pandas中，它用于表示确实或NA值）因为“f”没有在obj4中所以他会从结果中除去。  </p>
+</blockquote>
+<p>可以通过赋值的方式就地修改  </p>
+<pre><code>    例如：
+        obj.index = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]</code></pre>
+<h3 id="重新索引"><a href="#重新索引" class="headerlink" title="重新索引"></a>重新索引</h3><p>pandas对象的一个重要方法是<strong>reindex</strong>（即可用于DataFrame，见Da.篇），起作用是创建一个新对象，它的数据符合新的索引  </p>
+<pre><code>        例如：
+            obj2 = obj.reindex([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;])</code></pre>
+<blockquote>
+<p>用该Series的reindex将会根据新索引进行重排（包括对应值）。如果索引某个不存在就引入缺失值NaN  </p>
+</blockquote>
+<p>对于时间序列这样的有序数据，重新索引时可能需要做一些插值处理</p>
+<p>method选项参数即可实现，使用fill可以实现前向填充  </p>
+<pre><code>        例如：
+            obj3 
+            Out:    
+            0    blue
+            2    purple
+            4    yellow 
+            dtype:    object
+
+            obj3.reindex(range(6),method = &#39;ffill&#39;)
+
+            obj3
+            Out[97]:    
+            0    blue 
+            1    blue          //向前填充按照前面索引对于值填充
+            2    purple
+            3    purple
+            4    yellow
+            5    yellow
+            dtype:    object
+
+    reindex函数的参数：
+            index    用作索引的新序列。既可以是index实例，也可以是其他序列类型的python数据结构，index会被完全使用到指定位置
+            method    插值(填充)方式，具体参数见官方文档
+            fill_value    在重新索引的过程中，需要引入缺失值时使用的替代值
+            limit    前向或后向填充时的最大填充量
+            tolerance    向前向后填充时，填充不准确匹配项的最大间距（绝对值距离）
+            level    在MultiIndex的指定级别上匹配简单索引，否则选其子集
+            copy    默认为True，无论如何都复制；如何为False，则新旧相等就不复制  </code></pre>
+<h2 id="Series的简单运算"><a href="#Series的简单运算" class="headerlink" title="Series的简单运算"></a>Series的简单运算</h2><p>使用Numpy函数或类似Numpy的运算（如根据布尔类型数组进行过滤，标量乘法，应用数学函数等）都会保留索引值的连接  </p>
+<pre><code>    例如：
+        obj2[ obj2 &gt; 0 ]
+        obj2*2</code></pre>
+<p>还可以将Series看成是一个定长的有序字典，因为它是索引值到数据值的一个映射。它可以用在许多原本需要自字典参数的函数中  </p>
+<pre><code>    例如：
+        &#39;b&#39; in obj2
+        Out: True</code></pre>
+<p>Series最重要的一个功能是，它会根据运算的索引标签自动对齐数据  </p>
+<pre><code>    例如：
+         obj1                                 obj2
+        Out: a    3                        Out: a    2
+             b     4                        b    1
+             c     5
+           dtype:  int64                   dtype: int64
+
+        obj1 +  obj2 
+        Out: a    5
+             b    5
+             c    NaN
+
+    数据对其功能后面会详解：类似于SQL中的join  </code></pre>
+<h1 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h1><p>DataFrame对象的index和columns的name属性也可以用Series设置<br>    跟Series一样，values属性也会以二维ndarray的形式返回DataFrame中的数据 </p>
+<h2 id="DataFrame的删除"><a href="#DataFrame的删除" class="headerlink" title="DataFrame的删除"></a>DataFrame的删除</h2><blockquote>
+<p>由于需要执⾏⼀些数据整理和集合逻辑，所以drop⽅法 返回的是⼀个在指定轴上删除了指定值的新对象   </p>
+</blockquote>
+<blockquote>
+<p>对于DataFrame,可以删除任意轴上的索引值，默认则会则会删除axis 0 即行索引值  </p>
+</blockquote>
+<pre><code>    例如：
+        data1 = data.drop([&#39;a&#39;,&#39;b&#39;],axis=1)</code></pre>
+<blockquote>
+<p>df.pop(“列名”)  会删除 指定列，并将其返回</p>
+</blockquote>
+<blockquote>
+<p>许多函数，如drop，会修改Series或DataFrame的⼤⼩或形状， 可以就地修改对象，不会返回新的对象  </p>
+</blockquote>
+<blockquote>
+<p>⼩⼼使⽤inplace，它会销毁所有被删除的数据  </p>
+</blockquote>
+<h2 id="DataFrame的创建"><a href="#DataFrame的创建" class="headerlink" title="DataFrame的创建"></a>DataFrame的创建</h2><p>最常见的是直接传入一个由等长列表或Numpy数组组成的字典  </p>
+<pre><code>    例如：(索引自动填充)
+        data = &#123;&#39;a&#39;:[1,2,3,4] , &#39;b&#39; :[4,2,2,5] &#125;</code></pre>
+<p>如果指定了列序列，则DataFrame的列就会按照指定顺序进⾏排 列  </p>
+<pre><code>    例如:
+        pd.DataFrame(data,  columns=[&#39;a&#39;,&#39;b&#39;])
+        如果传入的列在数据中找不到，就会在结果中产生缺失值NaN</code></pre>
+<p>嵌套字典创建  </p>
+<pre><code>    例如：
+        pop = &#123; &#39;a&#39;:&#123;01 : 1&#125;,&#39;b&#39;:&#123;02: 2&#125; &#125;  </code></pre>
+<blockquote>
+<p>如果嵌套字典传给DataFrame， pandas就会被解释为：<br>外层字典的键作为列，内层键则会被合并作为行索引，但是如果在创建的时候指定了index属性则会按照指定索引，没有对应索引的值则为NaN，没指定的键所对应的值则被丢弃</p>
+</blockquote>
+<h3 id="DataFrame构造函数所能接受的各种数据"><a href="#DataFrame构造函数所能接受的各种数据" class="headerlink" title="DataFrame构造函数所能接受的各种数据"></a>DataFrame构造函数所能接受的各种数据</h3><p><strong>二维ndarray:</strong>     数据矩阵，还可以传入行标和列标  </p>
+<p><strong>有数组、列表或元组组成的字典:</strong>     每个序列都会变成DataFrame的一列。所有的序列的长度必须相同  </p>
+<p><strong>Numpy的结构化/记录数组:</strong>      类似于“有数组组成的字典”  </p>
+<p><strong>由Series组成的字典:</strong>     上面有详细说明  </p>
+<p><strong>由字典组成的字典:</strong>     各内存字典会成为一列。键会被合并成结果的行索引，跟“由Series组成的字典”类似  </p>
+<p><strong>字典或Serires的列表:</strong>     各项将会成为DataFrame的一行。字典键或Series索引的并集及那个会成为DataFrame的列表  </p>
+<p><strong>由列表或元组组成的列表:</strong>     类似于“二维ndarray”    </p>
+<p><strong>另一个DataFrame:</strong>     该DataFrame的索引将会被沿用，除非显示指定了其他索引  </p>
+<p><strong>Numpy的MaskedArray:</strong>     类似于“二维ndarray”的情况，只是掩码值在结果DataFrame会变成NA/确实值  </p>
+<h2 id="DataFrame值的获取"><a href="#DataFrame值的获取" class="headerlink" title="DataFrame值的获取"></a>DataFrame值的获取</h2><p>对于特别大的DataFrame，head方法会选取前五行   </p>
+<pre><code>    例如：
+        frame.head()</code></pre>
+<p>通过类似字典表继的方式或属性的方式，可以将DataFrame的列获取为一个Series<br>也就是说⽤⼀个值或序列对DataFrame进⾏索引其实就是获取⼀个或多个列  </p>
+<pre><code>    例如：
+        frame[&#39;a&#39;]
+        freme.a   (不推荐)</code></pre>
+<p>返回的Series拥有原DataFrame相同的索引，且name属性也已经被相应的设置好了  </p>
+<blockquote>
+<p>笔记：IPython提供了类似属性的访问（即frame2.year）和 tab补全。 frame2[column]适⽤于任何列的名，但是frame2.column只有 在列名是⼀个合理的Python变量名时才适⽤</p>
+</blockquote>
+<p>行也可以用过为位置或名称的方式进行获取，行列区域，例如loc和iloc属性  </p>
+<p>DataFrame的⾏的标签索引，引⼊了特殊的标签运算符 loc和iloc<br>它们可以让你⽤类似NumPy的标记使⽤轴标签 （loc）或整数索引（iloc）  </p>
+<pre><code>        例如：
+            data.loc[&#39;a&#39;,[&#39;one&#39;,&#39;two&#39;]]
+            即为&quot;a&quot;行，one，two列
+            data.iloc[2,[3,0,1]]  
+            即为第三列，依次取第四行第一行和第二行
+            由此可见iloc可实现花式索引</code></pre>
+<p>这两个索引函数也适用于一个标签或多个标签的切片  </p>
+<pre><code>            例如：
+                data.loc[:&#39;a&#39;,&#39;two&#39;]     loc+切片
+                即为a行之前的（包括），two列
+
+                data.iloc[: , :3 ][ data.three &gt; 5]    iloc+切片+布尔
+                即为第4列之前（不包括第4列）而且three列大于5的行</code></pre>
+<blockquote>
+<p>笔记：在⼀开始设计pandas时，我觉得⽤frame[:, col]选取列 过于繁琐（也容易出错），因为列的选择是⾮常常⻅的操 作。我做了些取舍，将花式索引的功能（标签和整数）放到 了ix运算符中。在实践中，这会导致许多边缘情况，数据的轴 标签是整数，所以pandas团队决定创造loc和iloc运算符分别 处理严格基于标签和整数的索引。 ix运算符仍然可⽤，但并不推荐</p>
+</blockquote>
+<p>获取行的另一种方式即使一种特殊的切片索引或布尔类型数组选取  </p>
+<pre><code>        例如：
+            data[:2]
+            即为选取前两行
+
+            data[ data[&#39;three&#39;] &gt; 5 ]
+            即选取three列中满足值大于5的行</code></pre>
+<p>另⼀种⽤法是通过布尔型DataFrame（⽐如下⾯这个由标量⽐较 运算得出的）进⾏索引  </p>
+<pre><code>    该方法选取的即为某些限制要求的值无论行列
+    例如：
+        data[data &lt; 5] =0
+        即为选取整个DataFrame中所有小于5的值并将其复制为0</code></pre>
+<blockquote>
+<p>pandas可以勉强进⾏整数索引，但是会导致⼩bug，为了进⾏统⼀，如果轴索引含有整数，数据选取总会使⽤标签。 为了更准确，请使⽤loc（标签）或iloc（整数）</p>
+</blockquote>
+<h3 id="DataFrame的索引选项汇总"><a href="#DataFrame的索引选项汇总" class="headerlink" title="DataFrame的索引选项汇总"></a>DataFrame的索引选项汇总</h3><pre><code>    df[val]    从DataFrame选取单列或一组列：在特殊情况下比较方便，布尔型数组（过滤行）,切片（行切片），或布尔型DataFrame（根据条件设置值）
+    df.loc[val]    通过标签，选取DataFrame的单个行或一组行
+    df.loc[:,val]     通过标签，选取单列或列子集
+    df.loc[val1,val2]           通过标签，同时选取行和列
+    df.iloc[where]    通过整数位置（索引）从DataFrame选取单个行或行子集
+    df.iloc[:,where]    通过整数位置，从DataFrame选取单个列或列子集
+    df.iloc[where_i,where_j]                            通过整数位置，同时选取行和列
+    df.at[label_i,label_j]    通过行和列标签，选取单一的标量
+    df.iat[i,j]    通过行和列的位置（整数），选取单一的标量
+    reindex    通过标签选取行或列
+    get_value    通过行和列标签选取单一值
+    set_value</code></pre>
+<h2 id="DataFrame修改（索引，列，值）"><a href="#DataFrame修改（索引，列，值）" class="headerlink" title="DataFrame修改（索引，列，值）"></a>DataFrame修改（索引，列，值）</h2><h3 id="列数值修改"><a href="#列数值修改" class="headerlink" title="列数值修改"></a>列数值修改</h3><p>一列的数值可以通过赋值的方式进行修改<br>        例如：<br>            frame[‘a’] = 2<br>            frame[‘a’] = np.arage(6.) （从0.0到6.0）</p>
+<blockquote>
+<p>将列表或数组赋值给某个列时，其长度必须跟DataFrame的长度相匹配。如果赋值的时一个Series，就会精确匹配DataFrame的索引  </p>
+</blockquote>
+<blockquote>
+<p>DataFrame列的添加：<br>为不存在的列赋值会创建一个新列，关键字del用于删除列。</p>
+</blockquote>
+<h4 id="删除列"><a href="#删除列" class="headerlink" title="删除列"></a>删除列</h4><p>我们使用drop()函数，此函数有一个列表形参labels，写的时候可以加上labels=[xxx]，也可以不加，列表内罗列要删除行或者列的名称，默认是行名称，如果要删除列，则要增加参数axis=1，操作如下：</p>
+<pre><code>    test_dict_df.drop([&#39;id&#39;],axis=1)</code></pre>
+<h4 id="重命名列名"><a href="#重命名列名" class="headerlink" title="重命名列名"></a>重命名列名</h4><pre><code>    df.rename(columns=&#123;&#39;原列名&#39;：&#39;新列名&#39;&#125;,inplace=True)    
+    take（）</code></pre>
+<h3 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h3><p>使用类是Numpy数组的方法，对DataFrame进行转置（交换行和列）  </p>
+<pre><code>    例如：
+        frame.T  </code></pre>
+<h3 id="重新索引-reindex"><a href="#重新索引-reindex" class="headerlink" title="重新索引 reindex"></a>重新索引 reindex</h3><p>DataFrame借助 reindex可以修改（行）索引和列。<br>只传递一个序列时会重新索引结果的行  </p>
+<pre><code>    例如：
+        frame1 = frame.reindex([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;])
+        frame2 = frame.reindex(columns=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;])</code></pre>
+<h3 id="排序和排名"><a href="#排序和排名" class="headerlink" title="排序和排名"></a>排序和排名</h3><p><strong>根据数据集排序（sorting）也是一种最重要的内置运算:</strong></p>
+<p>要对行或列索引进行排序（按字典顺序）可使用sort_index方法，它将返回一个已排序的新对象  </p>
+<pre><code>    例如：
+        obj.sort_index()
+        对于DataFrame则可以通过axis应用于任意一轴</code></pre>
+<blockquote>
+<p>数据默认是按升序排序的，但是也可以降序排序，传入ascending=False</p>
+</blockquote>
+<p>若要按值对Series进⾏排序，可使⽤其sort_values⽅法   </p>
+<pre><code>        例如：
+            obj.sort_values() </code></pre>
+<blockquote>
+<p>在排序时，任何缺失值默认都会被放到Series的末尾</p>
+</blockquote>
+<p>望根据⼀个或多个列中的值 进⾏排序。将⼀个或多个列的名字传递给sort_values的by选项即可  </p>
+<pre><code>                例如:
+                    frame.sort_values(by=[&#39;a&#39;,&#39;b&#39;])</code></pre>
+<p><strong>rank是通过“为各 组分配⼀个平均排名”的⽅式破坏平级关系的:</strong></p>
+<p>rank是将Series或DataFrame的数据进行排序类型的一种方法，不过它并不像sort（含sort_index、sort_values等）那样返回的是排序后的数据，而是当前数据的排名   </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/]YED8[]6NA8MTG]%60QSZ12VX.2houihcv4ek0.png" alt="哈希表实现原理">   </p>
+<p>我们可以自己先拍一下一些没用争议的数字，比如-5最小，其排名为1.0，0其次，因此其排名为2.0，数字2同理，其排名为3.0，这些都没问题，但是到了4的时候，我们发现Series中存在两个4，那么根据不同的规则，我们可以说数字4的排名是4.0，但也可以说是5.0，而“为各组分配一个平均排名”就能很好的解释这个4.5的来源了，即取4.0和5.0的平均值，那么对于数字7来说，也是一个道理了，其既可以取6.0，也可以取7.0，这里平均一下，就成了6.5了</p>
+<p><strong>了所有⽤于破坏平级关系的method选项:</strong><br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E7%A0%B4%E5%9D%8F%E5%B9%B3%E7%BA%A7%E5%85%B3%E7%B3%BB%E7%9A%84method%E9%80%89%E9%A1%B9.n6lhjh8dynk.png">   </p>
+
       
 
       
@@ -190,7 +458,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pyhton</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据预处理//" class="article-tag-list-link color1">数据预处理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -240,7 +530,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2021/05/23/2021523pyhton%E5%9F%BA%E7%A1%80-2/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/02/23/2021523Pandas-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -254,9 +544,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/03/01/2021523Pandas-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Pandas——(中)
+        
+      </div>
+    </a>
   
-    <a href="/2020/09/23/%E4%BA%8C%E5%8F%89%E5%A0%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">二叉堆</div>
+  
+    <a href="/2020/02/15/2021523Numpy/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Numpy</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -283,7 +582,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pandas%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">pandas入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5"><span class="toc-number">1.1.</span> <span class="toc-text">导入 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pandas%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">pandas的数据类型：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Series"><span class="toc-number">2.</span> <span class="toc-text">Series</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Series%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">2.1.</span> <span class="toc-text">Series的创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Series%E5%80%BC%E7%9A%84%E8%8E%B7%E5%8F%96"><span class="toc-number">2.2.</span> <span class="toc-text">Series值的获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Serires%E4%BF%AE%E6%94%B9%EF%BC%88%E7%B4%A2%E5%BC%95%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">Serires修改（索引）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E6%96%B0%E7%B4%A2%E5%BC%95"><span class="toc-number">2.3.1.</span> <span class="toc-text">重新索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Series%E7%9A%84%E7%AE%80%E5%8D%95%E8%BF%90%E7%AE%97"><span class="toc-number">2.4.</span> <span class="toc-text">Series的简单运算</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DataFrame"><span class="toc-number">3.</span> <span class="toc-text">DataFrame</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame%E7%9A%84%E5%88%A0%E9%99%A4"><span class="toc-number">3.1.</span> <span class="toc-text">DataFrame的删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">3.2.</span> <span class="toc-text">DataFrame的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DataFrame%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%89%80%E8%83%BD%E6%8E%A5%E5%8F%97%E7%9A%84%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE"><span class="toc-number">3.2.1.</span> <span class="toc-text">DataFrame构造函数所能接受的各种数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame%E5%80%BC%E7%9A%84%E8%8E%B7%E5%8F%96"><span class="toc-number">3.3.</span> <span class="toc-text">DataFrame值的获取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DataFrame%E7%9A%84%E7%B4%A2%E5%BC%95%E9%80%89%E9%A1%B9%E6%B1%87%E6%80%BB"><span class="toc-number">3.3.1.</span> <span class="toc-text">DataFrame的索引选项汇总</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame%E4%BF%AE%E6%94%B9%EF%BC%88%E7%B4%A2%E5%BC%95%EF%BC%8C%E5%88%97%EF%BC%8C%E5%80%BC%EF%BC%89"><span class="toc-number">3.4.</span> <span class="toc-text">DataFrame修改（索引，列，值）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E6%95%B0%E5%80%BC%E4%BF%AE%E6%94%B9"><span class="toc-number">3.4.1.</span> <span class="toc-text">列数值修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%88%97"><span class="toc-number">3.4.1.1.</span> <span class="toc-text">删除列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D%E5%88%97%E5%90%8D"><span class="toc-number">3.4.1.2.</span> <span class="toc-text">重命名列名</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E7%BD%AE"><span class="toc-number">3.4.2.</span> <span class="toc-text">转置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E6%96%B0%E7%B4%A2%E5%BC%95-reindex"><span class="toc-number">3.4.3.</span> <span class="toc-text">重新索引 reindex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E5%92%8C%E6%8E%92%E5%90%8D"><span class="toc-number">3.4.4.</span> <span class="toc-text">排序和排名</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -405,11 +704,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color2">Pyhton</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Pyhton</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
