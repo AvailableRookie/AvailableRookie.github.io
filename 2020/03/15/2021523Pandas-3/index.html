@@ -6,15 +6,77 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Category: 语法基础 | JCJunBlog</title>
+  <title>Pandas——(三) | JCJunBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JCJunBlog">
-<meta property="og:url" content="http://yoursite.com/categories/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/index.html">
+  <meta name="description" content="层次化索引层次化索引（hierarchical indexing）是pandas的⼀项重要功 能，它使你能在⼀个轴上拥有多个（两个以上）索引级别。抽象 点说，它使你能以低维度形式处理⾼维度数据。   例如：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pandas——(三)">
+<meta property="og:url" content="http://yoursite.com/2020/03/15/2021523Pandas-3/index.html">
 <meta property="og:site_name" content="JCJunBlog">
+<meta property="og:description" content="层次化索引层次化索引（hierarchical indexing）是pandas的⼀项重要功 能，它使你能在⼀个轴上拥有多个（两个以上）索引级别。抽象 点说，它使你能以低维度形式处理⾼维度数据。   例如：">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4ljqvses2ui0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3q11pn9gphq0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5z2qdw011840.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2o76wqfb3840.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6oq4md8x6xs0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/G%7BQN%60%7B[K%60]AF%7B0%60EUN]YJPO.2c2lovmo0s2s.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2wi4mpvr6xa0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.5fxad82g8440.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7jr3qtt7aj40.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5q9z2m0txj80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6dnuajs5crw0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4llf55byxm20.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6cqd3dcercc0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4swbi401di00.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.21v3pgw8yid.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.46wgzq0w8xq0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.21njwv72r734.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.ztlkcf7bpi8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6tdwsp6hkfs0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.7i1yhf713j40.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.20vorf577dmo.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.i8a10c8jprc.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7eelujspez80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2n5rx6iwdlm0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6lieg2cmuio.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.682hdfh4sq80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.6ezskawa3ak0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.6reivx5rerw0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1lgg6arq8s3k.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5ssrafjt6zs0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2ejm3qaqmhq8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.54q9w5n9p000.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2qrwvfa05ig.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.vzuiv5au4r4.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.ovqqy3p4zgw.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5me21q55phg0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.28lujtze8cnw.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1gxzevevndb4.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6df9wjasji00.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4647nu8635w0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1cwnfh0rk8dc.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.60dp7jqzuzw0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7hcjy7k2ulg0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4y2wpttjc5w0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.67y8y87bgoc0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.77he7abanus0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5jt7e3y55000.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2iosbw7ta0s0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.26i14mtee0ao.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2h3a8195mwc0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.21znwte9ljnk.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2lq2y9tjszc0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.636q2qoikx40.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.37rlq0pvo840.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.duu1nqyl7y8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1id6nqfnpqps.png">
+<meta property="article:published_time" content="2020-03-14T23:53:17.000Z">
+<meta property="article:modified_time" content="2021-05-24T03:58:47.141Z">
 <meta property="article:author" content="Jia Caijun">
+<meta property="article:tag" content="Pyhton">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4ljqvses2ui0.png">
   
     <link rel="alternative" href="/atom.xml" title="JCJunBlog" type="application/atom+xml">
   
@@ -143,35 +205,238 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-2021523Pandas-3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/02/2021523pyhton%E5%9F%BA%E7%A1%80-2/" class="archive-article-date">
-  	<time datetime="2020-01-01T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/02/2021523pyhton%E5%9F%BA%E7%A1%80-2/">Python基础——(二)</a>
+    <h1 class="article-title" itemprop="name">
+      Pandas——(三)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <span id="busuanzi_container_page_pv">
+          |阅读量(<span id="busuanzi_value_page_pv"></span>)
+        </span>
+        
+        <a href="/2020/03/15/2021523Pandas-3/" class="archive-article-date">
+  	<time datetime="2020-03-14T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+
+      
+        <h1 id="层次化索引"><a href="#层次化索引" class="headerlink" title="层次化索引"></a>层次化索引</h1><p>层次化索引（hierarchical indexing）是pandas的⼀项重要功 能，它使你能在⼀个轴上拥有多个（两个以上）索引级别。抽象 点说，它使你能以低维度形式处理⾼维度数据。  </p>
+<p>例如：<a id="more"></a><br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4ljqvses2ui0.png"><br>看到的结果是经过美化的带有MultiIndex索引的Series的格式。 索引之间的“间隔”表示“直接使⽤上⾯的标签”： </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3q11pn9gphq0.png">  </p>
+<blockquote>
+<p>和一级索引一样其也支持切片</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5z2qdw011840.png">  </p>
+<blockquote>
+<p>并且可以进行一二级索引并列选取：</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2o76wqfb3840.png"></p>
+<p>层次化索引在数据重塑和基于分组的操作（如透视表⽣成）</p>
+<h2 id="Series多索引转化为DataFrame："><a href="#Series多索引转化为DataFrame：" class="headerlink" title="Series多索引转化为DataFrame："></a>Series多索引转化为DataFrame：</h2><h3 id="unstack函数"><a href="#unstack函数" class="headerlink" title="unstack函数"></a>unstack函数</h3><pre><code>可以通过unstack⽅法将这段数据重新 安排到⼀个DataFrame中</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6oq4md8x6xs0.png">  </p>
+<pre><code>    对于⼀个DataFrame，每条轴都可以有分层索引 ， 并且可以指定名字：
+
+    例如：创建一个frame数据如下</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/G%7BQN%60%7B[K%60]AF%7B0%60EUN]YJPO.2c2lovmo0s2s.png">  </p>
+<h2 id="分级索引排序与分级索引级别交换（重排与分级排序）"><a href="#分级索引排序与分级索引级别交换（重排与分级排序）" class="headerlink" title="分级索引排序与分级索引级别交换（重排与分级排序）"></a>分级索引排序与分级索引级别交换（重排与分级排序）</h2><h3 id="swaplevel函数"><a href="#swaplevel函数" class="headerlink" title="swaplevel函数"></a>swaplevel函数</h3><p>重新调整某条轴上各级别的顺序，或根据指定级别 上的值对数据进⾏排序   </p>
+<pre><code>swaplevel接受两个级别编号或名称， 并返回⼀个互换了级别的新对象（但数据不会发⽣变化）：  </code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2wi4mpvr6xa0.png">  </p>
+<h3 id="sort-index函数"><a href="#sort-index函数" class="headerlink" title="sort_index函数"></a>sort_index函数</h3><pre><code>    sort_index则根据单个级别中的值对数据进⾏排序。交换级别 时，常常也会⽤到sort_index，这样最终结果就是按照指定顺序 进⾏字⺟排序了：</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.5fxad82g8440.png"></p>
+<h2 id="根据级别汇总统计"><a href="#根据级别汇总统计" class="headerlink" title="根据级别汇总统计"></a>根据级别汇总统计</h2><p>许多对DataFrame和Series的描述和汇总统计都有⼀个level选 项，它⽤于指定在某条轴上求和的级别。  </p>
+<blockquote>
+<p>再以上⾯那个 DataFrame为例，我们可以根据⾏或列上的级别来进⾏求和：  </p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7jr3qtt7aj40.png">    </p>
+<pre><code>求和，是将该级别中所相同的低级数据进行一个加和，这其实是利⽤了pandas的groupby功能，本书稍后将对其进⾏详 细讲解。 </code></pre>
+<h2 id="使⽤DataFrame的列进⾏索引"><a href="#使⽤DataFrame的列进⾏索引" class="headerlink" title="使⽤DataFrame的列进⾏索引"></a>使⽤DataFrame的列进⾏索引</h2><p>⼈们经常想要将DataFrame的⼀个或多个列当做⾏索引来⽤，或 者可能希望将⾏索引变成DataFrame的列   </p>
+<pre><code>  例如：</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5q9z2m0txj80.png">  </p>
+<h3 id="DataFrame的set-index函数"><a href="#DataFrame的set-index函数" class="headerlink" title="DataFrame的set_index函数"></a>DataFrame的set_index函数</h3><pre><code>        DataFrame的set_index函数会将其⼀个或多个列转换为⾏索 引，并创建⼀个新的DataFrame： </code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6dnuajs5crw0.png">    </p>
+<blockquote>
+<p>以多重索引的形式，覆盖原索引  </p>
+</blockquote>
+<p>默认情况下，那些列会从DataFrame中移除，但也可以将其保留 下来：<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4llf55byxm20.png">  </p>
+<pre><code>reset_index的功能跟set_index刚好相反，层次化索引的级别会 被转移到列⾥⾯：</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6cqd3dcercc0.png">    </p>
+<h1 id="合并数据集"><a href="#合并数据集" class="headerlink" title="合并数据集"></a>合并数据集</h1><p>pandas对象中的数据可以通过⼀些⽅式进⾏合并：</p>
+<pre><code>○ pandas.merge可根据⼀个或多个键将不同DataFrame中的⾏ 连接起来。SQL或其他关系型数据库的⽤户对此应该会⽐较 熟悉，因为它实现的就是数据库的join操作。
+○ pandas.concat可以沿着⼀条轴将多个对象堆叠到⼀起。
+○ 实例⽅法combine_first可以将重复数据编接在⼀起，⽤⼀个对 象中的值填充另⼀个对象中的缺失值。 </code></pre>
+<h2 id="merge函数"><a href="#merge函数" class="headerlink" title="merge函数"></a>merge函数</h2><p><strong>数据库风格的DataFrame合并</strong><br>数据集的合并（merge）或连接（join）运算是通过⼀个或多个 键将⾏链接起来的。这些运算是关系型数据库（基于SQL）的核 ⼼。    </p>
+<pre><code>pandas的merge函数是对数据应⽤这些算法的主要切⼊点</code></pre>
+<blockquote>
+<p>默认情况下，merge做的是“内连接”    </p>
+</blockquote>
+<pre><code>SQL:
+    内连接：
+    假设A和B进行表连接，使用内连接的话，凡是A表和B表能够匹配上的记录查询出来，这就是内连接。AB两张表没有主副之分，两张表是平等的。且只显示所匹配上的数据</code></pre>
+<h3 id="列合并"><a href="#列合并" class="headerlink" title="列合并"></a>列合并</h3><h4 id="多对一"><a href="#多对一" class="headerlink" title="多对一"></a>多对一</h4><pre><code>以下面的数据为例：</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4swbi401di00.png">    </p>
+<pre><code>这是⼀种多对⼀的合并。df1中的数据有多个被标记为a和b的 ⾏，⽽df2中key列的每个值则仅对应⼀⾏。对这些对象调⽤ merge即可得到</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.21v3pgw8yid.png">    </p>
+<pre><code>注意，我并没有指明要⽤哪个列进⾏连接。如果没有指定， merge就会将重叠列的列名当做键。不过，最好明确指定⼀下</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.46wgzq0w8xq0.png"><br>如果两个对象的列名不同，也可以分别进⾏指定：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.21njwv72r734.png">  </p>
+<p>可能你已经注意到了，结果⾥⾯c和d以及与之相关的数据消失 了。默认情况下，merge做的是“内连接”；结果中的键是交集。 其他⽅式还有”left”、”right”以及”outer”。外连接求取的是键的并 集，组合了左连接和右连接的效果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.ztlkcf7bpi8.png"><br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6tdwsp6hkfs0.png">  </p>
+<h4 id="多对多"><a href="#多对多" class="headerlink" title="多对多"></a>多对多</h4><p><strong>多对多连接产⽣的是⾏的笛卡尔积</strong><br>由于左边的DataFrame有3 个”b”⾏，右边的有2个，所以最终结果中就有6个”b”⾏。连接⽅ 式只影响出现在结果中的不同的键的值  </p>
+<pre><code>例如以下多对多例子：  </code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.7i1yhf713j40.png">    </p>
+<pre><code>要根据多个键进⾏合并，传⼊⼀个由列名组成的列表即可：
+例如：</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.20vorf577dmo.png">  </p>
+<blockquote>
+<p>结果中会出现哪些键组合取决于所选的合并⽅式，你可以这样来<br><strong>理解：多个键形成⼀系列元组，并将其当做单个连接键（当然， 实际上并不是这么回事）。</strong>  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>注意：在进⾏列－列连接时，DataFrame对象中的索引会被 丢弃。</p>
+</blockquote>
+</blockquote>
+<h4 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h4><p>对于合并运算需要考虑的最后⼀个问题是对重复列名的处理。虽 然你可以⼿⼯处理列名重叠的问题（查看前⾯介绍的重命名轴标 签），但merge有⼀个更实⽤的suffixes选项，⽤于指定附加到左 右两个DataFrame对象的重叠列名上的字符串    </p>
+<pre><code>  例如：</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.i8a10c8jprc.png">  </p>
+<h4 id="merge参数"><a href="#merge参数" class="headerlink" title="merge参数"></a>merge参数</h4><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7eelujspez80.png"><br>indicator 添加特殊的列_merge，它可以指明每个⾏的来源，它 的值有left_only、right_only或both，根据每⾏的合并数据的来 源。</p>
+<h3 id="索引上的合并"><a href="#索引上的合并" class="headerlink" title="索引上的合并"></a>索引上的合并</h3><pre><code>可以传⼊left_index=True或right_index=True（或两个都传） 以说明索引应该被⽤作连接键(当索引具有一定的意义时，使用索引作为匹配的字段)   </code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2n5rx6iwdlm0.png">  </p>
+<blockquote>
+<p>right_index=True 由此可看处，right1的索引作为了匹配对象。  由此可看出merge函数会根据匹配的key进行排序。</p>
+</blockquote>
+<h4 id="层次化索引合并"><a href="#层次化索引合并" class="headerlink" title="层次化索引合并"></a>层次化索引合并</h4><p>对于层次化索引的数据，事情就有点复杂了，因为索引的合并默 认是多键合并  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6lieg2cmuio.png">  </p>
+<blockquote>
+<p><strong><em>注 意⽤how=’outer’对重复索引值的处理</em></strong> </p>
+</blockquote>
+<p><strong>这种情况下，你必须以列表的形式指明⽤作合并键的多个列</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.682hdfh4sq80.png">  </p>
+<blockquote>
+<p>使用outer  出现笛卡尔积现象，会出现重复的索引，需要对重复索引进行处理  </p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.6ezskawa3ak0.png">  </p>
+<p>同时使⽤合并双⽅的索引也没问题：   </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.6reivx5rerw0.png">  </p>
+<h2 id="join合并方法"><a href="#join合并方法" class="headerlink" title="join合并方法"></a>join合并方法</h2><p>DataFrame还有⼀个便捷的join实例⽅法，它能更为⽅便地实现 按索引合并。它还可⽤于合并多个带有相同或相似索引的 DataFrame对象，但要求没有重叠的列  </p>
+<p>在上⾯那个例⼦（同时使⽤合并双⽅的索引）中，我 们使用join可以编写</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1lgg6arq8s3k.png">    </p>
+<pre><code>因为⼀些历史版本的遗留原因，DataFrame的join⽅法默认使⽤ 的是左连接，保留左边表的⾏索引</code></pre>
+<p>同时它还⽀持在调⽤的 DataFrame的列上，连接传递的DataFrame索引（同merge默认的连接方式一样）：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5ssrafjt6zs0.png">  </p>
+<h2 id="多DataFrame索引合并"><a href="#多DataFrame索引合并" class="headerlink" title="多DataFrame索引合并"></a>多DataFrame索引合并</h2><p>对于简单的索引合并，你还可以向join传⼊⼀组 DataFrame，下⼀节会介绍更为通⽤的concat函数，也能实现此 功能：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2ejm3qaqmhq8.png">  </p>
+<h2 id="轴向连接"><a href="#轴向连接" class="headerlink" title="轴向连接"></a>轴向连接</h2><p>另⼀种数据合并运算也被称作连接（concatenation）、绑定 （binding）或堆叠（stacking）。NumPy的concatenation函数 可以⽤NumPy数组来做 </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.54q9w5n9p000.png">  </p>
+<p>对于pandas对象（如Series和DataFrame），带有标签的轴使你 能够进⼀步推⼴数组的连接运算。具体点说，你还需要考虑以下 这些东⻄：  </p>
+<pre><code>1.如果对象在其它轴上的索引不同，我们应该合并这些轴的不 同元素还是只使⽤交集？ 
+2.连接的数据集是否需要在结果对象中可识别？
+3.连接轴中保存的数据是否需要保留？
+4.许多情况下， DataFrame默认的整数标签最好在连接时删掉。  </code></pre>
+<h2 id="concat函数"><a href="#concat函数" class="headerlink" title="concat函数"></a>concat函数</h2><p>pandas的concat函数提供了⼀种能够解决这些问题的可靠⽅式</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2qrwvfa05ig.png">  </p>
+<p>对这些对象调⽤concat可以将值和索引粘合在⼀起：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.vzuiv5au4r4.png"></p>
+<pre><code>concat是在axis=0上⼯作的，最终产⽣⼀个新的 Series。如果传⼊axis=1，则结果就会变成⼀个 DataFrame（axis=1是列）  </code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.ovqqy3p4zgw.png"><br>这种情况下，另外的轴上没有重叠，从索引的有序并集（外连 接）上就可以看出来。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5me21q55phg0.png">  </p>
+<pre><code>    传⼊join=&#39;inner&#39;即可得到它们的交集： </code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.28lujtze8cnw.png"><br>在这个例⼦中，f和g标签消失了，是因为使⽤的是join=’inner’选 项。    </p>
+<pre><code>你可以通过join_axes指定要在其它轴上使⽤的索引  (该项即为新序列索引值，若无对呀值则用NaN填充。但是通过此次的指定排列结果的原片段则会被打乱，不易区分</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1gxzevevndb4.png"><br>与上一个例子相比该结果的索引根据 join_axes排列选取的，并且原数据中没有的用NaN来填充</p>
+<pre><code>    不过有个问题，参与连接的⽚段在结果中区分不开（无法判断连接结果片段那块是哪的）。假设你想要 在连接轴上创建⼀个层次化索引。使⽤keys参数即可达到这个⽬ 的:</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6df9wjasji00.png">  </p>
+<pre><code>        然后再可以通过unstack进行格式转化为DataFrame</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4647nu8635w0.png">  </p>
+<p>如果沿着axis=1对Series进⾏合并，则keys就会成为DataFrame 的列头:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1cwnfh0rk8dc.png"><br>同样的逻辑也适⽤于DataFrame对象:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.60dp7jqzuzw0.png">    </p>
+<pre><code>如果传⼊的不是列表⽽是⼀个字典，则字典的键就会被当做keys 选项的值:  </code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7hcjy7k2ulg0.png">    </p>
+<pre><code>最后⼀个关于DataFrame的问题是，DataFrame的⾏索引不包含 任何相关数据
+        在连接时需要忽略行索引的，来直接连接列所对应的数据   </code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4y2wpttjc5w0.png"><br>在这种情况下，传⼊ignore_index=True即可：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.67y8y87bgoc0.png"></p>
+<h3 id="concat参数"><a href="#concat参数" class="headerlink" title="concat参数"></a>concat参数</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.77he7abanus0.png"></p>
+<h2 id="合并重叠数据"><a href="#合并重叠数据" class="headerlink" title="合并重叠数据"></a>合并重叠数据</h2><p>还有⼀种数据组合问题不能⽤简单的合并（merge）或连接（concatenation）运算来处理。  </p>
+<h3 id="NumPy的where函数"><a href="#NumPy的where函数" class="headerlink" title="NumPy的where函数"></a>NumPy的where函数</h3><blockquote>
+<p>⽐如说，你可能有索引全部或部 分重叠的两个数据集。举个有启发性的例⼦，我们使⽤NumPy 的where函数，它表示⼀种等价于⾯向数组的if-else：  </p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5jt7e3y55000.png">    </p>
+<pre><code>由此可看出，如果a中的数据时NaN，就将b中的数据代替a，否则取a中的数据。</code></pre>
+<h3 id="Series的combine-first函数"><a href="#Series的combine-first函数" class="headerlink" title="Series的combine_first函数"></a>Series的combine_first函数</h3><blockquote>
+<p>Series有⼀个combine_first⽅法，实现的也是⼀样的功能，还带有pandas的数据对⻬：  </p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2iosbw7ta0s0.png">    </p>
+<pre><code>该方法将相反索引的数据，进行了一一对应，并进行了上述操作。</code></pre>
+<blockquote>
+<p>对于DataFrame，combine_first⾃然也会在列上做同样的事情， 因此你可以将其看做：⽤传递对象中的数据为调⽤对象的缺失数 据“打补丁”：  </p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.26i14mtee0ao.png">  </p>
+<h1 id="重塑和轴向旋转"><a href="#重塑和轴向旋转" class="headerlink" title="重塑和轴向旋转"></a>重塑和轴向旋转</h1><p>有许多⽤于重新排列表格型数据的基础运算。这些函数也称作重 塑（reshape）或轴向旋转（pivot）运算。  </p>
+<pre><code>层次化索引为DataFrame数据的重排任务提供了⼀种具有良好⼀ 致性的⽅式。主要功能有⼆：
+ stack：将数据的列“旋转”为⾏。 
+unstack：将数据的⾏“旋转”为列。</code></pre>
+<p>接下来看⼀个简单的 DataFrame，其中的⾏列索引均为字符串数组： </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2h3a8195mwc0.png">  </p>
+<h2 id="unstack和stack"><a href="#unstack和stack" class="headerlink" title="unstack和stack"></a>unstack和stack</h2><p><strong>默认情况下，unstack操作的是最内层（stack也是如此）。</strong><br>传⼊ 分层级别的编号或名称即可对其它级别进⾏unstack操作：<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.21znwte9ljnk.png">    </p>
+<p><strong>如果不是所有的级别值都能在各分组中找到的话，则unstack操 作可能会引⼊缺失数据：</strong>  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2lq2y9tjszc0.png">  </p>
+<pre><code>    stack默认会滤除缺失数据，因此该运算是可逆的： </code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.636q2qoikx40.png">  </p>
+<p>可以通过dropna 参数来取消自动去除NaN</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.37rlq0pvo840.png">    </p>
+<pre><code>在对DataFrame进⾏unstack操作时，作为旋转轴的级别将会成 为结果中的最低级别  </code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.duu1nqyl7y8.png">  </p>
+<p>当调⽤stack，我们可以指明轴的名字：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1id6nqfnpqps.png"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubaoshou.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixinshou.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -183,93 +448,141 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/语法基础//" class="article-tag-list-link color5">语法基础</a>
+        			<a href="/categories/数据预处理//" class="article-tag-list-link color1">数据预处理</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/03/15/2021523Pandas-3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
+<nav id="article-nav">
+  
+    <a href="/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          二叉树的中序遍历
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/01/2021523Pandas-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pandas——(二)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/" class="archive-article-date">
-  	<time datetime="2019-12-22T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E5%8C%96%E7%B4%A2%E5%BC%95"><span class="toc-number">1.</span> <span class="toc-text">层次化索引</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Series%E5%A4%9A%E7%B4%A2%E5%BC%95%E8%BD%AC%E5%8C%96%E4%B8%BADataFrame%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">Series多索引转化为DataFrame：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#unstack%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">unstack函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BA%A7%E7%B4%A2%E5%BC%95%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%88%86%E7%BA%A7%E7%B4%A2%E5%BC%95%E7%BA%A7%E5%88%AB%E4%BA%A4%E6%8D%A2%EF%BC%88%E9%87%8D%E6%8E%92%E4%B8%8E%E5%88%86%E7%BA%A7%E6%8E%92%E5%BA%8F%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">分级索引排序与分级索引级别交换（重排与分级排序）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#swaplevel%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text">swaplevel函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort-index%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">sort_index函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E7%BA%A7%E5%88%AB%E6%B1%87%E6%80%BB%E7%BB%9F%E8%AE%A1"><span class="toc-number">1.3.</span> <span class="toc-text">根据级别汇总统计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E2%BD%A4DataFrame%E7%9A%84%E5%88%97%E8%BF%9B%E2%BE%8F%E7%B4%A2%E5%BC%95"><span class="toc-number">1.4.</span> <span class="toc-text">使⽤DataFrame的列进⾏索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DataFrame%E7%9A%84set-index%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.1.</span> <span class="toc-text">DataFrame的set_index函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">2.</span> <span class="toc-text">合并数据集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#merge%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">merge函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E5%90%88%E5%B9%B6"><span class="toc-number">2.1.1.</span> <span class="toc-text">列合并</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%AF%B9%E4%B8%80"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">多对一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%AF%B9%E5%A4%9A"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">多对多</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E5%90%8D"><span class="toc-number">2.1.1.3.</span> <span class="toc-text">命名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#merge%E5%8F%82%E6%95%B0"><span class="toc-number">2.1.1.4.</span> <span class="toc-text">merge参数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E4%B8%8A%E7%9A%84%E5%90%88%E5%B9%B6"><span class="toc-number">2.1.2.</span> <span class="toc-text">索引上的合并</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E5%8C%96%E7%B4%A2%E5%BC%95%E5%90%88%E5%B9%B6"><span class="toc-number">2.1.2.1.</span> <span class="toc-text">层次化索引合并</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#join%E5%90%88%E5%B9%B6%E6%96%B9%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text">join合并方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9ADataFrame%E7%B4%A2%E5%BC%95%E5%90%88%E5%B9%B6"><span class="toc-number">2.3.</span> <span class="toc-text">多DataFrame索引合并</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%B4%E5%90%91%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.4.</span> <span class="toc-text">轴向连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#concat%E5%87%BD%E6%95%B0"><span class="toc-number">2.5.</span> <span class="toc-text">concat函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#concat%E5%8F%82%E6%95%B0"><span class="toc-number">2.5.1.</span> <span class="toc-text">concat参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E9%87%8D%E5%8F%A0%E6%95%B0%E6%8D%AE"><span class="toc-number">2.6.</span> <span class="toc-text">合并重叠数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NumPy%E7%9A%84where%E5%87%BD%E6%95%B0"><span class="toc-number">2.6.1.</span> <span class="toc-text">NumPy的where函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Series%E7%9A%84combine-first%E5%87%BD%E6%95%B0"><span class="toc-number">2.6.2.</span> <span class="toc-text">Series的combine_first函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E5%A1%91%E5%92%8C%E8%BD%B4%E5%90%91%E6%97%8B%E8%BD%AC"><span class="toc-number">3.</span> <span class="toc-text">重塑和轴向旋转</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#unstack%E5%92%8Cstack"><span class="toc-number">3.1.</span> <span class="toc-text">unstack和stack</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/">Python基础——(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pyhton</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语法基础//" class="article-tag-list-link color5">语法基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
+        
+    </div>
+</aside>
 
 
 
   
+  
+  
+
+  
+
+  
+
+  
+
+
           </div>
         </div>
       </div>
@@ -300,10 +613,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
