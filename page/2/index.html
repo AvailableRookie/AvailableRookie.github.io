@@ -144,6 +144,505 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-二叉树的中序遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/">二叉树的中序遍历</a>
+    </h1>
+  
+
+        <span id="busuanzi_container_page_pv">
+          |阅读量(<span id="busuanzi_value_page_pv"></span>)
+        </span>
+        
+        <a href="/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" class="archive-article-date">
+  	<time datetime="2020-08-27T14:23:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+
+      
+        <h1 id="二叉树中序遍历"><a href="#二叉树中序遍历" class="headerlink" title="二叉树中序遍历"></a>二叉树中序遍历</h1><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">Leetcode 题库连接</a></p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><blockquote>
+<p>遍历顺序：先访问左子树——根节点——右子树，按照这个顺序。   </p>
+</blockquote>
+<blockquote>
+<p>特点：中序遍历对于二叉搜索树具有特殊性，中序遍历出二叉搜索树是按照从小到大的顺序遍历的。</p>
+</blockquote>
+<h2 id="遍历方法"><a href="#遍历方法" class="headerlink" title="遍历方法  "></a>遍历方法
+        
+          <a class="article-more-a" href="/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/92//" class="article-tag-list-link color3">92</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/27/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2021526SQL基础-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/26/2021526SQL%E5%9F%BA%E7%A1%80-2/">SQL基础——(二) 窗口函数</a>
+    </h1>
+  
+
+        <span id="busuanzi_container_page_pv">
+          |阅读量(<span id="busuanzi_value_page_pv"></span>)
+        </span>
+        
+        <a href="/2020/07/26/2021526SQL%E5%9F%BA%E7%A1%80-2/" class="archive-article-date">
+  	<time datetime="2020-07-25T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+
+      
+        <h1 id="SQL窗口函数"><a href="#SQL窗口函数" class="headerlink" title="SQL窗口函数"></a>SQL窗口函数</h1><p>窗口函数也称为OLAP（Online Anallytical Processing）函数，意思是对数据库数据进行实时分析处理。窗口函数就是为了实现OLAP而添加的标准SQL功能。</p>
+<h2 id="什么是窗口"><a href="#什么是窗口" class="headerlink" title="什么是窗口?"></a>什么是窗口?</h2><p>窗口的概念非常重要，它可以理解为记录集合，窗口函数也就是在满足某种条件的记录集合上执行的特殊函数，对于每条记录都要在此窗口内执行函数，有的函数，随着记录不同，窗口大小都是固定的，这种属于静态窗口；有的函数则相反，不同的记录对应着不同的窗口，<strong>这种动态变化的窗口叫滑动窗口。</strong> </p>
+<h2 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序  "></a>执行顺序
+        
+          <a class="article-more-a" href="/2020/07/26/2021526SQL%E5%9F%BA%E7%A1%80-2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/SQL窗口函数//" class="article-tag-list-link color3">SQL窗口函数</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/26/2021526SQL%E5%9F%BA%E7%A1%80-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2021525SQL基础-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/15/2021525SQL%E5%9F%BA%E7%A1%80-1/">SQL基础——(一) 查询语句</a>
+    </h1>
+  
+
+        <span id="busuanzi_container_page_pv">
+          |阅读量(<span id="busuanzi_value_page_pv"></span>)
+        </span>
+        
+        <a href="/2020/07/15/2021525SQL%E5%9F%BA%E7%A1%80-1/" class="archive-article-date">
+  	<time datetime="2020-07-14T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+
+      
+        <h1 id="认识SQL"><a href="#认识SQL" class="headerlink" title="认识SQL"></a>认识SQL</h1><h2 id="SQL-语法顺序与实际执行顺序"><a href="#SQL-语法顺序与实际执行顺序" class="headerlink" title="SQL 语法顺序与实际执行顺序"></a>SQL 语法顺序与实际执行顺序</h2><pre><code>        select        5
+            ...
+        from        1
+            ... 
+        join        2
+            ... 
+        on          3
+            ...
+        where        4
+            ...
+        group by    5
+            ...
+        having        6
+            ...
+        order by    6
+            ...
+        limit        7</code></pre>
+<h2 id="SQL-语句分类"><a href="#SQL-语句分类" class="headerlink" title="SQL 语句分类 "></a>SQL 语句分类
+        
+          <a class="article-more-a" href="/2020/07/15/2021525SQL%E5%9F%BA%E7%A1%80-1/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/DQL查询语句//" class="article-tag-list-link color3">DQL查询语句</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/15/2021525SQL%E5%9F%BA%E7%A1%80-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2021523Pandas-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/15/2021523Pandas-3/">Pandas——(三) 层次化索引</a>
+    </h1>
+  
+
+        <span id="busuanzi_container_page_pv">
+          |阅读量(<span id="busuanzi_value_page_pv"></span>)
+        </span>
+        
+        <a href="/2020/03/15/2021523Pandas-3/" class="archive-article-date">
+  	<time datetime="2020-03-14T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+
+      
+        <h1 id="层次化索引"><a href="#层次化索引" class="headerlink" title="层次化索引"></a>层次化索引</h1><p>层次化索引（hierarchical indexing）是pandas的⼀项重要功 能，它使你能在⼀个轴上拥有多个（两个以上）索引级别。抽象 点说，它使你能以低维度形式处理⾼维度数据。  </p>
+<p>例如：
+        
+          <a class="article-more-a" href="/2020/03/15/2021523Pandas-3/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pyhton</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据预处理//" class="article-tag-list-link color1">数据预处理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/15/2021523Pandas-3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2021523Pandas-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/01/2021523Pandas-2/">Pandas——(二)</a>
+    </h1>
+  
+
+        <span id="busuanzi_container_page_pv">
+          |阅读量(<span id="busuanzi_value_page_pv"></span>)
+        </span>
+        
+        <a href="/2020/03/01/2021523Pandas-2/" class="archive-article-date">
+  	<time datetime="2020-03-01T04:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+
+      
+        <h1 id="索引对象"><a href="#索引对象" class="headerlink" title="索引对象"></a>索引对象</h1><p>pandas的索引对象负责管理轴标签和其他元数据（比如轴名称等）。在构建Series或DataFrame时，所用到的任何数组或其他序列的标签都会被转化成一个Index对象  </p>
+<p>单独创建一个Index对象  </p>
+<pre><code>        例如：
+            index  = pd.Index([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;])
+            index
+            Out：
+                Index（[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;] (轴标签), dtype = &#39;object&#39;(元数据)）
+            可以看作成一个固定大小的集合  </code></pre>
+<blockquote>
+<p>Index对象是不可变的,不可变可以是Index对象在多个数据结构之间安全共享，即可以解释为什么当两个Serise相加时只有一方有的索引值的结果相加为NaN等系列感觉不太方便的地方。  </p>
+</blockquote>
+<blockquote>
+<p>此处注意只是说Index对象是不变的，而在Series和DataFrame对象中其成员属性Index是可以改变为其他的Index对象的所以不影响其索引和标签的修改</p>
+</blockquote>
+<blockquote>
+<p>与python的集合不同，pandas的Index可以包含重复的标签。<br>即pandas中的索引和columns是可以重复的，当调用重复的索引或columns时会返回所有重复的索引或者columns对应的值  </p>
+</blockquote>
+<h2 id="Index的方法和属性："><a href="#Index的方法和属性：" class="headerlink" title="Index的方法和属性：  "></a>Index的方法和属性：
+        
+          <a class="article-more-a" href="/2020/03/01/2021523Pandas-2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pyhton</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据预处理//" class="article-tag-list-link color1">数据预处理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/01/2021523Pandas-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2021523Pandas-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -353,7 +852,7 @@
     <div class="article-entry" itemprop="articleBody">
 
       
-        <h2 id="Python基础——-一"><a href="#Python基础——-一" class="headerlink" title="Python基础——(一)"></a><a target="_blank" rel="noopener" href="http://jiacaijun.cn/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/#more">Python基础——(一)</a></h2><h1 id="pyhotn函数"><a href="#pyhotn函数" class="headerlink" title="pyhotn函数"></a>pyhotn函数</h1><h2 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h2><pre><code>def 函数名（形参）:
+        <h2 id="Python基础——-一"><a href="#Python基础——-一" class="headerlink" title="Python基础——(一)"></a><a target="_blank" rel="noopener" href="http://jiacaijun.cn/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/#more">Python基础——(一)</a></h2><h1 id="python函数"><a href="#python函数" class="headerlink" title="python函数"></a>python函数</h1><h2 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h2><pre><code>def 函数名（形参）:
     函数体
     [return 返回值]</code></pre>
 <h3 id="形参"><a href="#形参" class="headerlink" title="形参   "></a>形参
@@ -725,11 +1224,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客相关</a>
+                <a href="javascript:void(0)" class="js-tag color2">tensorflow2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">博客相关</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -738,6 +1245,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>
