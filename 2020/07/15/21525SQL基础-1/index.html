@@ -6,54 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>绘图与可视化——(一) matplotlib | JCJunBlog</title>
+  <title>SQL基础——(一) 查询语句 | JCJunBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="matplotlib 概述信息可视化（也叫绘图）是数据分析中最重要的⼯作之⼀。它可 能是探索过程的⼀部分，例如，帮助我们找出异常值、必要的数 据转换、得出有关模型的idea等。另外，做⼀个可交互的数据可 视化也许是⼯作的最终⽬标。Python有许多库进⾏静态或动态的 数据可视化。   更多内容关注  matplotlib官方文档功能matplotlib⽀持各种操作系统上许 多不同的GUI后端，⽽且">
+  <meta name="description" content="认识SQLSQL 语法顺序与实际执行顺序        select        5             ...         from        1             ...          join        2             ...          on          3             ...         where        4">
 <meta property="og:type" content="article">
-<meta property="og:title" content="绘图与可视化——(一) matplotlib">
-<meta property="og:url" content="http://yoursite.com/2020/04/13/2021523%E7%BB%98%E5%9B%BE%E5%92%8C%E5%8F%AF%E8%A7%86%E5%8C%96-1/index.html">
+<meta property="og:title" content="SQL基础——(一) 查询语句">
+<meta property="og:url" content="http://yoursite.com/2020/07/15/21525SQL%E5%9F%BA%E7%A1%80-1/index.html">
 <meta property="og:site_name" content="JCJunBlog">
-<meta property="og:description" content="matplotlib 概述信息可视化（也叫绘图）是数据分析中最重要的⼯作之⼀。它可 能是探索过程的⼀部分，例如，帮助我们找出异常值、必要的数 据转换、得出有关模型的idea等。另外，做⼀个可交互的数据可 视化也许是⼯作的最终⽬标。Python有许多库进⾏静态或动态的 数据可视化。   更多内容关注  matplotlib官方文档功能matplotlib⽀持各种操作系统上许 多不同的GUI后端，⽽且">
+<meta property="og:description" content="认识SQLSQL 语法顺序与实际执行顺序        select        5             ...         from        1             ...          join        2             ...          on          3             ...         where        4">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3d90urrbwwe0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1kai4pzg74bk.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.rq58ocd384w.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1axr8qvq1l8g.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4k1zh38ho940.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5don967fymk0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.28dh91kkl4w0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2p5nk0fcc5q0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5n0wf3ml3ic0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5k2ybfv82ec0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7chhgsil1e80.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3zm2ct8jawm0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7jhbodsnjls.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.pm16nd7t3io.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2y220u22g6i0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4rulvqhli3y0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4rulvqhli3y0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3m1dzlznxua0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.26imeamt7qqo.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2g6w0kbevphc.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7gcm4swj2c40.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ng58t29m680.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.36ws8arltyk0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.106w3m23tlz4.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ca7rfxz0v80.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2hhuu82d54o0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1bew0rugmdnk.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.khphy37wwps.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5xjow9nf69c0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.ccvjqp7yob4.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.fxv3zmbzl8o.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6wpcsjj8kb.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1jon7g2az334.png">
-<meta property="article:published_time" content="2020-04-12T23:53:17.000Z">
-<meta property="article:modified_time" content="2021-05-28T14:06:00.420Z">
+<meta property="article:published_time" content="2020-07-14T23:53:17.000Z">
+<meta property="article:modified_time" content="2021-05-26T01:48:23.444Z">
 <meta property="article:author" content="Jia Caijun">
-<meta property="article:tag" content="Python">
+<meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3d90urrbwwe0.png">
   
     <link rel="alternative" href="/atom.xml" title="JCJunBlog" type="application/atom+xml">
   
@@ -180,14 +146,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-2021523绘图和可视化-1" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-21525SQL基础-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      绘图与可视化——(一) matplotlib
+      SQL基础——(一) 查询语句
     </h1>
   
 
@@ -195,8 +161,8 @@
           |阅读量(<span id="busuanzi_value_page_pv"></span>)
         </span>
         
-        <a href="/2020/04/13/2021523%E7%BB%98%E5%9B%BE%E5%92%8C%E5%8F%AF%E8%A7%86%E5%8C%96-1/" class="archive-article-date">
-  	<time datetime="2020-04-12T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+        <a href="/2020/07/15/21525SQL%E5%9F%BA%E7%A1%80-1/" class="archive-article-date">
+  	<time datetime="2020-07-14T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-15</time>
 </a>
         
       </header>
@@ -204,111 +170,639 @@
     <div class="article-entry" itemprop="articleBody">
 
       
-        <h1 id="matplotlib-概述"><a href="#matplotlib-概述" class="headerlink" title="matplotlib 概述"></a>matplotlib 概述</h1><p>信息可视化（也叫绘图）是数据分析中最重要的⼯作之⼀。它可 能是探索过程的⼀部分，例如，帮助我们找出异常值、必要的数 据转换、得出有关模型的idea等。另外，做⼀个可交互的数据可 视化也许是⼯作的最终⽬标。Python有许多库进⾏静态或动态的 数据可视化。  </p>
-<p>更多内容关注 </p>
-<h3 id="matplotlib官方文档"><a href="#matplotlib官方文档" class="headerlink" title="matplotlib官方文档"></a><a target="_blank" rel="noopener" href="http://matplotlib.org/">matplotlib官方文档</a></h3><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>matplotlib⽀持各种操作系统上许 多不同的GUI后端，⽽且还能将图⽚导出为各种常⻅的⽮量 （vector）和光栅（raster）图：PDF、SVG、JPG、PNG、 BMP、GIF等。 </p>
-<h2 id="使用推荐"><a href="#使用推荐" class="headerlink" title="使用推荐 "></a>使用推荐 <a id="more"></a></h2><p>Matplotlib的文档和示例同时使用OO和pyplot方法（功能同样强大），您应该随意使用两者（但是，最好选择其中一种并坚持使用，而不是混合使用）。通常，我们建议将pyplot限制为交互式绘图（例如，在Jupyter笔记本中），并建议使用OO样式进行非交互式绘图（在打算作为较大项目的一部分重复使用的函数和脚本中） 。  </p>
-<h3 id="显示中文"><a href="#显示中文" class="headerlink" title="显示中文"></a>显示中文</h3><pre><code>    notebook图示中显示中文
-    plt.rcParams[&#39;font.sans-serif&#39;] = [u&#39;SimHei&#39;]
-    plt.rcParams[&#39;axes.unicode_minus&#39;] = False</code></pre>
-<h3 id="调整图片大小"><a href="#调整图片大小" class="headerlink" title="调整图片大小"></a>调整图片大小</h3><pre><code>    plt.figure(figsize=(15, 10))
-    sns.heatmap(corr, annot=True)   # 代码
-    plt.show()
-    ）</code></pre>
-<h3 id="保存图片"><a href="#保存图片" class="headerlink" title="保存图片"></a>保存图片</h3><pre><code>    matplotlib：
-    plt.hist(data[&#39;Price&#39;])
-    plt.savefig(&#39;hist.png&#39;) #路径+文件名
-    seaborn：
-    sns_hist = sns.distplot(data[&#39;Price&#39;])
-    fig = sns_hist.get_figure()
-    fig.savefig(&#39;hist.png&#39;) #路径+文件名  </code></pre>
-<h3 id="交互式"><a href="#交互式" class="headerlink" title="交互式"></a>交互式</h3><p>在Jupyter中运⾏%matplotlib notebook（或在IPython中运 ⾏%matplotlib），再通过plot回值图行的时候可以形参动态交互，就可以创建⼀个简单的图形。  </p>
-<h1 id="Figure和Subplot"><a href="#Figure和Subplot" class="headerlink" title="Figure和Subplot"></a>Figure和Subplot</h1><p>matplotlib的图像都位于Figure对象中。你可以⽤plt.figure创建⼀个新的Figure：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3d90urrbwwe0.png"></p>
-<pre><code>    注意：如果⽤的是IPython，这时会弹出⼀个空窗⼝，但在Jupyter中， 必须再输⼊更多命令才能看到。plt.figure有⼀些选项，特别是 figsize，它⽤于确保当图⽚保存到磁盘时具有⼀定的⼤⼩和纵横 ⽐。 </code></pre>
-<p>不能通过空Figure绘图。必须⽤add_subplot创建⼀个或多个 subplot才⾏：<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1kai4pzg74bk.png"><br>图像应该是2×2的（即最多4张图），且当前 选中的是4个subplot中的第⼀个（编号从1开始）。如果再把后 ⾯两个subplot也创建出来，最终得到的图像如图所示： </p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.rq58ocd384w.png">  </p>
+        <h1 id="认识SQL"><a href="#认识SQL" class="headerlink" title="认识SQL"></a>认识SQL</h1><h2 id="SQL-语法顺序与实际执行顺序"><a href="#SQL-语法顺序与实际执行顺序" class="headerlink" title="SQL 语法顺序与实际执行顺序"></a>SQL 语法顺序与实际执行顺序</h2><pre><code>        select        5
+            ...
+        from        1
+            ... 
+        join        2
+            ... 
+        on          3
+            ...
+        where        4
+            ...
+        group by    5
+            ...
+        having        6
+            ...
+        order by    6
+            ...
+        limit        7</code></pre>
+<h2 id="SQL-语句分类"><a href="#SQL-语句分类" class="headerlink" title="SQL 语句分类 "></a>SQL 语句分类 <a id="more"></a></h2><p>SQL语句，包括增删改查</p>
+<pre><code>DQL: （数据查询语句）凡是select语句都是DQL
+DML：（数据操作语言）insert delete update,对表当中的数据进行增删改
+DDL：（数据定义语言）create drop alter，对表结构的增删改。
+TCL：（事务控制语言）commit提交事务，rollback回滚事务。（TCL中的T是Transaction——事务）
+DCL：（数据控制语言）grant授权，revoke撤销权限等——————超管进行权限设置</code></pre>
+<h1 id="DQL-查询语句"><a href="#DQL-查询语句" class="headerlink" title="DQL 查询语句"></a>DQL 查询语句</h1><p>本文的例题所使用的数据库表如下：  </p>
+<pre><code>dept（表名）；
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| DEPTNO | int(2)      | NO   | PRI | NULL    |       |    （部门编号）
+| DNAME  | varchar(14) | YES  |     | NULL    |       |    （部门名称）
+| LOC    | varchar(13) | YES  |     | NULL    |       |    （部门位置）
++--------+-------------+------+-----+---------+-------+
+
+
+emp;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| EMPNO    | int(4)      | NO   | PRI | NULL    |       |（员工编号）
+| ENAME    | varchar(10) | YES  |     | NULL    |       |（员工姓名）
+| JOB      | varchar(9)  | YES  |     | NULL    |       |（工作岗位）
+| MGR      | int(4)      | YES  |     | NULL    |       |（上级领导编号）
+| HIREDATE | date        | YES  |     | NULL    |       |（入职日期）
+| SAL      | double(7,2) | YES  |     | NULL    |       |（月薪）
+| COMM     | double(7,2) | YES  |     | NULL    |       |（补助、津贴）
+| DEPTNO   | int(2)      | YES  |     | NULL    |       |（部门编号）
++----------+-------------+------+-----+---------+-------+
+
+
+desc salgrade;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| GRADE | int(11) | YES  |     | NULL    |       |
+| LOSAL | int(11) | YES  |     | NULL    |       |
+| HISAL | int(11) | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+</code></pre>
+<h2 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h2><pre><code>        select 字段名1，字段名2，.....from 表名；</code></pre>
 <blockquote>
-<p>带有三个subplot的Figure</p>
+<p>提示：任何一条sql语句都以“；”结尾sql语句不区分大小写      </p>
 </blockquote>
-<h1 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h1><h2 id="画图方式一"><a href="#画图方式一" class="headerlink" title="画图方式一"></a>画图方式一</h2><pre><code>自己创建一个空的figure对象并自己添加subplot（子页），然后通过返回的subolot对象，调用相对于应的方法画图</code></pre>
-<p>使⽤Jupyter notebook有⼀点不同，即每个⼩窗重新执 ⾏后，图形会被重置。因此，对于复杂的图形，，你必须将 所有的绘图命令存在⼀个⼩窗⾥，这⾥，我们运⾏同⼀个⼩窗⾥的所有命令：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1axr8qvq1l8g.png"><br>如果这时执⾏⼀条绘图命令（如plt.plot([1.5, 3.5, -2, 1.6])）， matplotlib就会在最后⼀个⽤过的subplot（如果没有则创建⼀ 个）上进⾏绘制，隐藏创建figure和subplot的过程。  </p>
-<p>因此，如果 我们执⾏下列命令，你就会得到如图所示的结果： </p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4k1zh38ho940.png">    </p>
-<p>“k–”是⼀个线型选项，⽤于告诉matplotlib绘制⿊⾊虚线图。上⾯ 那些由fig.add_subplot所返回的对象是AxesSubplot对象，直接 调⽤它们的实例⽅法就可以在其它空着的格⼦⾥⾯画图了：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5don967fymk0.png">  </p>
-<h2 id="画图方式二"><a href="#画图方式二" class="headerlink" title="画图方式二"></a>画图方式二</h2><p>通过pyplo自动创建和管理时间轴，直接调用如果最近时间有用过subplot则会优先在最近一次使用的上面画图，如果没有则会自动创建一个后直接画图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.28dh91kkl4w0.png"></p>
-<h2 id="画图方式三"><a href="#画图方式三" class="headerlink" title="画图方式三"></a>画图方式三</h2><p>通过创建subplot数组管理subpolt对象（创建一个subpolt数组的同时会返回一个figure对象）。   </p>
-<pre><code>创建包含subplot⽹格的figure是⼀个⾮常常⻅的任务，matplotlib 有⼀个更为⽅便的⽅法plt.subplots，它可以创建⼀个新的 Figure，并返回⼀个含有已创建的subplot对象的NumPy数组： </code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2p5nk0fcc5q0.png"></p>
+<h2 id="简单查询语句"><a href="#简单查询语句" class="headerlink" title="简单查询语句"></a>简单查询语句</h2><h3 id="字段参加数学运算"><a href="#字段参加数学运算" class="headerlink" title="字段参加数学运算"></a>字段参加数学运算</h3><pre><code>例：
+    查询员工的年薪？   
+
+解析:
+    年薪*12
+
+    select ename,sal*12 from emp;
+    +--------+----------+
+    | ename  | sal*12   |
+    +--------+----------+
+    | SMITH  |  9600.00 |
+    | ALLEN  | 19200.00 |
+    | WARD   | 15000.00 |
+    | JONES  | 35700.00 |
+    | MARTIN | 15000.00 |
+    | BLAKE  | 34200.00 |
+    | CLARK  | 29400.00 |
+    | SCOTT  | 36000.00 |
+    | KING   | 60000.00 |
+    | TURNER | 18000.00 |
+    | ADAMS  | 13200.00 |
+    | JAMES  | 11400.00 |
+    | FORD   | 36000.00 |
+    | MILLER | 15600.00 |
+    +--------+----------+</code></pre>
+<h3 id="给查询列重命名"><a href="#给查询列重命名" class="headerlink" title="给查询列重命名"></a>给查询列重命名</h3><pre><code>例如:
+ select ename,sal * 12 as &#39;年薪&#39; from emp;  
+     +--------+----------+
+    | ename  | 年薪     |
+    +--------+----------+
+    | SMITH  |  9600.00 |
+    | ALLEN  | 19200.00 |
+    | WARD   | 15000.00 |
+    | JONES  | 35700.00 |
+    | MARTIN | 15000.00 |
+    | BLAKE  | 34200.00 |
+    | CLARK  | 29400.00 |
+    | SCOTT  | 36000.00 |
+    | KING   | 60000.00 |
+    | TURNER | 18000.00 |
+    | ADAMS  | 13200.00 |
+    | JAMES  | 11400.00 |
+    | FORD   | 36000.00 |
+    | MILLER | 15600.00 |
+    +--------+----------+  </code></pre>
 <blockquote>
-<p>返回一个图行 fig<br>返回一个队形数组  axes</p>
+<p>   注意：SQL字符串用单引号’   ‘  as关键字可以省略  </p>
 </blockquote>
-<pre><code>    这是⾮常实⽤的，因为可以轻松地对axes数组进⾏索引，就好像 是⼀个⼆维数组⼀样，例如axes[0,1]。你还可以通过sharex和 sharey指定subplot应该具有相同的X轴或Y轴。</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5n0wf3ml3ic0.png"></p>
-<h2 id="调整subplot周围的间距"><a href="#调整subplot周围的间距" class="headerlink" title="调整subplot周围的间距"></a>调整subplot周围的间距</h2><p>间距跟图像的⾼度和宽度有关，因 此，如果你调整了图像⼤⼩（不管是编程还是⼿⼯），间距也会 ⾃动调整。利⽤Figure的subplots_adjust⽅法可以轻⽽易举地修 改间距，此外，它也是个顶级函数：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5k2ybfv82ec0.png">  </p>
-<pre><code>    wspace和hspace⽤于控制宽度和⾼度的百分⽐，可以⽤作 subplot之间的间距。  </code></pre>
-<p>其中我将间距收缩到了0<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7chhgsil1e80.png"></p>
+<h3 id="查询全部字段"><a href="#查询全部字段" class="headerlink" title="查询全部字段"></a>查询全部字段</h3><pre><code>mysql&gt; select * from emp;（效率低下）  
+    +-------+--------+-----------+------+------------+---------+---------+--------+
+    | EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
+    +-------+--------+-----------+------+------------+---------+---------+--------+
+    |  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+    |  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+    |  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+    |  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+    |  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+    |  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+    |  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+    |  7788 | SCOTT  | ANALYST   | 7566 | 1987-04-19 | 3000.00 |    NULL |     20 |
+    |  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+    |  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+    |  7876 | ADAMS  | CLERK     | 7788 | 1987-05-23 | 1100.00 |    NULL |     20 |
+    |  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+    |  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+    |  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+    +-------+--------+-----------+------+------------+---------+---------+--------+</code></pre>
+<h2 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h2><h3 id="语法结构-where"><a href="#语法结构-where" class="headerlink" title="语法结构 where"></a>语法结构 where</h3><pre><code>    select
+        字段，字段...
+    from
+        表名
+    where
+        条件；</code></pre>
 <blockquote>
-<p>不难看出，其中的轴标签重叠了。matplotlib不会检查标签是否 重叠，所以对于这种情况，你只能⾃⼰设定刻度位置和刻度标 签。</p>
+<p>执行顺序：先from，然后where 最后select  </p>
 </blockquote>
-<h2 id="颜⾊、标记和线型"><a href="#颜⾊、标记和线型" class="headerlink" title="颜⾊、标记和线型"></a>颜⾊、标记和线型</h2><p>matplotlib的plot函数接受⼀组X和Y坐标，还可以接受⼀个表示颜 ⾊和线型的字符串缩写。  </p>
-<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>要根据x和y绘制绿⾊虚线，你可 以执⾏如下代码：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3zm2ct8jawm0.png">  </p>
-<h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><p>这种在⼀个字符串中指定颜⾊和线型的⽅式⾮常⽅便。在实际 中，如果你是⽤代码绘图，你可能不想通过处理字符串来获得想 要的格式。通过下⾯这种更为明确的⽅式也能得到同样的效果：  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7jhbodsnjls.png">  </p>
-<pre><code>常⽤的颜⾊可以使⽤颜⾊缩写，你也可以指定颜⾊码（例 如，&#39;#CECECE&#39;）。</code></pre>
-<p>线图可以使⽤标记强调数据点。因为matplotlib可以创建连续线 图，在点之间进⾏插值，因此有时可能不太容易看出真实数据点 的位置。标记也可以放到格式字符串中，但标记类型和线型必须 放在颜⾊后</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.pm16nd7t3io.png">   </p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2y220u22g6i0.png"><br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4rulvqhli3y0.png"><br>或者写成</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4rulvqhli3y0.png">  </p>
-<p>在线型图中，⾮实际数据点默认是按线性⽅式插值的。可以通过 drawstyle选项修改：  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3m1dzlznxua0.png">  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.26imeamt7qqo.png">  </p>
-<h2 id="刻度、标签"><a href="#刻度、标签" class="headerlink" title="刻度、标签"></a>刻度、标签</h2><p>使⽤过程型的 pyplot接⼝（例如，matplotlib.pyplot）以及更为⾯向对象的原⽣ matplotlib API。 </p>
-<pre><code>pyplot接⼝的设计⽬的就是交互式使⽤，含有诸如xlim、xticks和 xticklabels之类的⽅法。它们分别控制图表的范围、刻度位置、 刻度标签等。</code></pre>
-<p>调⽤时不带参数，则返回当前的参数值（例如，plt.xlim()返回 当前的X轴绘图范围）。   </p>
-<p>调⽤时带参数，则设置参数值（例如，plt.xlim([0,10])会将X轴 的范围设置为0到10）。</p>
-<pre><code>所有这些⽅法都是对当前或最近创建的AxesSubplot起作⽤的，它们各⾃对应subplot对象上的两个⽅法，以xlim为例，就是 ax.get_xlim和ax.set_xlim。</code></pre>
-<p>设置标题、轴标签、刻度以及刻度标签 </p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2g6w0kbevphc.png"></p>
-<h3 id="刻度"><a href="#刻度" class="headerlink" title="刻度"></a>刻度</h3><pre><code>要改变x轴刻度，最简单的办法是使⽤set_xticks和 set_xticklabels。前者告诉matplotlib要将刻度放在数据范围中的 哪些位置，默认情况下，这些位置也就是刻度标签。</code></pre>
-<p>但我们可以 通过set_xticklabels将任何其他的值⽤作标签： </p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7gcm4swj2c40.png">  </p>
-<pre><code>plt.grid()   添加虚线网格        
-    //单词  grid ：n. 网格；格子，栅格；输电网
-plt.axhline(0, color=&#39;颜色&#39;,linestule=&#39;--&#39;)  </code></pre>
-<p>rotation选项设定x刻度标签倾斜30度。最后，再⽤set_xlabel为X 轴设置⼀个名称，并⽤set_title设置⼀个标题：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ng58t29m680.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.36ws8arltyk0.png"><br>Y轴的修改⽅式与此类似，只需将上述代码中的x替换为y即可。 轴的类有集合⽅法，可以批量设定绘图选项。前⾯的例⼦，也可 以写为：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.106w3m23tlz4.png">  </p>
-<h3 id="添加图例"><a href="#添加图例" class="headerlink" title="添加图例"></a>添加图例</h3><p>图例（legend）是另⼀种⽤于标识图表元素的重要⼯具。添加图 例的⽅式有多种。最简单的是在添加subplot的时候传⼊label参 数：<br>（例：可以参考上面的“绘图和可视化”页上的图片）  </p>
-<pre><code>在此之后，你可以调⽤ax.legend()或plt.legend()来⾃动创建图例 ： </code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ca7rfxz0v80.png"></p>
+<pre><code>例1：
+查询员工工资等于5000的员工姓名？
+select ename from emp where sal = 5000; 
+
++-------+
+| ename |
++-------+
+| KING  |
++-------+  
+
+例2：
+查询SMITH的工资？
+select sal from emp where ename = &#39;SMITH&#39;;
++--------+
+| sal    |
++--------+
+| 800.00 |
++--------+  
+
+例3：
+找出工资高于3000的员工？ 
+mysql&gt; select ename from emp where sal &gt; 3000;
++-------+
+| ename |
++-------+
+| KING  |
++-------+  </code></pre>
+<h4 id="lt-gt-或！"><a href="#lt-gt-或！" class="headerlink" title="&lt;&gt;或！="></a>&lt;&gt;或！=</h4><blockquote>
+<p>注意：SQL中的不等于号：&lt;&gt;或！=  </p>
+</blockquote>
+<pre><code>找出工资不等于3000的员工？
+mysql&gt; select ename from emp where sal &lt;&gt; 3000;
++--------+
+| ename  |
++--------+
+| SMITH  |
+| ALLEN  |
+| WARD   |
+| JONES  |
+| MARTIN |
+| BLAKE  |
+| CLARK  |
+| KING   |
+| TURNER |
+| ADAMS  |
+| JAMES  |
+| MILLER |
++--------+</code></pre>
+<h4 id="between-…-and-…"><a href="#between-…-and-…" class="headerlink" title="between … and …"></a>between … and …</h4><pre><code>找出工资在1100和3000之间的员工?
+select ename from emp where sal &gt;= 1100 and sal &lt;= 3000;
+select ename from emp where sal between 1100 and 3000;（闭区间）
+
+注意：     between   ...    and  ...   左小右大，闭区间
+        除了可以使用数字之外，还能用字符
+        between   &#39;a&#39;    and  &#39;b&#39;    搜索首字母，左闭右开  
+
+        +--------+
+        | ename  |
+        +--------+
+        | ALLEN  |
+        | WARD   |
+        | JONES  |
+        | MARTIN |
+        | BLAKE  |
+        | CLARK  |
+        | SCOTT  |
+        | TURNER |
+        | ADAMS  |
+        | FORD   |
+        | MILLER | 
+        +--------+  </code></pre>
+<h3 id="is-（not）-NULL"><a href="#is-（not）-NULL" class="headerlink" title="is （not） NULL"></a>is （not） NULL</h3><blockquote>
+<p>在数据库中NULL不是一个值，代表什么也没有，为空。<br>空不是一个值，不能用等号衡量。<br>必须使用is NULL 或者 is not NULL    </p>
+</blockquote>
+<pre><code>找出哪些人没有津贴？         
+select ename from emp where comm is null;
++--------+
+| ename  |
++--------+
+| SMITH  |
+| JONES  |
+| BLAKE  |
+| CLARK  |
+| SCOTT  |
+| KING   |
+| ADAMS  |
+| JAMES  |
+| FORD   |
+| MILLER |
++--------+</code></pre>
 <blockquote>
-<p>legend⽅法有⼏个其它的loc位置参数选项，loc告诉matplotlib要将图例放在哪。如果你不是吹⽑求疵的 话，”best”是不错的选择</p>
+<p>   and 优先级大于 or<br>    in等同于 or</p>
+</blockquote>
+<h2 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h2><p>在模糊查询中，必须掌握两个特殊的符号，一个是%，一个是_  </p>
+<blockquote>
+<p>%代表任意多个字符，_代表任意一个字符。</p>
+</blockquote>
+<h3 id="字符串模糊查询"><a href="#字符串模糊查询" class="headerlink" title="字符串模糊查询"></a>字符串模糊查询</h3><pre><code>例如：
+找出名字当中还有o的？                  
+    select ename from emp where ename like &#39;%o%&#39;;
+
+找出名字中第二个字母是A的？
+    select ename from emp where ename like &#39;_o%&#39;;
+
+找出名字中右下划线的？    
+    select ename from emp where ename like &#39;%\_%&#39;;(转义)</code></pre>
+<h2 id="排序（升序、降序）"><a href="#排序（升序、降序）" class="headerlink" title="排序（升序、降序）"></a>排序（升序、降序）</h2><h3 id="语法结构："><a href="#语法结构：" class="headerlink" title="语法结构："></a>语法结构：</h3><pre><code>按照工资
+    select
+        ename，sal
+    from
+        emp
+    order by
+        sal；</code></pre>
+<blockquote>
+<p>注意：默认是升序。怎么指定升序或者降序的？asc表示升序，desc表示降序。  </p>
+</blockquote>
+<pre><code>    select ename，sal from emp order by sal；  //升序
+    select ename，sal from emp order by sal asc；    //升序
+    select ename，sal from emp order by sal desc；    //降序</code></pre>
+<h3 id="多级排序"><a href="#多级排序" class="headerlink" title="多级排序"></a>多级排序</h3><pre><code>例如：
+按照工资的降序排列，当工资相同的时候再按照名字的升序排列。
+select ename，sal from emp order by sal desc，ename asc；</code></pre>
+<blockquote>
+<p>注意：字段越靠前的作用越大，当前面的字段相等时才参考第二个字段。  </p>
+</blockquote>
+<pre><code>例：
+找出员工工作岗位是SALESMAN的员工，并且要求按照薪资的降序排列。
+
+select                3
+    （字段）ename，job
+from                1
+    （表名）emp
+where                2
+    （条件）job = ’SALESMAN‘    
+order by            4
+    （字段，顺序）sal desc；   </code></pre>
+<h2 id="分组函数"><a href="#分组函数" class="headerlink" title="分组函数"></a>分组函数</h2><p>分组函数一共5个。  </p>
+<p>分组函数还有另一个名字，多行处理函数。  </p>
+<p>多行处理函数的特点:输入多行，最终输出的结果是1行。</p>
+<pre><code>count 计数
+sum 求和
+avg 平均值
+max 最大值
+min 最小值</code></pre>
+<blockquote>
+<p>记住：所有的分组函数都是对“某一组”数据进行操作的。  </p>
+</blockquote>
+<pre><code>例：
+找出工资的总和？
+    select sum(sal)    from emp;
+找出最高工资？
+    select max(sal) from emp;
+找出平均工资？
+    select min(sal) from emp;
+找出最低工资？
+    select avg(sal)    from emp;
+找出总人数？
+    select count(*) from emp;
+    select count(ename) from emp;    </code></pre>
+<p>注意： 分组函数自动忽略NULL(即使有NULL参加运算也不会影响结果)  </p>
+<pre><code>例如：
+mysql&gt; select count(comm) from emp;
++-------------+
+| count(comm) |
++-------------+
+|           4 |
++-------------+</code></pre>
+<h3 id="分组函数不可where中使用"><a href="#分组函数不可where中使用" class="headerlink" title="分组函数不可where中使用"></a>分组函数不可where中使用</h3><p>group by是在where执行之后执行。<br>——而分组函数是分组之后才能用。</p>
+<pre><code>例如：  
+找出高于平均工资的员工？</code></pre>
+<p><del>select ename,sal from emp where sal &gt; avg(sal);</del>  </p>
+<pre><code>如何解决呢？   
+ 子查询语句：
+
+    select ename,sal from emp where sal &gt; (select avg(sal) from emp);
+    +-------+---------+
+    | ename | sal     |
+    +-------+---------+
+    | JONES | 2975.00 |
+    | BLAKE | 2850.00 |
+    | CLARK | 2450.00 |
+    | SCOTT | 3000.00 |
+    | KING  | 5000.00 |
+    | FORD  | 3000.00 |
+    +-------+---------+</code></pre>
+<h3 id="count-与-count-具体字段-的区别？"><a href="#count-与-count-具体字段-的区别？" class="headerlink" title="count(*)与 count(具体字段) 的区别？"></a>count(*)与 count(具体字段) 的区别？</h3><pre><code>count(*)统计的是该字段所有数据个数。
+            mysql&gt; select count(*) from emp;
+            +----------+
+            | count(*) |
+            +----------+
+            |       14 |
+            +----------+
+count(具体字段)统计的是字段数据不为空的数据个数。
+            mysql&gt; select count(comm) from emp;
+            +-------------+
+            | count(comm) |
+            +-------------+
+            |           4 |
+            +-------------+  </code></pre>
+<h3 id="分组处理函数组合。"><a href="#分组处理函数组合。" class="headerlink" title="分组处理函数组合。"></a>分组处理函数组合。</h3><pre><code>select count(*),sum(sal),avg(sal),max(sal),min(sal) from emp;</code></pre>
+<h2 id="单行处理函数"><a href="#单行处理函数" class="headerlink" title="单行处理函数"></a>单行处理函数</h2><p>什么是单行处理函数？(针对每一行进行处理)<br>输入一行，输出一行  </p>
+<pre><code>  例如：
+    select ename,(sal+comm)*12 as yearsal from emp;</code></pre>
+<blockquote>
+<p>注意：所有数据库都规定，只要有NULL参的运算结果一定时NULL<br>            使用空处理函数：<br>                字段计算替换NULL        </p>
+</blockquote>
+<pre><code>    select ename,(sal+ifnull(comm,0))*12 yearsal from emp;
+            +--------+----------+
+            | ename  | yearsal  |
+            +--------+----------+
+            | SMITH  |  9600.00 |
+            | ALLEN  | 22800.00 |
+            | WARD   | 21000.00 |
+            | JONES  | 35700.00 |
+            | MARTIN | 31800.00 |
+            | BLAKE  | 34200.00 |
+            | CLARK  | 29400.00 |
+            | SCOTT  | 36000.00 |
+            | KING   | 60000.00 |
+            | TURNER | 18000.00 |
+            | ADAMS  | 13200.00 |
+            | JAMES  | 11400.00 |
+            | FORD   | 36000.00 |
+            | MILLER | 15600.00 |
+            +--------+----------+</code></pre>
+<h3 id="ifnull-空处理函数"><a href="#ifnull-空处理函数" class="headerlink" title="ifnull() 空处理函数"></a>ifnull() 空处理函数</h3><p>ifnull（可能为NULL的数据，被当成什么处理）：属于单行处理函数 </p>
+<pre><code>mysql&gt;  select ename,ifnull(comm,0) as comm from emp;
++--------+---------+
+| ename  | comm    |
++--------+---------+
+| SMITH  |    0.00 |
+| ALLEN  |  300.00 |
+| WARD   |  500.00 |
+| JONES  |    0.00 |
+| MARTIN | 1400.00 |
+| BLAKE  |    0.00 |
+| CLARK  |    0.00 |
+| SCOTT  |    0.00 |
+| KING   |    0.00 |
+| TURNER |    0.00 |
+| ADAMS  |    0.00 |
+| JAMES  |    0.00 |
+| FORD   |    0.00 |
+| MILLER |    0.00 |
++--------+---------+
+
+    查询替换NULL
+    select 
+        a.ename &#39;员工&#39;,ifnull(b.ename,&#39;没有老板&#39;) as &#39;老板&#39;
+    from
+        emp a
+    left join
+        emp b
+    on 
+        a.mgr = b.empno;</code></pre>
+<h2 id="group-by-和-having"><a href="#group-by-和-having" class="headerlink" title="group by 和 having"></a>group by 和 having</h2><h3 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h3><p>按照某字段或者某字段进行分组。  </p>
+<pre><code>案例：
+找出每个工作岗位的最高薪资。
+    select max(sal),job from emp group by job;
+    +----------+-----------+
+    | max(sal) | job       |
+    +----------+-----------+
+    |  1300.00 | CLERK     |
+    |  1600.00 | SALESMAN  |
+    |  2975.00 | MANAGER   |
+    |  3000.00 | ANALYST   |
+    |  5000.00 | PRESIDENT |
+    +----------+-----------+</code></pre>
+<blockquote>
+<p>注意：<br>    分组函数一般会和group by联合使用，这也是为什么它被成为分组函数的原因。并且任何一个分组函数（count sum avg max min）都是再group by语句执行结束之后才会被执行的。<br>    当一条sql语句没有group by的话，整个表的数据自成一组（字段自成一组）。<br>    分组函数在group by之后执行的。  </p>
 </blockquote>
 <blockquote>
-<p>要从图例中去除⼀个或多个元素，不传⼊label或传⼊ label=’nolegend’即可。  </p>
+<p>注意：<br>     当一条语句中有group by的话，select后面之只能跟分组函数和参与分组的字段。</p>
 </blockquote>
-<h2 id="注解以及在Subplot上绘图"><a href="#注解以及在Subplot上绘图" class="headerlink" title="注解以及在Subplot上绘图"></a>注解以及在Subplot上绘图</h2><p>除标准的绘图类型，你可能还希望绘制⼀些⼦集的注解，可能是 ⽂本、箭头或其他图形等。注解和⽂字可以通过text、arrow和 annotate函数进⾏添加。text可以将⽂本绘制在图表的指定坐标 (x,y)，还可以加上⼀些⾃定义格式：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2hhuu82d54o0.png">  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1bew0rugmdnk.png">  </p>
-<pre><code>这张图中有⼏个重要的点要强调：ax.annotate⽅法可以在指定的 x和y坐标轴绘制标签。我们使⽤set_xlim和set_ylim⼈⼯设定起 始和结束边界，⽽不使⽤matplotlib的默认⽅法。最后，⽤ ax.set_title添加图标标题。 </code></pre>
-<h1 id="将图表保存到⽂件"><a href="#将图表保存到⽂件" class="headerlink" title="将图表保存到⽂件"></a>将图表保存到⽂件</h1><p>利⽤plt.savefig可以将当前图表保存到⽂件。该⽅法相当于 Figure对象的实例⽅法savefig。例如，要将图表保存为SVG⽂ 件，你只需输⼊：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.khphy37wwps.png"><br>⽂件类型是通过⽂件扩展名推断出来的。因此，如果你使⽤的 是.pdf，就会得到⼀个PDF⽂件。  </p>
-<p>我在发布图⽚时最常⽤到两个 重要的选项是dpi（控制“每英⼨点数”分辨率）和 bbox_inches（可以剪除当前图表周围的空⽩部分）。要得到⼀ 张带有最⼩⽩边且分辨率为400DPI的PNG图⽚：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5xjow9nf69c0.png">  </p>
-<pre><code>savefig并⾮⼀定要写⼊磁盘，也可以写⼊任何⽂件型的对象</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.ccvjqp7yob4.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.fxv3zmbzl8o.png">  </p>
-<h1 id="matplotlib配置"><a href="#matplotlib配置" class="headerlink" title="matplotlib配置"></a>matplotlib配置</h1><p>matplotlib⾃带⼀些配⾊⽅案，以及为⽣成出版质量的图⽚⽽设 定的默认配置信息。幸运的是，⼏乎所有默认⾏为都能通过⼀组 全局参数进⾏⾃定义，它们可以管理图像⼤⼩、subplot边距、配 ⾊⽅案、字体⼤⼩、⽹格类型等。  </p>
-<p>⼀种Python编程⽅式配置系统 的⽅法是使⽤rc⽅法。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6wpcsjj8kb.png"><br>    rc的第⼀个参数是希望⾃定义的对象， 如’figure’、’axes’、’xtick’、’ytick’、’grid’、’legend’等。其后可以 跟上⼀系列的关键字参数。⼀个简单的办法是将这些选项写成⼀ 个字典：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1jon7g2az334.png"></p>
+<p><del>select ename max(sal),job from emp group by job;</del><br>↑以上数据虽然在Mysql中不会报错但是查询结果毫无意义，因为其ename没有被分组，其数据混乱    </p>
+<h4 id="多字段分组"><a href="#多字段分组" class="headerlink" title="多字段分组"></a>多字段分组</h4><p>group by 后面跟多个字段的话是将多个字段合在一起分组。</p>
+<pre><code>    案例：
+    找出每个部门不同工作岗位的最高薪资。
+        select max(sal),job,deptno from emp group by DEPTNO,job;</code></pre>
+<h3 id="having"><a href="#having" class="headerlink" title="having"></a>having</h3><p>having是对分组之后的数据进行再次过滤。</p>
+<h4 id="having与where的区别"><a href="#having与where的区别" class="headerlink" title="having与where的区别"></a>having与where的区别</h4><pre><code>案例1：
+找出每个部门的最高薪资，要求显示薪资大于2900的数据。
+    select max(sal),deptno from emp group by deptno having max(sal) &gt; 2900;
+        ↑该写法的分组之后在筛选的，效率较低
+
+    select max(sal),deptno from emp where sal &gt; 2900 group by deptno;
+        ↑该写法分组之前就已经筛选好了，减少了分组的复杂度，效率较高
+
+案例2：
+找出每个部门的平均薪资，要求显示平均薪资大于2000的数据。
+
+select avg(sal),deptno from emp group by deptno having avg(sal) &gt; 2000;
+
+
+select avg(sal),depton from emp    ||where avg(sal)|| group by depton;
+    ↑该写法显然行不通，where后面不能跟分组函数。</code></pre>
+<h2 id="查询结果集的去重"><a href="#查询结果集的去重" class="headerlink" title="查询结果集的去重"></a>查询结果集的去重</h2><p>distinct关键字去除重复记录<br>distinct的后面跟多个字段，也是将字段合起来去重</p>
+<pre><code>select distinct    job from emp;  //distinct关键字去除重复记录
+
+select distinct job,deptno from emp;  </code></pre>
+<blockquote>
+<p>注意：distinct 关键字前面不能放字段。</p>
+</blockquote>
+<pre><code>案例：统计岗位的数量。  
+select count(distinct job) from emp;</code></pre>
+<h2 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h2><p>在实际开发中，大部分的情况下都是从单张表中查询数据，一般都是多张表联合查询的最终结果。 一般一个业务都会对应多张表，比如：学生和班级，起码两张表。  </p>
+<pre><code>        学生序号  学生姓名 班级序号      班级名称
+    ——————————————————————————————————————————————————————
+            1        zs        1        河北北方学院
+            2        ls        1        河北北方学院</code></pre>
+<p>如果都储存到一张表——如上：很明显有很多重复的数据，导致数据的“冗余”。</p>
+<pre><code>        根据表的连接方式来划分，包括：
+            内连接：
+                等值连接
+                非等值连接
+                自链接
+            外连接：
+                左外链接（左连接）
+                右外连接（右链接）
+            全连接（很少用不讲） </code></pre>
+<h3 id="内连接："><a href="#内连接：" class="headerlink" title="内连接："></a>内连接：</h3><pre><code>假设A和B进行表连接，使用内连接的话，凡是A表和B表能够匹配上的记录查询出来，这就是内连接。
+AB两张表没有主副之分，两张表是平等的。</code></pre>
+<h3 id="外连接："><a href="#外连接：" class="headerlink" title="外连接："></a>外连接：</h3><pre><code>假设A和B表进行连接，使用外连接的话，AB两张表中有一张表是主表，一张表是副表，主要查询主表
+中的数据，捎带着查询副表，当副表中的数据没有和主表中的数据匹配上，副表自动模拟出NULL与之匹配。</code></pre>
+<p>外连接的分类？  </p>
+<pre><code>左外连接（左连接）：表示左边的这张表是主表
+右外链接（右链接）：表示右边的这张表是主表
+
+左连接表有右连接表的写法，有链接表右左链接表的写法</code></pre>
+<blockquote>
+<p>在表的链接查询方面有一种现象被称为：笛卡尔积现象。（笛卡尔乘积现象） </p>
+</blockquote>
+<p>笛卡尔乘积查询现象即是两张表没有任何限制的话，查询出来会是两个表记录数据条数的乘积。  </p>
+<pre><code>4×14个结果
+select e.ename,d.dname from emp e,dept d;
+给表起别名：
+    1.在查找多张表的多个字段的时候避免不同表之间出现同名字段
+    2.同时提高了查询效率（直接去某个表去找某个字段）
+    3.增强了可读性
+    +--------+------------+
+    | ename  | dname      |
+    +--------+------------+
+    | SMITH  | ACCOUNTING |
+    | SMITH  | RESEARCH   |
+    | SMITH  | SALES      |
+    | SMITH  | OPERATIONS |
+    .................
+    56 rows in set (0.01 sec)</code></pre>
+<h3 id="连接查询思路："><a href="#连接查询思路：" class="headerlink" title="连接查询思路："></a>连接查询思路：</h3><pre><code>    1.看看需要几个表
+    2.我想要啥结果
+    3.保留想要的结果的表
+    4.得出一个带有想要结果的大表
+
+
+案例1: 
+找出每个员工的上级领导？（所有员工）
+    左连接：
+        select a.ename as &#39;员工&#39;,b.ename as &#39;领导&#39; from emp a left join emp b on a.mgr = b.empno;
+
+    右链接：
+        select a.ename as &#39;员工&#39;,b.ename as &#39;领导&#39; from emp b right join emp a on a.mgr = b.empno;
+
+
+案例2:
+找出哪个部门没有员工？        
+
+思路：
+    看看需要几个表——&gt;发现需要而两个表
+    我想要啥结果——&gt;部门
+    保留想要的结果的表——&gt;设为主表
+    得出一个带有想要结果的大表——&gt;进行筛选——&gt;得出最终表格
+
+    select d.*,e.* from dept d left join emp e on d.deptno = e.deptno where ;</code></pre>
+<h3 id="三张以上表查询"><a href="#三张以上表查询" class="headerlink" title="三张以上表查询"></a>三张以上表查询</h3><pre><code>        注意：
+            .....
+                A
+            join
+                B
+            on
+                ...
+            join
+                C
+            on    
+                ...</code></pre>
+<blockquote>
+<p>表示：A表与B表连接，连接之后A表继续与C表进行连接 或者 A和B连接之后结果与C连接</p>
+</blockquote>
+<pre><code>案例1：
+    找出每个员工的部门名称以及工资等级？
+
+
+    分析:    
+        需要对照三张表    emp dept salgrade
+        结果——员工姓名，部门名称，工资等级
+        一一对应——内连接
+
+    select e.ename,d.dname,s.grade from emp e join dept d on e.deptno = d.deptno join salgrade s on sal between s.losal and s.hisal;
+
+
+案例2：
+    找出每一个员工的部门名称、工资等级、以及上级领导
+
+        分析：        
+            结果——全部员工，工资等级，部门名称，以及上级领导
+            需要参考四张表 emp dept salgrade emp1
+            KING没有领导，无法一一对应，外连接
+            全部员工，确定主表为emp
+
+            select 
+                e.ename,s.grade,d.dname,e1.ename&#39;老板&#39;
+            from
+                emp e
+            join
+                salgrade s
+            on
+                e.sal between s.losal and s.hisal
+            join
+                dept d
+            on
+                e.deptno = d.deptno
+            left join
+                emp e1
+            on
+                e.mgr = e1.empno;</code></pre>
+<h2 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h2><p>什么是子查询： </p>
+<pre><code>    select 
+        ..(select).
+    from
+        ..(select).
+    where
+        ..(select).
+
+案例：
+找出高于平均薪资的员工信息
+    分析：
+        1.找到所有员工的平均薪资
+            select avg(sal) from emp;
+        2.找最高的
+            select * from emp where sal &gt; (select avg(sal) from emp);  
+
+案例：
+找出每个部门平均的薪水等级
+    分析：
+        结果 平均薪水等级表(薪水等级)
+        需要：薪水，薪水等级，部门名称，三个表 emp salgrade dept
+        部门薪水等级——内连接查询：三表一一对应
+        求平均——普通查询    
+
+    select 
+        d.dname,avg(s.grade) 
+    from 
+        emp e 
+    join 
+        dept d 
+    on 
+        e.deptno = d.deptno 
+    join 
+        salgrade s 
+    on 
+        e.sal 
+    between 
+        s.losal 
+    and 
+        s.hisal 
+    group by 
+        dname;
+
+子查询：
+
+    select avg(grade) from (select d.dname,s.grade from emp e join dept d on e.deptno = d.deptno join salgrade s on e.sal between s.losal and s.hisal) t group by dname;</code></pre>
+<h2 id="union连接查询结果"><a href="#union连接查询结果" class="headerlink" title="union连接查询结果"></a>union连接查询结果</h2><p>可以将两个查询结果连接起来</p>
+<pre><code>使用方法
+    select ename from emp;
+    union
+    select sal from emp;  </code></pre>
+<h2 id="limit"><a href="#limit" class="headerlink" title="limit"></a>limit</h2><p>limit（重点——分页查询）<br>        limit是特有的去结果集中的部分数据  </p>
+<pre><code>    语法机制：
+        limit startIndex,length
+            startIndex表示起始位置，从0开始，0表示第一条数据。
+            length表示取几个。 
+
+            案例：取出工资的前5名的员工（思路：降序去前5给）
+        select ename,sal from emp order by sal desc;
+
+    取前5个：
+        select ename,sal from emp order by sal desc limit 0,5;
+        select ename,sal from emp order by sal desc limit 5;</code></pre>
+<blockquote>
+<p>limit时sql语句最后执行的一个环节</p>
+</blockquote>
+<h3 id="通用标准的分页sql"><a href="#通用标准的分页sql" class="headerlink" title="通用标准的分页sql?"></a>通用标准的分页sql?</h3><pre><code>limit m,n;
+
+每页显示pageSize条记录
+第pageNo页 ：
+  m = （pageNo - 1） * pageSize;
+  n =  pageSize;</code></pre>
 
       
 
@@ -353,7 +847,7 @@ plt.axhline(0, color=&#39;颜色&#39;,linestule=&#39;--&#39;)  </code></pre>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
         		</li>
       		
 		</ul>
@@ -365,7 +859,7 @@ plt.axhline(0, color=&#39;颜色&#39;,linestule=&#39;--&#39;)  </code></pre>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/matplotlib//" class="article-tag-list-link color1">matplotlib</a>
+        			<a href="/categories/DQL查询语句//" class="article-tag-list-link color3">DQL查询语句</a>
         		</li>
       		
 		</ul>
@@ -420,7 +914,7 @@ plt.axhline(0, color=&#39;颜色&#39;,linestule=&#39;--&#39;)  </code></pre>
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/04/13/2021523%E7%BB%98%E5%9B%BE%E5%92%8C%E5%8F%AF%E8%A7%86%E5%8C%96-1/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/07/15/21525SQL%E5%9F%BA%E7%A1%80-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -434,18 +928,18 @@ plt.axhline(0, color=&#39;颜色&#39;,linestule=&#39;--&#39;)  </code></pre>
   
 <nav id="article-nav">
   
-    <a href="/2020/07/15/2021525SQL%E5%9F%BA%E7%A1%80-1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/26/21526SQL%E5%9F%BA%E7%A1%80-2/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          SQL基础——(一) 查询语句
+          SQL基础——(二) 窗口函数
         
       </div>
     </a>
   
   
-    <a href="/2020/03/15/2021523Pandas-3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Pandas——(三) 层次化索引</div>
+    <a href="/2020/04/13/21523%E7%BB%98%E5%9B%BE%E5%92%8C%E5%8F%AF%E8%A7%86%E5%8C%96-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">绘图与可视化——(一) matplotlib</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -472,7 +966,7 @@ plt.axhline(0, color=&#39;颜色&#39;,linestule=&#39;--&#39;)  </code></pre>
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#matplotlib-%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">matplotlib 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#matplotlib%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-number">1.0.1.</span> <span class="toc-text">matplotlib官方文档</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%8E%A8%E8%8D%90"><span class="toc-number">1.2.</span> <span class="toc-text">使用推荐 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87"><span class="toc-number">1.2.1.</span> <span class="toc-text">显示中文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E6%95%B4%E5%9B%BE%E7%89%87%E5%A4%A7%E5%B0%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text">调整图片大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87"><span class="toc-number">1.2.3.</span> <span class="toc-text">保存图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E4%BA%92%E5%BC%8F"><span class="toc-number">1.2.4.</span> <span class="toc-text">交互式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Figure%E5%92%8CSubplot"><span class="toc-number">2.</span> <span class="toc-text">Figure和Subplot</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%BB%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text">画图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E5%9B%BE%E6%96%B9%E5%BC%8F%E4%B8%80"><span class="toc-number">3.1.</span> <span class="toc-text">画图方式一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E5%9B%BE%E6%96%B9%E5%BC%8F%E4%BA%8C"><span class="toc-number">3.2.</span> <span class="toc-text">画图方式二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E5%9B%BE%E6%96%B9%E5%BC%8F%E4%B8%89"><span class="toc-number">3.3.</span> <span class="toc-text">画图方式三</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E6%95%B4subplot%E5%91%A8%E5%9B%B4%E7%9A%84%E9%97%B4%E8%B7%9D"><span class="toc-number">3.4.</span> <span class="toc-text">调整subplot周围的间距</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9C%E2%BE%8A%E3%80%81%E6%A0%87%E8%AE%B0%E5%92%8C%E7%BA%BF%E5%9E%8B"><span class="toc-number">3.5.</span> <span class="toc-text">颜⾊、标记和线型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A"><span class="toc-number">3.5.1.</span> <span class="toc-text">方法一：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A"><span class="toc-number">3.5.2.</span> <span class="toc-text">方法二：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%BB%E5%BA%A6%E3%80%81%E6%A0%87%E7%AD%BE"><span class="toc-number">3.6.</span> <span class="toc-text">刻度、标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%BB%E5%BA%A6"><span class="toc-number">3.6.1.</span> <span class="toc-text">刻度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%9B%BE%E4%BE%8B"><span class="toc-number">3.6.2.</span> <span class="toc-text">添加图例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3%E4%BB%A5%E5%8F%8A%E5%9C%A8Subplot%E4%B8%8A%E7%BB%98%E5%9B%BE"><span class="toc-number">3.7.</span> <span class="toc-text">注解以及在Subplot上绘图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%86%E5%9B%BE%E8%A1%A8%E4%BF%9D%E5%AD%98%E5%88%B0%E2%BD%82%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">将图表保存到⽂件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#matplotlib%E9%85%8D%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">matplotlib配置</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86SQL"><span class="toc-number">1.</span> <span class="toc-text">认识SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL-%E8%AF%AD%E6%B3%95%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%AE%9E%E9%99%85%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.1.</span> <span class="toc-text">SQL 语法顺序与实际执行顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL-%E8%AF%AD%E5%8F%A5%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text">SQL 语句分类 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DQL-%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.</span> <span class="toc-text">DQL 查询语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text">语法格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.2.</span> <span class="toc-text">简单查询语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5%E5%8F%82%E5%8A%A0%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="toc-number">2.2.1.</span> <span class="toc-text">字段参加数学运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%99%E6%9F%A5%E8%AF%A2%E5%88%97%E9%87%8D%E5%91%BD%E5%90%8D"><span class="toc-number">2.2.2.</span> <span class="toc-text">给查询列重命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%85%A8%E9%83%A8%E5%AD%97%E6%AE%B5"><span class="toc-number">2.2.3.</span> <span class="toc-text">查询全部字段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.3.</span> <span class="toc-text">条件查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E7%BB%93%E6%9E%84-where"><span class="toc-number">2.3.1.</span> <span class="toc-text">语法结构 where</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#lt-gt-%E6%88%96%EF%BC%81"><span class="toc-number">2.3.1.1.</span> <span class="toc-text">&lt;&gt;或！&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#between-%E2%80%A6-and-%E2%80%A6"><span class="toc-number">2.3.1.2.</span> <span class="toc-text">between … and …</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#is-%EF%BC%88not%EF%BC%89-NULL"><span class="toc-number">2.3.2.</span> <span class="toc-text">is （not） NULL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.4.</span> <span class="toc-text">模糊查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.4.1.</span> <span class="toc-text">字符串模糊查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%EF%BC%88%E5%8D%87%E5%BA%8F%E3%80%81%E9%99%8D%E5%BA%8F%EF%BC%89"><span class="toc-number">2.5.</span> <span class="toc-text">排序（升序、降序）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="toc-number">2.5.1.</span> <span class="toc-text">语法结构：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%A7%E6%8E%92%E5%BA%8F"><span class="toc-number">2.5.2.</span> <span class="toc-text">多级排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E5%87%BD%E6%95%B0"><span class="toc-number">2.6.</span> <span class="toc-text">分组函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E5%87%BD%E6%95%B0%E4%B8%8D%E5%8F%AFwhere%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="toc-number">2.6.1.</span> <span class="toc-text">分组函数不可where中使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#count-%E4%B8%8E-count-%E5%85%B7%E4%BD%93%E5%AD%97%E6%AE%B5-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">2.6.2.</span> <span class="toc-text">count(*)与 count(具体字段) 的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0%E7%BB%84%E5%90%88%E3%80%82"><span class="toc-number">2.6.3.</span> <span class="toc-text">分组处理函数组合。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E8%A1%8C%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0"><span class="toc-number">2.7.</span> <span class="toc-text">单行处理函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ifnull-%E7%A9%BA%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0"><span class="toc-number">2.7.1.</span> <span class="toc-text">ifnull() 空处理函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#group-by-%E5%92%8C-having"><span class="toc-number">2.8.</span> <span class="toc-text">group by 和 having</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#group-by"><span class="toc-number">2.8.1.</span> <span class="toc-text">group by</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%AD%97%E6%AE%B5%E5%88%86%E7%BB%84"><span class="toc-number">2.8.1.1.</span> <span class="toc-text">多字段分组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#having"><span class="toc-number">2.8.2.</span> <span class="toc-text">having</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#having%E4%B8%8Ewhere%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.8.2.1.</span> <span class="toc-text">having与where的区别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E9%9B%86%E7%9A%84%E5%8E%BB%E9%87%8D"><span class="toc-number">2.9.</span> <span class="toc-text">查询结果集的去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.10.</span> <span class="toc-text">连接查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E8%BF%9E%E6%8E%A5%EF%BC%9A"><span class="toc-number">2.10.1.</span> <span class="toc-text">内连接：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%9A"><span class="toc-number">2.10.2.</span> <span class="toc-text">外连接：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="toc-number">2.10.3.</span> <span class="toc-text">连接查询思路：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E5%BC%A0%E4%BB%A5%E4%B8%8A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.10.4.</span> <span class="toc-text">三张以上表查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.11.</span> <span class="toc-text">子查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#union%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C"><span class="toc-number">2.12.</span> <span class="toc-text">union连接查询结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#limit"><span class="toc-number">2.13.</span> <span class="toc-text">limit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E6%A0%87%E5%87%86%E7%9A%84%E5%88%86%E9%A1%B5sql"><span class="toc-number">2.13.1.</span> <span class="toc-text">通用标准的分页sql?</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -614,6 +1108,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tensorflow2</a>
               </li>
              
@@ -635,10 +1133,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>

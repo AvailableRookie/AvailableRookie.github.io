@@ -6,59 +6,49 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>tensorflow2——(二) 模型搭建 | JCJunBlog</title>
+  <title>Pandas——(二) | JCJunBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="自定义训练模型初始化参数、优化算法、评估标准 epoch（也就是所有数据训练完一次） batch  每次存现的数据量 steps  一个epoch的batch个数  &#x3D;  总数据量&#x2F;batch     训练">
+  <meta name="description" content="索引对象pandas的索引对象负责管理轴标签和其他元数据（比如轴名称等）。在构建Series或DataFrame时，所用到的任何数组或其他序列的标签都会被转化成一个Index对象   单独创建一个Index对象           例如：             index  &#x3D; pd.Index([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;])">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tensorflow2——(二) 模型搭建">
-<meta property="og:url" content="http://yoursite.com/2021/02/08/2021528tensorflow2-2/index.html">
+<meta property="og:title" content="Pandas——(二)">
+<meta property="og:url" content="http://yoursite.com/2020/03/01/21523Pandas-2/index.html">
 <meta property="og:site_name" content="JCJunBlog">
-<meta property="og:description" content="自定义训练模型初始化参数、优化算法、评估标准 epoch（也就是所有数据训练完一次） batch  每次存现的数据量 steps  一个epoch的batch个数  &#x3D;  总数据量&#x2F;batch     训练">
+<meta property="og:description" content="索引对象pandas的索引对象负责管理轴标签和其他元数据（比如轴名称等）。在构建Series或DataFrame时，所用到的任何数组或其他序列的标签都会被转化成一个Index对象   单独创建一个Index对象           例如：             index  &#x3D; pd.Index([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;])">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5058yw4suk00.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ebyquftg400.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5l2p1mud1740.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5pkv68e28p80.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4cceyc0itvk0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3l3pp7oemie0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6saiwyqruzw0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.10it0cdrfwds.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.56v6b2b6faw0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ewchzb7sz80.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.527ork6rm3g0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2t4tk07llmy0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5em4gcn3ia80.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5bx4x53zdug0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.snbt0yvogi8.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2eyjr8afrvx.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ohnrywbmy80.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.11pcbkzgrbao.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2l06p0p1ntc0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1izfrgapieao.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.jzl9tr8mj5o.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.70ka3mymnag0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.28ntg0wrrolc.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3lb73iuwh020.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5dmktdjbe700.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ys6hy8ydgg0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.77aej10g66c0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.46j6ggs6jdq0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2tuiq1nqcj00.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.29gdeqioi2sk.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5a0lt191sqo0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6endxj30nk00.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.kulurs2yhb4.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.n7he1415p5s.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5m47ksoj8yg0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.64406pfvsjs0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3f8pedl67nw0.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4evlclae3rm0.png">
-<meta property="article:published_time" content="2021-02-08T05:53:17.000Z">
-<meta property="article:modified_time" content="2021-05-28T12:41:52.156Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/isin%E7%A4%BA%E4%BE%8B.3w7rtzst1w80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E5%B8%83%E5%B0%94%E5%9E%8B%E6%95%B0%E7%BB%84%E7%B4%A2%E5%BC%95%E7%AD%9B%E9%80%89%E7%A9%BA%E5%AD%97%E7%AC%A6%E4%B8%B2.1b423qmaa8n4.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E5%B8%83%E5%B0%94%E5%9E%8B%E6%95%B0%E7%BB%84%E7%B4%A2%E5%BC%95%E8%BF%87%E6%BB%A4%E7%BC%BA%E5%A4%B1%E5%80%BC.693403vm92k0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/fillna.t96qaosek3k.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/fillna2.1x4oz0367utc.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/fillna3.78p7lg344ik0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E7%A7%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE1.80wqiye23m0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/duplicate%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%B8%83%E5%B0%94%E5%9E%8BSeries.311odujcukk0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/drop_duplicates%E6%96%B9%E6%B3%95.4z169vqv4h80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E9%83%A8%E5%88%86%E5%88%97%E8%BF%9B%E8%A1%8C%E9%87%8D%E5%A4%8D%E9%A1%B9%E5%88%A4%E6%96%AD.48lf5wriel00.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/keep.2rj4cx6cvzi0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E8%82%89%E7%B1%BB%E7%9B%B8%E5%85%B3%E6%95%B0%E6%8D%AE.1ttcsgye6lnk.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E8%82%89%E7%B1%BB%E5%88%B0%E5%8A%A8%E7%89%A9%E7%9A%84%E6%98%A0%E5%B0%84.29xwd71442m8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/Series%E7%9A%84map%E6%96%B9%E6%B3%95.2f4oo4q19xjw.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E4%BC%A0%E5%85%A5%E5%87%BD%E6%95%B0.7kecamua6mg0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/map.1110s2g8s0uo.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/applymap.1f88vt6a4so0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.1ahlwt2yb62o.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.1vztx4ervy9s.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.4hmjrzcp8160.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.769dpwnrdh40.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.5imdg1j7mkc0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.5zm4oxi6kqk0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.gfs8vvlszts.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.66mhroyjlq40.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.16p1en1n9rts.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.2ctab0fw6j40.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.rfbbn4c1zwg.png">
+<meta property="article:published_time" content="2020-03-01T04:53:17.000Z">
+<meta property="article:modified_time" content="2021-05-28T14:03:54.811Z">
 <meta property="article:author" content="Jia Caijun">
-<meta property="article:tag" content="tensorflow2">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5058yw4suk00.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/isin%E7%A4%BA%E4%BE%8B.3w7rtzst1w80.png">
   
     <link rel="alternative" href="/atom.xml" title="JCJunBlog" type="application/atom+xml">
   
@@ -185,14 +175,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-2021528tensorflow2-2" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-21523Pandas-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      tensorflow2——(二) 模型搭建
+      Pandas——(二)
     </h1>
   
 
@@ -200,8 +190,8 @@
           |阅读量(<span id="busuanzi_value_page_pv"></span>)
         </span>
         
-        <a href="/2021/02/08/2021528tensorflow2-2/" class="archive-article-date">
-  	<time datetime="2021-02-08T05:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-08</time>
+        <a href="/2020/03/01/21523Pandas-2/" class="archive-article-date">
+  	<time datetime="2020-03-01T04:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
 </a>
         
       </header>
@@ -209,77 +199,284 @@
     <div class="article-entry" itemprop="articleBody">
 
       
-        <h1 id="自定义训练模型"><a href="#自定义训练模型" class="headerlink" title="自定义训练模型"></a>自定义训练模型</h1><h2 id="初始化参数、优化算法、评估标准"><a href="#初始化参数、优化算法、评估标准" class="headerlink" title="初始化参数、优化算法、评估标准"></a>初始化参数、优化算法、评估标准</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5058yw4suk00.png"></p>
-<pre><code>epoch（也就是所有数据训练完一次）
-batch  每次存现的数据量
-steps  一个epoch的batch个数  =  总数据量/batch    </code></pre>
-<h2 id="训练"><a href="#训练" class="headerlink" title="训练 "></a>训练 <a id="more"></a></h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ebyquftg400.png"></p>
-<p>每结束一个epoch（也就是所有数据训练完一次）进行一个预测并计算预测值的loss</p>
-<h1 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h1><h2 id="自定义损失函数"><a href="#自定义损失函数" class="headerlink" title="自定义损失函数"></a>自定义损失函数</h2><pre><code>仅需将我们定义好的函数传给loss即可</code></pre>
-<h2 id="自定义MSE损失函数"><a href="#自定义MSE损失函数" class="headerlink" title="自定义MSE损失函数"></a>自定义MSE损失函数</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5l2p1mud1740.png"></p>
-<h3 id="加权交叉熵损失函数"><a href="#加权交叉熵损失函数" class="headerlink" title="加权交叉熵损失函数"></a>加权交叉熵损失函数</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5pkv68e28p80.png"></p>
-<h1 id="参数训练"><a href="#参数训练" class="headerlink" title="参数训练"></a>参数训练</h1><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4cceyc0itvk0.png"></p>
-<h2 id="梯度跟踪器"><a href="#梯度跟踪器" class="headerlink" title="梯度跟踪器"></a>梯度跟踪器</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3l3pp7oemie0.png"><br>GradientTape()   梯度跟踪器（求导器），  然后使用tape 的gradient（）方法对整个跟踪的参数进行求导  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6saiwyqruzw0.png"></p>
-<h2 id="tape"><a href="#tape" class="headerlink" title="tape"></a>tape</h2><p>设置该参数后 tape在该过程结束后不会自动释放资源，需要自己释放<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.10it0cdrfwds.png"></p>
-<h2 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h2><p>然后在将其传入到优化器中，对参数进行更新优化<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.56v6b2b6faw0.png"></p>
-<h2 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ewchzb7sz80.png">  </p>
-<p>w ，b 不是 Variable 类型所以我们如果想记录w，b的梯度我们需要讲其放入到watch（）中  </p>
-<h2 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.527ork6rm3g0.png"></p>
-<p>loss对于 w b 共同的导数  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2t4tk07llmy0.png"><br>z1对于 x的导数+z2对于x的导数  </p>
-<p>求二阶导数<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5em4gcn3ia80.png"></p>
-<h1 id="自定义层和网络"><a href="#自定义层和网络" class="headerlink" title="自定义层和网络"></a>自定义层和网络</h1><p>需要自己实现自定义网络需要继承keras.layers.Layer   或  keras.Model  </p>
-<p>Sequential  中无法 放其他操作，只能使用现成的层，而我们的自定义层或网络即可以实现自己的逻辑，再放入到Sequential中  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5bx4x53zdug0.png"></p>
-<h2 id="自定义网络"><a href="#自定义网络" class="headerlink" title="自定义网络"></a>自定义网络</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.snbt0yvogi8.png"></p>
-<h2 id="Sequential构建网络"><a href="#Sequential构建网络" class="headerlink" title="Sequential构建网络"></a>Sequential构建网络</h2><h3 id="创建网络"><a href="#创建网络" class="headerlink" title="创建网络"></a>创建网络</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2eyjr8afrvx.png"></p>
-<h3 id="初始化网络"><a href="#初始化网络" class="headerlink" title="初始化网络"></a>初始化网络</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ohnrywbmy80.png"></p>
-<p><img src=""></p>
-<h3 id="训练网络-并返回训练指标和loss的记录"><a href="#训练网络-并返回训练指标和loss的记录" class="headerlink" title="训练网络,并返回训练指标和loss的记录"></a>训练网络,并返回训练指标和loss的记录</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.11pcbkzgrbao.png"></p>
-<h3 id="可视化-history"><a href="#可视化-history" class="headerlink" title="可视化 history"></a>可视化 history</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2l06p0p1ntc0.png"></p>
-<p>代码：  </p>
-<pre><code>def visualize_training(history, lw = 3):
-plt.figure(figsize=(10,6))
-plt.plot(history.history[&#39;accuracy&#39;], label = &#39;training&#39;, marker = &#39;*&#39;, linewidth = lw)
-plt.plot(history.history[&#39;val_accuracy&#39;], label = &#39;validation&#39;, marker = &#39;o&#39;, linewidth = lw)
-plt.title(&#39;Training Accuracy vs Validation Accuracy&#39;)
-plt.xlabel(&#39;Epochs&#39;)
-plt.ylabel(&#39;Accuracy&#39;)
-plt.legend(fontsize = &#39;x-large&#39;)
-plt.show()
+        <h1 id="索引对象"><a href="#索引对象" class="headerlink" title="索引对象"></a>索引对象</h1><p>pandas的索引对象负责管理轴标签和其他元数据（比如轴名称等）。在构建Series或DataFrame时，所用到的任何数组或其他序列的标签都会被转化成一个Index对象  </p>
+<p>单独创建一个Index对象  </p>
+<pre><code>        例如：
+            index  = pd.Index([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;])
+            index
+            Out：
+                Index（[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;] (轴标签), dtype = &#39;object&#39;(元数据)）
+            可以看作成一个固定大小的集合  </code></pre>
+<blockquote>
+<p>Index对象是不可变的,不可变可以是Index对象在多个数据结构之间安全共享，即可以解释为什么当两个Serise相加时只有一方有的索引值的结果相加为NaN等系列感觉不太方便的地方。  </p>
+</blockquote>
+<blockquote>
+<p>此处注意只是说Index对象是不变的，而在Series和DataFrame对象中其成员属性Index是可以改变为其他的Index对象的所以不影响其索引和标签的修改</p>
+</blockquote>
+<blockquote>
+<p>与python的集合不同，pandas的Index可以包含重复的标签。<br>即pandas中的索引和columns是可以重复的，当调用重复的索引或columns时会返回所有重复的索引或者columns对应的值  </p>
+</blockquote>
+<h2 id="Index的方法和属性："><a href="#Index的方法和属性：" class="headerlink" title="Index的方法和属性：  "></a>Index的方法和属性：  <a id="more"></a></h2><pre><code>        append     连接另一个Index对象，产生一个新的Index
+        difference    计算差集，并得到一个Index
+        intersection    计算交集
+        union    计算并集
+        isin    计算一个指示各值是否都包含在参数集合中的布尔数组
+        delete    删除索引i处的元素，并得到新的Index
+        drop    删除传入的值，并得到新的Index
+        insert    将元素插入到索引i处，并得到新的Index
+        in_monotonic    当各元素均大于等于前一个元素时，返回True
+        is_unique    当Index没有重复值时，返回True
+        unique    计算Index中唯一值的数组  </code></pre>
+<h2 id="带有重复标签的轴索引"><a href="#带有重复标签的轴索引" class="headerlink" title="带有重复标签的轴索引"></a>带有重复标签的轴索引</h2><p>索引的is_unique属性可以告诉你它的值是否是唯⼀的  </p>
+<pre><code>        例如：
+                pbj.index.is_unique
+            返回布尔值</code></pre>
+<blockquote>
+<p>对于带有重复值的索引，数据选取的⾏为将会有些不同。如果某个索引对应多个值，则返回⼀个Series；⽽对应单个值的，则返 回⼀个标量值</p>
+</blockquote>
+<h1 id="Pandas数据运算"><a href="#Pandas数据运算" class="headerlink" title="Pandas数据运算"></a>Pandas数据运算</h1><p>pandas最重要的一个功能是，它可以对不同索引的对象进行算数运算。在将对象相加时，如果存在不同的索引对，则结果的索引就是该索引对的并集。类似于sql中的外连接。自动的数据对齐操作在不重叠的索引处引入了NaN值。缺失值会在算术运算过程中传播，对于DataFrame则对齐操作会同时发生在行和列上  </p>
+<blockquote>
+<p>相加后将会返回⼀个新的DataFrame，其索引和列为原来 那两个DataFrame的并集</p>
+</blockquote>
+<blockquote>
+<p>百分号在python中做数据分析时是一个字符串，无法使用百分号数据进行计算，只能做一个显示  </p>
+</blockquote>
+<pre><code>例如:
+    添加一个新字段并将一个字段（小数）转换为百分数显示
+    data[&#39;A_per%&#39;]  = data[A_per] . apply(lambda x: &quot;%.3f%%&quot; % (x*100)  )    .3f%则表示百分数显示三位小数。</code></pre>
+<h2 id="灵活的运算函数"><a href="#灵活的运算函数" class="headerlink" title="灵活的运算函数"></a>灵活的运算函数</h2><p>在对不同索引的对象进行算数运算时，你可能希望当一个对象中某个轴标签在另一个对象中找不到时填充特殊值  </p>
+<pre><code>        可以适用比较灵活的运算函数
+            例如：
+                df1.add(df2, fill_value = 0)</code></pre>
+<blockquote>
+<p>该方法与直接用+号不同，在出现不同索引对的并集则会保留原值，而原数据中的NaN会被填充为0  </p>
+</blockquote>
+<h3 id="常用的灵活的算术⽅法"><a href="#常用的灵活的算术⽅法" class="headerlink" title="常用的灵活的算术⽅法:"></a>常用的灵活的算术⽅法:</h3><pre><code>        add,radd    用于加法（+）的方法
+        sub,rsub    用于减法（-）的方法
+        div,rdiv    用于除法（/）的方法
+        floordiv,rfloordiv    用于低除（//）的方法
+        mul,rmul    用于乘法（*）的方法
+        pow,rpow    用于指数（**）的方法  </code></pre>
+<blockquote>
+<p>它们每个都有⼀ 个副本，以字⺟r开头，它会翻转参数。因此这两个语句是等价 的  </p>
+</blockquote>
+<h2 id="DataFrame和Series之间的运算"><a href="#DataFrame和Series之间的运算" class="headerlink" title="DataFrame和Series之间的运算"></a>DataFrame和Series之间的运算</h2><p>跟不同维度的NumPy数组⼀样，DataFrame和Series之间算术运 类似于数组的广播<br>            例如：<br>                          b    d    e<br>            Utah    0.0    1.0    2.0<br>            Ohio    3.0    4.0    5.0<br>            Texas    6.0    7.0    8.0<br>            Oregon    9.0    10.011.0</p>
+<pre><code>        Out[182]:
+        b    0.0 
+        e    2.0
+        f   3.0
 
-plt.figure(figsize=(10,6))
-plt.plot(history.history[&#39;loss&#39;], label = &#39;training&#39;, marker = &#39;*&#39;, linewidth = lw)
-plt.plot(history.history[&#39;val_loss&#39;], label = &#39;validation&#39;, marker = &#39;o&#39;, linewidth = lw)
-plt.title(&#39;Training Loss vs Validation Loss&#39;)
-plt.xlabel(&#39;Epochs&#39;)
-plt.ylabel(&#39;Loss&#39;)
-plt.legend(fontsize = &#39;x-large&#39;)
-plt.show()</code></pre>
-<h3 id="模型预测"><a href="#模型预测" class="headerlink" title="模型预测"></a>模型预测</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1izfrgapieao.png"></p>
-<h2 id="自定义层"><a href="#自定义层" class="headerlink" title="自定义层"></a>自定义层</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.jzl9tr8mj5o.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.70ka3mymnag0.png"><br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.28ntg0wrrolc.png"> </p>
-<h3 id="无参数的层"><a href="#无参数的层" class="headerlink" title="无参数的层"></a>无参数的层</h3><p>使用lambda表达式（仅有一个激活函数）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3lb73iuwh020.png"> </p>
-<h4 id="另一种写发"><a href="#另一种写发" class="headerlink" title="另一种写发"></a>另一种写发</h4><p>使用方法如下：（该方法和下面注释的两种表时也是等价的）<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5dmktdjbe700.png">   </p>
-<h1 id="动量与学习率"><a href="#动量与学习率" class="headerlink" title="动量与学习率"></a>动量与学习率</h1><h2 id="动量的设置"><a href="#动量的设置" class="headerlink" title="动量的设置"></a>动量的设置</h2><p>学习器的 momentum 参数为为优化器设置动量<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ys6hy8ydgg0.png"></p>
-<h2 id="学习率的动态调整"><a href="#学习率的动态调整" class="headerlink" title="学习率的动态调整"></a>学习率的动态调整</h2><p>直接手动再循环中改变  或者 使用keras的回调函数<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.77aej10g66c0.png"></p>
-<h1 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h1><p>数据切分 ， 将大的 x和y 切割分 5：1   出来一个x_val  和 y_val<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.46j6ggs6jdq0.png"></p>
-<p>训练评估<br>    validation_data = db_val   指定在哪个数据集进行评测<br>    validation_freq = 5    每多少个进行一次评测  一般为5或10<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2tuiq1nqcj00.png"></p>
-<h2 id="验证集"><a href="#验证集" class="headerlink" title="验证集"></a>验证集</h2><p>最后实测则不会使用db_val 了<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.29gdeqioi2sk.png"></p>
-<h2 id="快速实现"><a href="#快速实现" class="headerlink" title="快速实现"></a>快速实现</h2><p>自定进行交叉验证评测，不需要认为切割数据集，可代替上述所有步骤，其中validation_split = 0.1  则说明 db_val和db_train 为9：1<br>当输入数据input为 numpy 或 tenor 时才能设置经验切割，否则使用迭代器时需要如上自行分割</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5a0lt191sqo0.png"></p>
-<h1 id="正则惩罚项"><a href="#正则惩罚项" class="headerlink" title="正则惩罚项"></a>正则惩罚项</h1><p>在创建 层的时候可以直接定义  kernel_regularizer= keras.regularizers.l2(0.001)<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6endxj30nk00.png"></p>
-<p>手动在训练的时候loss计算时 添加计算过程进行求和计算<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.kulurs2yhb4.png"></p>
-<h1 id="模型的保存与加载"><a href="#模型的保存与加载" class="headerlink" title="模型的保存与加载"></a>模型的保存与加载</h1><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.n7he1415p5s.png"></p>
-<h2 id="save-load-weights"><a href="#save-load-weights" class="headerlink" title="save/load weights"></a>save/load weights</h2><p>仅保存参数，轻量级，适合自己有源码的情况下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5m47ksoj8yg0.png"></p>
-<h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.64406pfvsjs0.png"></p>
-<h2 id="save-load-entire-model"><a href="#save-load-entire-model" class="headerlink" title="save/load entire model"></a>save/load entire model</h2><p>简单粗暴，将所有状态和参数都保存，可以恢复</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3f8pedl67nw0.png"></p>
-<h2 id="saved-model"><a href="#saved-model" class="headerlink" title="saved_model"></a>saved_model</h2><p>保存为通用文件，可以使用C++进行解析使用</p>
-<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4evlclae3rm0.png"></p>
+                b           d         e         f
+     Utah       0.0      NaN         4.0      NaN
+     Ohio      3.0        NaN         5.0      NaN
+    Texas      6.0        NaN         8.0      NaN
+    Oregon     9.0        NAN        11.0      NaN</code></pre>
+<blockquote>
+<p>DataFrame和Series之间的算术运算会将wSeries的 索引匹配到DataFrame的列，然后沿着⾏⼀直向下⼴播  </p>
+</blockquote>
+<blockquote>
+<p>如果某个索引值在DataFrame的列或Series的索引中找不到，则 参与运算的两个对象就会被重新索引以形成并集</p>
+</blockquote>
+<p>如果你希望匹配⾏且在<strong>列上⼴播</strong>，则必须使⽤算术运算⽅法  </p>
+<pre><code>        例如：
+            frame.sub(series3,axis=&#39;index&#39;/0)</code></pre>
+<h1 id="函数应用和映射"><a href="#函数应用和映射" class="headerlink" title="函数应用和映射"></a>函数应用和映射</h1><h2 id="元素级函数应用"><a href="#元素级函数应用" class="headerlink" title="元素级函数应用"></a>元素级函数应用</h2><p>Numpy的ufuncs（元素级数组方法）也可以操作pandas对象  </p>
+<pre><code>    例如:
+        np.abs(df)</code></pre>
+<p>元素级的Python函数也是可以⽤的。假如你想得到DataFrame中各个 浮点值的格式化字符串，使⽤applymap即可  </p>
+<pre><code>        例如：
+            format    =   lambda x:  &#39;%.2f&#39;%x
+            df.applymap(format)</code></pre>
+<p>之所以叫做applymap，是因为Series有⼀个⽤于应⽤元素级函数 的map⽅法  </p>
+<pre><code>        例如：
+            s1.map(format)  </code></pre>
+<h2 id="数组级函数-应用行列"><a href="#数组级函数-应用行列" class="headerlink" title="数组级函数(应用行列)"></a>数组级函数(应用行列)</h2><blockquote>
+<p>将函数应用到由各列或行所形成的一维数组上。<br><strong>DataFrame/Series的apply方法即可实现此功能</strong>  </p>
+</blockquote>
+<blockquote>
+<p>该方法与GroupBy对象的apply不同的是，该方法传入的自定义函数有且仅有一个被调用对象数据对象即DataFrame或Series  </p>
+</blockquote>
+<pre><code>        例如：
+            f = lambda x: x.max() - x.min()
+            df.apply(f)</code></pre>
+<blockquote>
+<p>传递axis=’columns’到apply，这个函数会在**<em>每行执行**</em><br>传递到apply的函数不是必须返回⼀个标量，还可以返回由多个 值组成的Series  </p>
+</blockquote>
+<h1 id="汇总和计算描述统计"><a href="#汇总和计算描述统计" class="headerlink" title="汇总和计算描述统计"></a>汇总和计算描述统计</h1><p>pandas对象拥有一组常用的数学和统计方法，他们大部分都属于约简和汇总统计，用于Series中提取单个值（如sum或mean）或从DataFrame的行或列中提取一个Series（可以添加axis参数）。跟对应的Numpy数组方法相比，**<em>他们都是基于没有缺失数据的假设而构建的。**</em>  </p>
+<blockquote>
+<p>NaN值会⾃动被排除，除⾮整个切⽚（这⾥指的是⾏或列）都是NaN  </p>
+</blockquote>
+<h2 id="简约函数参数："><a href="#简约函数参数：" class="headerlink" title="简约函数参数："></a>简约函数参数：</h2><pre><code>    axis    简约的轴。DataFrame的行用0，列用1
+    skipna    排除缺失值，默认值为True
+    level    如果轴式层次化索引的（即MultiIndex），则根据level分组简约</code></pre>
+<h2 id="描述和汇总统计函数："><a href="#描述和汇总统计函数：" class="headerlink" title="描述和汇总统计函数："></a>描述和汇总统计函数：</h2><pre><code>count    非NA值的数量
+describe    针对Series或各DataFrame列计算汇总统计，产生多个统计结果max,count,min等
+min、max     计算最小值和最大值
+argmin、argmax   计算能过获取到最小值或最大值的索引位置（整数）
+idxmin、idxmax    计算能过获取到最小值和最大值的索引值
+quantile    计算样本的分位数（0到1）
+sum    值的总和
+mean    值的平均数
+median    值的算术中位数
+mad    根据平均值计算平均绝对离差
+var    样本值的方差
+std    样本值的标准差
+skew    样本值的偏度（三阶矩）
+kurt    样本值的峰度（四阶矩）
+cumsum    样本值的累计和
+cummin、cummax    样本值的累计最大值和累计最小值
+cumprod    样本值的累计积
+diff    计算一阶差分（对时间序列很有用）
+pct_change    计算百分数变化  </code></pre>
+<h2 id="相关系数与协方差"><a href="#相关系数与协方差" class="headerlink" title="相关系数与协方差"></a>相关系数与协方差</h2><p>Series的corr⽅法⽤于计算两个Series中重叠的、⾮NA的、按索 引对⻬的值的相关系数。与此类似，cov⽤于计算协⽅差：  </p>
+<pre><code>    例如：
+        df[&#39;a&#39;].corr(df[&#39;b&#39;])
+        df[&#39;a&#39;].cov(df[&#39;b&#39;])</code></pre>
+<p>利⽤DataFrame的corrwith⽅法，你可以计算其列或⾏跟另⼀个 Series或DataFrame之间的相关系数。传⼊⼀个Series将会返回 ⼀个相关系数值Series（针对各列进⾏计算）：  </p>
+<pre><code>    例如：
+        df.corrwith(df[&#39;a&#39;])
+        Out:
+            Serise…
+            对应产生一个序列的相关系数</code></pre>
+<p>传⼊⼀个DataFrame则会计算按列名配对的相关系数。这⾥，我 计算百分⽐变化与成交量的相关系数  </p>
+<p>传⼊axis=’columns’即可按⾏进⾏计算。⽆论如何，在计算相关 系数之前，所有的数据项都会按标签对⻬  </p>
+<h2 id="唯一值、值计数以及成员资格"><a href="#唯一值、值计数以及成员资格" class="headerlink" title="唯一值、值计数以及成员资格"></a>唯一值、值计数以及成员资格</h2><p>unique可以得到一维Series中的为一只数组    </p>
+<pre><code>    例如：
+        uniques = s1.unique()</code></pre>
+<p>value_counts用于计算一个Series中各值出现的频率,同时它还是一个顶级的pandas方法，可以用于任何数组或序列  </p>
+<pre><code>    例如：
+        pd.value_counts(s1.values , sort=False)</code></pre>
+<p>isin用于判断矢量化集合成员资格，可用于过滤Series中或DataFrame列中数据的子集</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/isin%E7%A4%BA%E4%BE%8B.3w7rtzst1w80.png">  </p>
+<pre><code>函数总结:  
+    isin    计算一个表示“Series各值是否包含于传入的值序列中&quot;的布尔型数组
+    match    计算一个数组中的各个值到另一个不同数组的整数索引，对于数据对齐和连接类型的操作十分有用
+    unique    计算Series中的唯一值数组，按发现的顺序返回
+    value_counts    返回一个Series，其索引唯一值，其值为频率，按计数值降序排列</code></pre>
+<p>你可能希望得到DataFrame中多个相关列<br>        将pandas.value_counts传给该DataFrame的apply函数  </p>
+<pre><code>        例如：
+            result = data.apply(pd.value_counts).fillna</code></pre>
+<blockquote>
+<p>结果中的⾏标签是所有列的唯⼀值。这些值是每个列中这 些值的相应计数  </p>
+</blockquote>
+<h1 id="数据清洗和准备"><a href="#数据清洗和准备" class="headerlink" title="数据清洗和准备"></a>数据清洗和准备</h1><h2 id="处理缺失数据："><a href="#处理缺失数据：" class="headerlink" title="处理缺失数据："></a>处理缺失数据：</h2><p>缺失数据在pandas中呈现的⽅式有些不完美，但对于⼤多数⽤ 户可以保证功能正常。对于数值数据，pandas使⽤浮点值 NaN（Not a Number）表示缺失数据。我们称其为哨兵值，可以 ⽅便的检测出来</p>
+<p><strong>Python内置的None值在对象数组中也可以作为NA</strong></p>
+<h3 id="缺失数据处理的函数："><a href="#缺失数据处理的函数：" class="headerlink" title="缺失数据处理的函数："></a>缺失数据处理的函数：</h3><pre><code>dropna    根据各标签的值中是否存在缺失数据对轴标签进行过滤，可通过阀值调节缺失值的容忍度
+fillna    用指定值或插值方法（如ffill或bfill）填充缺失数据
+isnull    返回一个含有布尔值的对象，这些布尔值表示哪些值是缺失值/NA,该对像的类型与原类型一样
+notnull    isnull否定式 </code></pre>
+<p><strong>布尔型数组索引筛选空字符串（并将其重命名）：</strong><br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E5%B8%83%E5%B0%94%E5%9E%8B%E6%95%B0%E7%BB%84%E7%B4%A2%E5%BC%95%E7%AD%9B%E9%80%89%E7%A9%BA%E5%AD%97%E7%AC%A6%E4%B8%B2.1b423qmaa8n4.png">  </p>
+<p><strong>布尔型数组索引过滤缺失值：</strong><br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E5%B8%83%E5%B0%94%E5%9E%8B%E6%95%B0%E7%BB%84%E7%B4%A2%E5%BC%95%E8%BF%87%E6%BB%A4%E7%BC%BA%E5%A4%B1%E5%80%BC.693403vm92k0.png">  </p>
+<h2 id="过滤缺失数据："><a href="#过滤缺失数据：" class="headerlink" title="过滤缺失数据："></a>过滤缺失数据：</h2><p>可以通过pandas.isnull或布尔索引的手工方法,但dropa可能会更实在一些，对于一个Series，dropna返回一各仅含飞控数据和索引的Series  </p>
+<pre><code>    例如：
+        s1.dropna()</code></pre>
+<p>而对于DataFrame对象，事情就有点复杂了。你可能希望丢弃全NaN或含有NaN的行或列。</p>
+<pre><code>    dropna默认丢弃任何含有缺失值的行,若传入参数how=&#39;all&#39;  将只丢弃全为NaN的那些行，传入参数axis即可对其他轴进行操作  
+    0删除行，1删除列</code></pre>
+<p>另⼀个滤除DataFrame⾏的问题涉及时间序列数据。假设你只想 留下⼀部分观测数据，可以⽤thresh参数实现此⽬的  </p>
+<pre><code>        thresh参数理解:
+        这一行除去NA值，剩余数值的数量大于等于n，便显示这一行。  </code></pre>
+<h2 id="填充缺失数据："><a href="#填充缺失数据：" class="headerlink" title="填充缺失数据："></a>填充缺失数据：</h2><blockquote>
+<p>fillna() </p>
+</blockquote>
+<p>你可能不想滤除缺失数据（有可能会丢弃跟它有关的其他数 据），⽽是希望通过其他⽅式填补那些“空洞”。对于⼤多数情况 ⽽⾔，fillna⽅法是最主要的函数。通过⼀个常数**<em>调⽤fillna**</em>就会将 缺失值替换为那个常数值：<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/fillna.t96qaosek3k.png">  </p>
+<p>若是通过⼀个字典调⽤fillna，就可以实现对不同的列填充不同的值。<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/fillna2.1x4oz0367utc.png">    </p>
+<blockquote>
+<p>fillna默认会返回新对象，但也可以对现有对象进⾏就地修改： </p>
+</blockquote>
+<pre><code>例如：_=df.fillna(0,   inplace=True)  </code></pre>
+<p>对reindexing (见series修改索引处 )有效的那些插值⽅法也可⽤于fillna:</p>
+<blockquote>
+<p>只要有些创新，你就可以利⽤fillna实现许多别的功能。⽐如说， 你可以传⼊Series的平均值或中位数：</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/fillna3.78p7lg344ik0.png"> </p>
+<h3 id="fillna函数参数："><a href="#fillna函数参数：" class="headerlink" title="fillna函数参数："></a>fillna函数参数：</h3><pre><code>value    用于填充确实值的标量值或字典对象
+method    插入方式，如果函数调用时未指定其他参数的话，默认为&quot;ffill&quot;
+axis    填充的轴，默认axis=0；
+inplace    修改调用者对象而不产生副本
+limit    （对于前向和后向填充）可以连续填充的最大数量  </code></pre>
+<h2 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h2><p>过滤，清理，转换工作    </p>
+<h3 id="移除重复数据"><a href="#移除重复数据" class="headerlink" title="移除重复数据"></a>移除重复数据</h3><p>数据：<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E7%A7%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE1.80wqiye23m0.png"> </p>
+<p>DataFrame的duplicate方法返回一个布尔型Series，表时各行是否是重复行（前面出现过的行）：<br>    <img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/duplicate%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%B8%83%E5%B0%94%E5%9E%8BSeries.311odujcukk0.png"></p>
+<p>drop_duplicates方法，它会返回一个DataFrame，重复的数组会标为False（删除重复的行）:<br>    例如：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/drop_duplicates%E6%96%B9%E6%B3%95.4z169vqv4h80.png"> </p>
+<blockquote>
+<p>以上两个方法默认判断是所有列，可以指定部分列进行重复项判断。</p>
+</blockquote>
+<pre><code>例如:
+    假设我们还有一列值，且只希望根据k1列过滤重复项：</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E9%83%A8%E5%88%86%E5%88%97%E8%BF%9B%E8%A1%8C%E9%87%8D%E5%A4%8D%E9%A1%B9%E5%88%A4%E6%96%AD.48lf5wriel00.png"></p>
+<blockquote>
+<p>duplicated和drop_duplicates默认保留的是第一个出现的值组合。传入keep = ‘last’则保留最后一个：</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/keep.2rj4cx6cvzi0.png"> </p>
+<h2 id="利用函数或映射进行数据转换："><a href="#利用函数或映射进行数据转换：" class="headerlink" title="利用函数或映射进行数据转换："></a>利用函数或映射进行数据转换：</h2><p>根据数组、Series、DataFrame 列中的值来实现转换工作。<br>    例：肉类相关数据<br>    <img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E8%82%89%E7%B1%BB%E7%9B%B8%E5%85%B3%E6%95%B0%E6%8D%AE.1ttcsgye6lnk.png"></p>
+<p>如果想添加一个列表时该肉类食物来源的动物类型，我们先编写一个不同肉类到动物的映射：<br>例如：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E8%82%89%E7%B1%BB%E5%88%B0%E5%8A%A8%E7%89%A9%E7%9A%84%E6%98%A0%E5%B0%84.29xwd71442m8.png"> </p>
+<blockquote>
+<p>Series的map方法可以接受一个函数或含有映射关系的字典对象，但是我这里有一个小问题，  </p>
+</blockquote>
+<blockquote>
+<p>即有些肉类的首字母大写了，而另一些则没有。因此我们还需要使用Series的Str.lower方法，  </p>
+</blockquote>
+<blockquote>
+<p>将各个值转化为小写。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/Series%E7%9A%84map%E6%96%B9%E6%B3%95.2f4oo4q19xjw.png">  </p>
+<blockquote>
+<p>同时我们也可以传入一个能够完成全部这些工作的函数：</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/%E4%BC%A0%E5%85%A5%E5%87%BD%E6%95%B0.7kecamua6mg0.png"></p>
+<blockquote>
+<p>使用map是一种实现元素级转换以及其他数据清理工作的方便快捷的方式。</p>
+</blockquote>
+<blockquote>
+<p>map（） 、apply（） 、applymap（）区别：  </p>
+</blockquote>
+<blockquote>
+<p>map()是Series对象的一个函数，DataFrame中没有map()，map()的功能是将一个自定义函数作用于Series对象的每个元素。  </p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/map.1110s2g8s0uo.png"> </p>
+<blockquote>
+<p>applymap()函数的功能是将自定义函数作用于DataFrame的所有元素</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/applymap.1f88vt6a4so0.png">  </p>
+<h2 id="替换值"><a href="#替换值" class="headerlink" title="替换值"></a>替换值</h2><p>利用fillna方法填充缺失数据可以看做值替换的一种特殊情况。前面已经看到，map可用于修改对象的数据子集，</p>
+<blockquote>
+<p>而replace则提供了一种实现该功能的更简单、更灵活方式。<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.1ahlwt2yb62o.png"></p>
+</blockquote>
+<p>-999这个值可能是一个表示缺失数据的标记值。我们将其替换为pandas能够理解的NA值<br>**<em>我们可以利用palace 来产生一个新的Series(除非传入inplace = True)**</em></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.1vztx4ervy9s.png"></p>
+<p>如果你希望一次性替换多个值，可以传入一个由代替换值组成的列表以及一个替换值</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.4hmjrzcp8160.png">  </p>
+<p>要让每个值有不同的替换值，可以传递一个替换列表：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.769dpwnrdh40.png">  </p>
+<blockquote>
+<p>data.replace方法与data.str.replace不同，后者做的是字符串的元素替换，我们会在后面学习Series的字符串方法。</p>
+</blockquote>
+<h2 id="重命名轴坐标："><a href="#重命名轴坐标：" class="headerlink" title="重命名轴坐标："></a>重命名轴坐标：</h2><p>跟Series中的值一样，轴标签也可以通过函数或映射进行转换，从而得到一个新的不同标签的对象。轴还可以被就地修改，而无需新建一个数据结构。<br>例如：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.5imdg1j7mkc0.png"><br>跟Series一样，轴索引也有一个map方法：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.5zm4oxi6kqk0.png">  </p>
+<blockquote>
+<p>data.index.map(transform)将会生产一个新的index索引对象，可以将其赋值给data 的index值，从而修改dataframe的索引  </p>
+</blockquote>
+<p>如果想创建数据集的转换版（而不是修改原始数据），比较适用的方法是rename  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.gfs8vvlszts.png"></p>
+<blockquote>
+<p>特别说明，raname可以结合字典对象实现对部分轴标签的更新</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.66mhroyjlq40.png">  </p>
+<p>rename可以实现赋值DataFrame并对其索引和列标签进行赋值，如果希望就地修改某个数据集，传入inplace=True<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.16p1en1n9rts.png"></p>
+<h1 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h1><p>Python能够成为流⾏的数据处理语⾔，部分原因是其简单易⽤的 字符串和⽂本处理功能。⼤部分⽂本运算都直接做成了字符串对 象的内置⽅法。对于更为复杂的模式匹配和⽂本操作，则可能需 要⽤到正则表达式。pandas对此进⾏了加强，它使你能够对整 组数据应⽤字符串表达式和正则表达式，⽽且能处理烦⼈的缺失 数据。  </p>
+<p>字符串对象⽅法：<br>见 <a target="_blank" rel="noopener" href="http://jiacaijun.cn/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/#more">Python基础——(一)</a>   </p>
+<p>正则表达式： 见 <a target="_blank" rel="noopener" href="http://jiacaijun.cn/2020/01/02/2021523pyhton%E5%9F%BA%E7%A1%80-2/#more">Python基础——(二)</a>    </p>
+<h2 id="Pandas的矢量化字符串函数"><a href="#Pandas的矢量化字符串函数" class="headerlink" title="Pandas的矢量化字符串函数:"></a>Pandas的矢量化字符串函数:</h2><pre><code>清理待分析的散乱数据时，常常需要做⼀些字符串规整化⼯作。 更为复杂的情况是，含有字符串的列有时还含有缺失数据。</code></pre>
+<blockquote>
+<p>通过data.map，所有字符串和正则表达式⽅法都能被应⽤于（传 ⼊lambda表达式或其他函数）各个值，但是如果存在NA（null） 就会报错。  </p>
+</blockquote>
+<p>为了解决这个问题，Series有⼀些能够跳过NA值的⾯ 向数组⽅法，进⾏字符串操作。通过Series的str属性即可访问这些⽅法。例如，我们可以通过str.contains检查各个电⼦邮件地址是否含有”gmail”：<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.2ctab0fw6j40.png"></p>
+<p>此类方法即可忽略Na值，防止影响计算</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/xxx.rfbbn4c1zwg.png"></p>
 
       
 
@@ -324,7 +521,7 @@ plt.show()</code></pre>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tensorflow2</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
@@ -336,7 +533,7 @@ plt.show()</code></pre>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/模型搭建//" class="article-tag-list-link color5">模型搭建</a>
+        			<a href="/categories/数据预处理//" class="article-tag-list-link color1">数据预处理</a>
         		</li>
       		
 		</ul>
@@ -391,7 +588,7 @@ plt.show()</code></pre>
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2021/02/08/2021528tensorflow2-2/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/03/01/21523Pandas-2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -405,9 +602,18 @@ plt.show()</code></pre>
   
 <nav id="article-nav">
   
+    <a href="/2020/03/15/21523Pandas-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Pandas——(三) 层次化索引
+        
+      </div>
+    </a>
   
-    <a href="/2021/01/23/2021528tensorflow2-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">tensorflow2——(一) 基础语法</div>
+  
+    <a href="/2020/02/23/21523Pandas-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pandas——(一)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -434,7 +640,7 @@ plt.show()</code></pre>
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">自定义训练模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%82%E6%95%B0%E3%80%81%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%E3%80%81%E8%AF%84%E4%BC%B0%E6%A0%87%E5%87%86"><span class="toc-number">1.1.</span> <span class="toc-text">初始化参数、优化算法、评估标准</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83"><span class="toc-number">1.2.</span> <span class="toc-text">训练 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">自定义损失函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89MSE%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">自定义MSE损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E6%9D%83%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.1.</span> <span class="toc-text">加权交叉熵损失函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AE%AD%E7%BB%83"><span class="toc-number">3.</span> <span class="toc-text">参数训练</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E8%B7%9F%E8%B8%AA%E5%99%A8"><span class="toc-number">3.1.</span> <span class="toc-text">梯度跟踪器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tape"><span class="toc-number">3.2.</span> <span class="toc-text">tape</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text">优化器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Variable"><span class="toc-number">3.4.</span> <span class="toc-text">Variable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E5%AF%BC"><span class="toc-number">3.5.</span> <span class="toc-text">求导</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%82%E5%92%8C%E7%BD%91%E7%BB%9C"><span class="toc-number">4.</span> <span class="toc-text">自定义层和网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C"><span class="toc-number">4.1.</span> <span class="toc-text">自定义网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sequential%E6%9E%84%E5%BB%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">4.2.</span> <span class="toc-text">Sequential构建网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">4.2.1.</span> <span class="toc-text">创建网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E7%BD%91%E7%BB%9C"><span class="toc-number">4.2.2.</span> <span class="toc-text">初始化网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E7%BD%91%E7%BB%9C-%E5%B9%B6%E8%BF%94%E5%9B%9E%E8%AE%AD%E7%BB%83%E6%8C%87%E6%A0%87%E5%92%8Closs%E7%9A%84%E8%AE%B0%E5%BD%95"><span class="toc-number">4.2.3.</span> <span class="toc-text">训练网络,并返回训练指标和loss的记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96-history"><span class="toc-number">4.2.4.</span> <span class="toc-text">可视化 history</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B"><span class="toc-number">4.2.5.</span> <span class="toc-text">模型预测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%82"><span class="toc-number">4.3.</span> <span class="toc-text">自定义层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%8F%82%E6%95%B0%E7%9A%84%E5%B1%82"><span class="toc-number">4.3.1.</span> <span class="toc-text">无参数的层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%A6%E4%B8%80%E7%A7%8D%E5%86%99%E5%8F%91"><span class="toc-number">4.3.1.1.</span> <span class="toc-text">另一种写发</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E4%B8%8E%E5%AD%A6%E4%B9%A0%E7%8E%87"><span class="toc-number">5.</span> <span class="toc-text">动量与学习率</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.1.</span> <span class="toc-text">动量的设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E5%8A%A8%E6%80%81%E8%B0%83%E6%95%B4"><span class="toc-number">5.2.</span> <span class="toc-text">学习率的动态调整</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"><span class="toc-number">6.</span> <span class="toc-text">交叉验证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E9%9B%86"><span class="toc-number">6.1.</span> <span class="toc-text">验证集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0"><span class="toc-number">6.2.</span> <span class="toc-text">快速实现</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E6%83%A9%E7%BD%9A%E9%A1%B9"><span class="toc-number">7.</span> <span class="toc-text">正则惩罚项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%BF%9D%E5%AD%98%E4%B8%8E%E5%8A%A0%E8%BD%BD"><span class="toc-number">8.</span> <span class="toc-text">模型的保存与加载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#save-load-weights"><span class="toc-number">8.1.</span> <span class="toc-text">save&#x2F;load weights</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-number">8.1.1.</span> <span class="toc-text">测试代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#save-load-entire-model"><span class="toc-number">8.2.</span> <span class="toc-text">save&#x2F;load entire model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#saved-model"><span class="toc-number">8.3.</span> <span class="toc-text">saved_model</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text">索引对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Index%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">Index的方法和属性：  </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%A6%E6%9C%89%E9%87%8D%E5%A4%8D%E6%A0%87%E7%AD%BE%E7%9A%84%E8%BD%B4%E7%B4%A2%E5%BC%95"><span class="toc-number">1.2.</span> <span class="toc-text">带有重复标签的轴索引</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pandas%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97"><span class="toc-number">2.</span> <span class="toc-text">Pandas数据运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%81%B5%E6%B4%BB%E7%9A%84%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">灵活的运算函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%81%B5%E6%B4%BB%E7%9A%84%E7%AE%97%E6%9C%AF%E2%BD%85%E6%B3%95"><span class="toc-number">2.1.1.</span> <span class="toc-text">常用的灵活的算术⽅法:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame%E5%92%8CSeries%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-number">2.2.</span> <span class="toc-text">DataFrame和Series之间的运算</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BA%94%E7%94%A8%E5%92%8C%E6%98%A0%E5%B0%84"><span class="toc-number">3.</span> <span class="toc-text">函数应用和映射</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E7%BA%A7%E5%87%BD%E6%95%B0%E5%BA%94%E7%94%A8"><span class="toc-number">3.1.</span> <span class="toc-text">元素级函数应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%BA%A7%E5%87%BD%E6%95%B0-%E5%BA%94%E7%94%A8%E8%A1%8C%E5%88%97"><span class="toc-number">3.2.</span> <span class="toc-text">数组级函数(应用行列)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B1%87%E6%80%BB%E5%92%8C%E8%AE%A1%E7%AE%97%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1"><span class="toc-number">4.</span> <span class="toc-text">汇总和计算描述统计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E7%BA%A6%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="toc-number">4.1.</span> <span class="toc-text">简约函数参数：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%E5%92%8C%E6%B1%87%E6%80%BB%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">4.2.</span> <span class="toc-text">描述和汇总统计函数：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E4%B8%8E%E5%8D%8F%E6%96%B9%E5%B7%AE"><span class="toc-number">4.3.</span> <span class="toc-text">相关系数与协方差</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%94%AF%E4%B8%80%E5%80%BC%E3%80%81%E5%80%BC%E8%AE%A1%E6%95%B0%E4%BB%A5%E5%8F%8A%E6%88%90%E5%91%98%E8%B5%84%E6%A0%BC"><span class="toc-number">4.4.</span> <span class="toc-text">唯一值、值计数以及成员资格</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%92%8C%E5%87%86%E5%A4%87"><span class="toc-number">5.</span> <span class="toc-text">数据清洗和准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E7%BC%BA%E5%A4%B1%E6%95%B0%E6%8D%AE%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">处理缺失数据：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E5%A4%B1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">5.1.1.</span> <span class="toc-text">缺失数据处理的函数：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E7%BC%BA%E5%A4%B1%E6%95%B0%E6%8D%AE%EF%BC%9A"><span class="toc-number">5.2.</span> <span class="toc-text">过滤缺失数据：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A1%AB%E5%85%85%E7%BC%BA%E5%A4%B1%E6%95%B0%E6%8D%AE%EF%BC%9A"><span class="toc-number">5.3.</span> <span class="toc-text">填充缺失数据：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fillna%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="toc-number">5.3.1.</span> <span class="toc-text">fillna函数参数：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.4.</span> <span class="toc-text">数据转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE"><span class="toc-number">5.4.1.</span> <span class="toc-text">移除重复数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%87%BD%E6%95%B0%E6%88%96%E6%98%A0%E5%B0%84%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2%EF%BC%9A"><span class="toc-number">5.5.</span> <span class="toc-text">利用函数或映射进行数据转换：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2%E5%80%BC"><span class="toc-number">5.6.</span> <span class="toc-text">替换值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D%E8%BD%B4%E5%9D%90%E6%A0%87%EF%BC%9A"><span class="toc-number">5.7.</span> <span class="toc-text">重命名轴坐标：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C"><span class="toc-number">6.</span> <span class="toc-text">字符串操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pandas%E7%9A%84%E7%9F%A2%E9%87%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.</span> <span class="toc-text">Pandas的矢量化字符串函数:</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -576,6 +782,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tensorflow2</a>
               </li>
              
@@ -597,10 +807,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>

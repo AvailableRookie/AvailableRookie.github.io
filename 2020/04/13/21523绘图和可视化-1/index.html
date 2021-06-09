@@ -6,20 +6,54 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python基础——(一) | JCJunBlog</title>
+  <title>绘图与可视化——(一) matplotlib | JCJunBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##  Python基础——(二)语言类型python 为解释型语言区别与java，python的翻译器没翻译一次就交给cpu执行一次而java则是编译语言，先由编译器将所有的代码编译成操作系统可以运行的可执行文件。    其缺点是：：每次运行的时候都要解释一遍，在性能上不如编译型语言。  python的优缺点">
+  <meta name="description" content="matplotlib 概述信息可视化（也叫绘图）是数据分析中最重要的⼯作之⼀。它可 能是探索过程的⼀部分，例如，帮助我们找出异常值、必要的数 据转换、得出有关模型的idea等。另外，做⼀个可交互的数据可 视化也许是⼯作的最终⽬标。Python有许多库进⾏静态或动态的 数据可视化。   更多内容关注  matplotlib官方文档功能matplotlib⽀持各种操作系统上许 多不同的GUI后端，⽽且">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python基础——(一)">
-<meta property="og:url" content="http://yoursite.com/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/index.html">
+<meta property="og:title" content="绘图与可视化——(一) matplotlib">
+<meta property="og:url" content="http://yoursite.com/2020/04/13/21523%E7%BB%98%E5%9B%BE%E5%92%8C%E5%8F%AF%E8%A7%86%E5%8C%96-1/index.html">
 <meta property="og:site_name" content="JCJunBlog">
-<meta property="og:description" content="##  Python基础——(二)语言类型python 为解释型语言区别与java，python的翻译器没翻译一次就交给cpu执行一次而java则是编译语言，先由编译器将所有的代码编译成操作系统可以运行的可执行文件。    其缺点是：：每次运行的时候都要解释一遍，在性能上不如编译型语言。  python的优缺点">
+<meta property="og:description" content="matplotlib 概述信息可视化（也叫绘图）是数据分析中最重要的⼯作之⼀。它可 能是探索过程的⼀部分，例如，帮助我们找出异常值、必要的数 据转换、得出有关模型的idea等。另外，做⼀个可交互的数据可 视化也许是⼯作的最终⽬标。Python有许多库进⾏静态或动态的 数据可视化。   更多内容关注  matplotlib官方文档功能matplotlib⽀持各种操作系统上许 多不同的GUI后端，⽽且">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-22T23:53:17.000Z">
-<meta property="article:modified_time" content="2021-05-28T14:04:19.002Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3d90urrbwwe0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1kai4pzg74bk.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.rq58ocd384w.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1axr8qvq1l8g.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4k1zh38ho940.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5don967fymk0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.28dh91kkl4w0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2p5nk0fcc5q0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5n0wf3ml3ic0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5k2ybfv82ec0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7chhgsil1e80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3zm2ct8jawm0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7jhbodsnjls.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.pm16nd7t3io.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2y220u22g6i0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4rulvqhli3y0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4rulvqhli3y0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3m1dzlznxua0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.26imeamt7qqo.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2g6w0kbevphc.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7gcm4swj2c40.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ng58t29m680.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.36ws8arltyk0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.106w3m23tlz4.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ca7rfxz0v80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2hhuu82d54o0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1bew0rugmdnk.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.khphy37wwps.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5xjow9nf69c0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.ccvjqp7yob4.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.fxv3zmbzl8o.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6wpcsjj8kb.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1jon7g2az334.png">
+<meta property="article:published_time" content="2020-04-12T23:53:17.000Z">
+<meta property="article:modified_time" content="2021-05-28T14:06:00.420Z">
 <meta property="article:author" content="Jia Caijun">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3d90urrbwwe0.png">
   
     <link rel="alternative" href="/atom.xml" title="JCJunBlog" type="application/atom+xml">
   
@@ -146,14 +180,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-2021523python基础-1" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-21523绘图和可视化-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Python基础——(一)
+      绘图与可视化——(一) matplotlib
     </h1>
   
 
@@ -161,8 +195,8 @@
           |阅读量(<span id="busuanzi_value_page_pv"></span>)
         </span>
         
-        <a href="/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/" class="archive-article-date">
-  	<time datetime="2019-12-22T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
+        <a href="/2020/04/13/21523%E7%BB%98%E5%9B%BE%E5%92%8C%E5%8F%AF%E8%A7%86%E5%8C%96-1/" class="archive-article-date">
+  	<time datetime="2020-04-12T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
 </a>
         
       </header>
@@ -170,300 +204,111 @@
     <div class="article-entry" itemprop="articleBody">
 
       
-        <h2 id="Python基础——-二"><a href="#Python基础——-二" class="headerlink" title="##  Python基础——(二)"></a>##  <a target="_blank" rel="noopener" href="http://jiacaijun.cn/2020/01/02/2021523pyhton%E5%9F%BA%E7%A1%80-2/#more">Python基础——(二)</a></h2><h1 id="语言类型"><a href="#语言类型" class="headerlink" title="语言类型"></a>语言类型</h1><h2 id="python-为解释型语言"><a href="#python-为解释型语言" class="headerlink" title="python 为解释型语言"></a>python 为解释型语言</h2><p>区别与java，python的翻译器没翻译一次就交给cpu执行一次而java则是编译语言，先由编译器将所有的代码编译成操作系统可以运行的可执行文件。  </p>
+        <h1 id="matplotlib-概述"><a href="#matplotlib-概述" class="headerlink" title="matplotlib 概述"></a>matplotlib 概述</h1><p>信息可视化（也叫绘图）是数据分析中最重要的⼯作之⼀。它可 能是探索过程的⼀部分，例如，帮助我们找出异常值、必要的数 据转换、得出有关模型的idea等。另外，做⼀个可交互的数据可 视化也许是⼯作的最终⽬标。Python有许多库进⾏静态或动态的 数据可视化。  </p>
+<p>更多内容关注 </p>
+<h3 id="matplotlib官方文档"><a href="#matplotlib官方文档" class="headerlink" title="matplotlib官方文档"></a><a target="_blank" rel="noopener" href="http://matplotlib.org/">matplotlib官方文档</a></h3><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>matplotlib⽀持各种操作系统上许 多不同的GUI后端，⽽且还能将图⽚导出为各种常⻅的⽮量 （vector）和光栅（raster）图：PDF、SVG、JPG、PNG、 BMP、GIF等。 </p>
+<h2 id="使用推荐"><a href="#使用推荐" class="headerlink" title="使用推荐 "></a>使用推荐 <a id="more"></a></h2><p>Matplotlib的文档和示例同时使用OO和pyplot方法（功能同样强大），您应该随意使用两者（但是，最好选择其中一种并坚持使用，而不是混合使用）。通常，我们建议将pyplot限制为交互式绘图（例如，在Jupyter笔记本中），并建议使用OO样式进行非交互式绘图（在打算作为较大项目的一部分重复使用的函数和脚本中） 。  </p>
+<h3 id="显示中文"><a href="#显示中文" class="headerlink" title="显示中文"></a>显示中文</h3><pre><code>    notebook图示中显示中文
+    plt.rcParams[&#39;font.sans-serif&#39;] = [u&#39;SimHei&#39;]
+    plt.rcParams[&#39;axes.unicode_minus&#39;] = False</code></pre>
+<h3 id="调整图片大小"><a href="#调整图片大小" class="headerlink" title="调整图片大小"></a>调整图片大小</h3><pre><code>    plt.figure(figsize=(15, 10))
+    sns.heatmap(corr, annot=True)   # 代码
+    plt.show()
+    ）</code></pre>
+<h3 id="保存图片"><a href="#保存图片" class="headerlink" title="保存图片"></a>保存图片</h3><pre><code>    matplotlib：
+    plt.hist(data[&#39;Price&#39;])
+    plt.savefig(&#39;hist.png&#39;) #路径+文件名
+    seaborn：
+    sns_hist = sns.distplot(data[&#39;Price&#39;])
+    fig = sns_hist.get_figure()
+    fig.savefig(&#39;hist.png&#39;) #路径+文件名  </code></pre>
+<h3 id="交互式"><a href="#交互式" class="headerlink" title="交互式"></a>交互式</h3><p>在Jupyter中运⾏%matplotlib notebook（或在IPython中运 ⾏%matplotlib），再通过plot回值图行的时候可以形参动态交互，就可以创建⼀个简单的图形。  </p>
+<h1 id="Figure和Subplot"><a href="#Figure和Subplot" class="headerlink" title="Figure和Subplot"></a>Figure和Subplot</h1><p>matplotlib的图像都位于Figure对象中。你可以⽤plt.figure创建⼀个新的Figure：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3d90urrbwwe0.png"></p>
+<pre><code>    注意：如果⽤的是IPython，这时会弹出⼀个空窗⼝，但在Jupyter中， 必须再输⼊更多命令才能看到。plt.figure有⼀些选项，特别是 figsize，它⽤于确保当图⽚保存到磁盘时具有⼀定的⼤⼩和纵横 ⽐。 </code></pre>
+<p>不能通过空Figure绘图。必须⽤add_subplot创建⼀个或多个 subplot才⾏：<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1kai4pzg74bk.png"><br>图像应该是2×2的（即最多4张图），且当前 选中的是4个subplot中的第⼀个（编号从1开始）。如果再把后 ⾯两个subplot也创建出来，最终得到的图像如图所示： </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.rq58ocd384w.png">  </p>
 <blockquote>
-<p>其缺点是：：每次运行的时候都要解释一遍，在性能上不如编译型语言。</p>
+<p>带有三个subplot的Figure</p>
 </blockquote>
-<h1 id="python的优缺点"><a href="#python的优缺点" class="headerlink" title="python的优缺点 "></a>python的优缺点 <a id="more"></a></h1><h2 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h2><ol>
-<li>Python的定位是“优雅”, “明确”，“简单”，所以Python程序看上去总是简单易懂，初学者学Python，不但入门容易，而且将来深入下去，可以编写那些非常复杂的程序。</li>
-<li>开发效率非常高，Python有非常强大的第三方库，基本上在计算机上实现的任何功能，Python官方库里都有相应的模块进行支持，直接下载调用后，在基础库的基础上在进行开发，大大降低开发周期，避免重复造轮子。</li>
-<li>高级语言——当你用Python语言编写程序的时候，你无需考虑像如何管理程序使用的内存一类的底层细节。</li>
-<li>可移植性——由于它的开源本质，Python已经被移植在许多平台上。如果在编程时小心的避免使用依赖于系统的特性，那么所有Python程序无需修改就几乎可以在市场上多有的系统平台上运行。</li>
-<li>可扩展性——如果你需要一段关键代码运行得更快或者希望某些算法不公开，可以把部分程序用C或者C++编写，然后在Python程序中使用它们。</li>
-<li>可嵌入性——可以把Python嵌入C/C++程序，从而向你的程序用户提供脚本功能。 </li>
-</ol>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点:"></a>缺点:</h2><ol>
-<li>速度慢，Python的运行速度相比C语言确实慢很多，跟Java比也要慢一些，因此这也是很多所谓的大牛不屑于使用Python的主要原因，但其实这里所指的运行速度慢在大部分情况下用户是无法直接感知到的，必须借助测试工具才能体现出来。</li>
-<li>代码不能加密，因为Python是解释型语言，它的源码都是以明文形式存放的，不过这也不算是一个缺点，因为如果项目要就源码加密，那么在最开始就不该用Python语言。 3. 线程不能利用多CPU问题，这是Python被人诟病最多的一个缺点。GIL即全局解释器锁，是计算机程序设计语言解释器用于同步线程的工具，使得任何时刻仅有一个线程在执行，Python的线程是操作系统的原生线程。在Linux上为pthread，在Window上为Win thread，完全由操作系统调度线程的执行。一个Python解释器进程内有一条主线程，以及多条用户程序的执行线程。即使在多核CPU平台上，由于GIL的存在，所以禁止多线程的并行执行那个。</li>
-</ol>
-<h1 id="python数据类型"><a href="#python数据类型" class="headerlink" title="python数据类型"></a>python数据类型</h1><blockquote>
-<p>弱类型，其原因其实就是py拥有每个类型的常量池，像java中string类，其每个变量的赋值都是在常量池中赋值，并把常量池的地址给变量名（引用），而带来的就是变量就成了一个只放地址的“指针”了，而这个变量即可获得所有类型</p>
-</blockquote>
-<h2 id="数据类型分为：可变数据类型和不可变数据类型"><a href="#数据类型分为：可变数据类型和不可变数据类型" class="headerlink" title="数据类型分为：可变数据类型和不可变数据类型"></a>数据类型分为：可变数据类型和不可变数据类型</h2><p><strong>不可变数据类型</strong>：当该数据类型对应变量的值发生改变时，那么它对应内存地址也会发生改变，这种数据类型就被称为不可变数据类型<br>            也就是说，变量类型是动态的，其实是b变量引用的类型可以改变。<br>            Number(数字类型)包括：int  float  bool布尔  复数（complex）<br>            字符串类型（String）<br>            元组（Tuple）  </p>
-<p><strong>可变数据类型</strong>：当该数据类型对应的变量的值发生改变，但它对应的地址值不会发生改变，这种数据类型叫做可变数据类型<br>            也就是说，变量的数据类型是静态的，就是变量的取值仅有一种类型。<br>            List（列表）[2,4,s,a]<br>            Dictionary（字典）K:V映射集合<br>            Set（集合）   </p>
+<h1 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h1><h2 id="画图方式一"><a href="#画图方式一" class="headerlink" title="画图方式一"></a>画图方式一</h2><pre><code>自己创建一个空的figure对象并自己添加subplot（子页），然后通过返回的subolot对象，调用相对于应的方法画图</code></pre>
+<p>使⽤Jupyter notebook有⼀点不同，即每个⼩窗重新执 ⾏后，图形会被重置。因此，对于复杂的图形，，你必须将 所有的绘图命令存在⼀个⼩窗⾥，这⾥，我们运⾏同⼀个⼩窗⾥的所有命令：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1axr8qvq1l8g.png"><br>如果这时执⾏⼀条绘图命令（如plt.plot([1.5, 3.5, -2, 1.6])）， matplotlib就会在最后⼀个⽤过的subplot（如果没有则创建⼀ 个）上进⾏绘制，隐藏创建figure和subplot的过程。  </p>
+<p>因此，如果 我们执⾏下列命令，你就会得到如图所示的结果： </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4k1zh38ho940.png">    </p>
+<p>“k–”是⼀个线型选项，⽤于告诉matplotlib绘制⿊⾊虚线图。上⾯ 那些由fig.add_subplot所返回的对象是AxesSubplot对象，直接 调⽤它们的实例⽅法就可以在其它空着的格⼦⾥⾯画图了：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5don967fymk0.png">  </p>
+<h2 id="画图方式二"><a href="#画图方式二" class="headerlink" title="画图方式二"></a>画图方式二</h2><p>通过pyplo自动创建和管理时间轴，直接调用如果最近时间有用过subplot则会优先在最近一次使用的上面画图，如果没有则会自动创建一个后直接画图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.28dh91kkl4w0.png"></p>
+<h2 id="画图方式三"><a href="#画图方式三" class="headerlink" title="画图方式三"></a>画图方式三</h2><p>通过创建subplot数组管理subpolt对象（创建一个subpolt数组的同时会返回一个figure对象）。   </p>
+<pre><code>创建包含subplot⽹格的figure是⼀个⾮常常⻅的任务，matplotlib 有⼀个更为⽅便的⽅法plt.subplots，它可以创建⼀个新的 Figure，并返回⼀个含有已创建的subplot对象的NumPy数组： </code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2p5nk0fcc5q0.png"></p>
 <blockquote>
-<p>总结：不可变数据类型变量更改后地址发生改变。<br>不可变数据类型变量更改后地址不发生改变。   </p>
+<p>返回一个图行 fig<br>返回一个队形数组  axes</p>
 </blockquote>
-<h1 id="python-在语法上"><a href="#python-在语法上" class="headerlink" title="python 在语法上"></a>python 在语法上</h1><pre><code>    注重缩进，没有花括号，而判断子夫句的依据则是缩进方式
-    注重换行，python没有;而是用换行判断一句语句的结束</code></pre>
-<h2 id="输出语句：print-s-s-s-sep-’’-end-’-n’"><a href="#输出语句：print-s-s-s-sep-’’-end-’-n’" class="headerlink" title="输出语句：print(s+s+s,sep=’’,end=’\n’)"></a>输出语句：print(s+s+s,sep=’’,end=’\n’)</h2><blockquote>
-<p>注意:<br>            “+”只能连接字符串<br>            如果要打印其他类型组合的话可以用格式化输出”%d””%f””%s”<br>            或者format格式化<br>            {}s{}，format(值，值)</p>
-</blockquote>
-<h2 id="输入语句：input-‘同时输出一句话’"><a href="#输入语句：input-‘同时输出一句话’" class="headerlink" title="输入语句：input(‘同时输出一句话’)"></a>输入语句：input(‘同时输出一句话’)</h2><blockquote>
-<p>注意：<br>            接收的input为字符串类型，在接收非字符串类型的时候需要强转<br>            int()<br>            string()<br>            double()</p>
-</blockquote>
-<h2 id="赋值运算："><a href="#赋值运算：" class="headerlink" title="赋值运算："></a>赋值运算：</h2><p>由于其独特的变量储存方式造成其赋值的本质与java不同<br>            其赋值就是地址的赋值</p>
-<h2 id="逻辑运算符："><a href="#逻辑运算符：" class="headerlink" title="逻辑运算符："></a>逻辑运算符：</h2><p>and逻辑与   or逻辑或   not逻辑非</p>
-<h2 id="三目运算符："><a href="#三目运算符：" class="headerlink" title="三目运算符："></a>三目运算符：</h2><p>结果  if   表达式  else  结果<br>真              假</p>
-<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><pre><code>    if 表达式:
-        成立
-    else:
-        不成立
-
-    if 表达式:
-        成立
-    elif 表达式:
-        成立
-    elif 表达式:
-        成立
-    else:
-        不成立：</code></pre>
-<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><pre><code>    for i in 集合range(1,2)左闭右开:
-        语句
-        break
-    else
-        pass</code></pre>
+<pre><code>    这是⾮常实⽤的，因为可以轻松地对axes数组进⾏索引，就好像 是⼀个⼆维数组⼀样，例如axes[0,1]。你还可以通过sharex和 sharey指定subplot应该具有相同的X轴或Y轴。</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5n0wf3ml3ic0.png"></p>
+<h2 id="调整subplot周围的间距"><a href="#调整subplot周围的间距" class="headerlink" title="调整subplot周围的间距"></a>调整subplot周围的间距</h2><p>间距跟图像的⾼度和宽度有关，因 此，如果你调整了图像⼤⼩（不管是编程还是⼿⼯），间距也会 ⾃动调整。利⽤Figure的subplots_adjust⽅法可以轻⽽易举地修 改间距，此外，它也是个顶级函数：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5k2ybfv82ec0.png">  </p>
+<pre><code>    wspace和hspace⽤于控制宽度和⾼度的百分⽐，可以⽤作 subplot之间的间距。  </code></pre>
+<p>其中我将间距收缩到了0<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7chhgsil1e80.png"></p>
 <blockquote>
-<p>注意：该for语句与其他语言不同，其判断循环的次数是集合的个数，其i的值是集合里的数值<br>                此处的else代表在for语句循环完以后再执行，而会被break跳出的语句，即for与else为一个语句。<br>                而且，个for语句都只会执行一遍in后面的列表，也就是以后的每次循环都会遵循一开始列表的值<br>                不管在循环过程中该列表变不变。（从而会出现删除列表元素不彻底的情况）</p>
+<p>不难看出，其中的轴标签重叠了。matplotlib不会检查标签是否 重叠，所以对于这种情况，你只能⾃⼰设定刻度位置和刻度标 签。</p>
 </blockquote>
-<h2 id="随机数的产生"><a href="#随机数的产生" class="headerlink" title="随机数的产生"></a>随机数的产生</h2><pre><code>    import random
-    random.randint(1,50)    取1-50的数
-    random.random() 小数
-    random.randrange()   左闭右开  底层为range()
-    random.choice(list)  从列表中随机选择
-    random.shuffle(list)  打乱列表顺序</code></pre>
-<p>函数range        从0开始取数：  </p>
-<pre><code>range(1，4)   一到三
-range(1,10,2)  取1，3，5，7，9：
-range(4)   取  0，1，2，3</code></pre>
-<h1 id="python字符串"><a href="#python字符串" class="headerlink" title="python字符串"></a>python字符串</h1><p>  类型转换为字符串：  str()</p>
-<p>  <strong>注意：</strong>  </p>
-<pre><code>        for i in &#39;s&#39;:
-            print(i)</code></pre>
+<h2 id="颜⾊、标记和线型"><a href="#颜⾊、标记和线型" class="headerlink" title="颜⾊、标记和线型"></a>颜⾊、标记和线型</h2><p>matplotlib的plot函数接受⼀组X和Y坐标，还可以接受⼀个表示颜 ⾊和线型的字符串缩写。  </p>
+<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>要根据x和y绘制绿⾊虚线，你可 以执⾏如下代码：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3zm2ct8jawm0.png">  </p>
+<h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><p>这种在⼀个字符串中指定颜⾊和线型的⽅式⾮常⽅便。在实际 中，如果你是⽤代码绘图，你可能不想通过处理字符串来获得想 要的格式。通过下⾯这种更为明确的⽅式也能得到同样的效果：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7jhbodsnjls.png">  </p>
+<pre><code>常⽤的颜⾊可以使⽤颜⾊缩写，你也可以指定颜⾊码（例 如，&#39;#CECECE&#39;）。</code></pre>
+<p>线图可以使⽤标记强调数据点。因为matplotlib可以创建连续线 图，在点之间进⾏插值，因此有时可能不太容易看出真实数据点 的位置。标记也可以放到格式字符串中，但标记类型和线型必须 放在颜⾊后</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.pm16nd7t3io.png">   </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2y220u22g6i0.png"><br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4rulvqhli3y0.png"><br>或者写成</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4rulvqhli3y0.png">  </p>
+<p>在线型图中，⾮实际数据点默认是按线性⽅式插值的。可以通过 drawstyle选项修改：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3m1dzlznxua0.png">  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.26imeamt7qqo.png">  </p>
+<h2 id="刻度、标签"><a href="#刻度、标签" class="headerlink" title="刻度、标签"></a>刻度、标签</h2><p>使⽤过程型的 pyplot接⼝（例如，matplotlib.pyplot）以及更为⾯向对象的原⽣ matplotlib API。 </p>
+<pre><code>pyplot接⼝的设计⽬的就是交互式使⽤，含有诸如xlim、xticks和 xticklabels之类的⽅法。它们分别控制图表的范围、刻度位置、 刻度标签等。</code></pre>
+<p>调⽤时不带参数，则返回当前的参数值（例如，plt.xlim()返回 当前的X轴绘图范围）。   </p>
+<p>调⽤时带参数，则设置参数值（例如，plt.xlim([0,10])会将X轴 的范围设置为0到10）。</p>
+<pre><code>所有这些⽅法都是对当前或最近创建的AxesSubplot起作⽤的，它们各⾃对应subplot对象上的两个⽅法，以xlim为例，就是 ax.get_xlim和ax.set_xlim。</code></pre>
+<p>设置标题、轴标签、刻度以及刻度标签 </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2g6w0kbevphc.png"></p>
+<h3 id="刻度"><a href="#刻度" class="headerlink" title="刻度"></a>刻度</h3><pre><code>要改变x轴刻度，最简单的办法是使⽤set_xticks和 set_xticklabels。前者告诉matplotlib要将刻度放在数据范围中的 哪些位置，默认情况下，这些位置也就是刻度标签。</code></pre>
+<p>但我们可以 通过set_xticklabels将任何其他的值⽤作标签： </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.7gcm4swj2c40.png">  </p>
+<pre><code>plt.grid()   添加虚线网格        
+    //单词  grid ：n. 网格；格子，栅格；输电网
+plt.axhline(0, color=&#39;颜色&#39;,linestule=&#39;--&#39;)  </code></pre>
+<p>rotation选项设定x刻度标签倾斜30度。最后，再⽤set_xlabel为X 轴设置⼀个名称，并⽤set_title设置⼀个标题：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ng58t29m680.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.36ws8arltyk0.png"><br>Y轴的修改⽅式与此类似，只需将上述代码中的x替换为y即可。 轴的类有集合⽅法，可以批量设定绘图选项。前⾯的例⼦，也可 以写为：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.106w3m23tlz4.png">  </p>
+<h3 id="添加图例"><a href="#添加图例" class="headerlink" title="添加图例"></a>添加图例</h3><p>图例（legend）是另⼀种⽤于标识图表元素的重要⼯具。添加图 例的⽅式有多种。最简单的是在添加subplot的时候传⼊label参 数：<br>（例：可以参考上面的“绘图和可视化”页上的图片）  </p>
+<pre><code>在此之后，你可以调⽤ax.legend()或plt.legend()来⾃动创建图例 ： </code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ca7rfxz0v80.png"></p>
 <blockquote>
-<p>由于弱类型特征，py中字符串就是字符数组，并且右索引，可以直接看成就是字符数组</p>
+<p>legend⽅法有⼏个其它的loc位置参数选项，loc告诉matplotlib要将图例放在哪。如果你不是吹⽑求疵的 话，”best”是不错的选择</p>
 </blockquote>
-<h2 id="字符串切片"><a href="#字符串切片" class="headerlink" title="字符串切片"></a>字符串切片</h2><pre><code>s[num]获取指定位置的单个字母
-s[1:5]获取范围内的多个字母    ######（左闭右开）
-s[3:]3以后所有
-s[:3]0开始到第2个
-s[-5:-1]从倒数第一个到倒数第五个
-s[::-1]从后往前输出
-s[5:0:-1]第五个到第一个到输
-s[0:5:1]第0个到第四个
-s[0:5:2]从第一个开始，步长为二（每隔2个取一个）  </code></pre>
-<h2 id="字符串相关函数"><a href="#字符串相关函数" class="headerlink" title="字符串相关函数"></a>字符串相关函数</h2><pre><code>字符串：内致函数
-        capitalize()    返回首字母大写
-        title()        返回字个单词首字母大写
-        istiele()    返回布尔是否所有单词首字母都大写
-        upper()        返回全大写
-        lower()        返回全小写
-
-        len(str)    返回字符串长度
-
-    查找相关
-        find(&#39;要查找位置&#39;，&#39;开始位置&#39;，&#39;结束位置&#39;)
-        find(&#39;R&#39;)        返回值-1没有找到，否则返回所找字符串的开始位置  
-        find(&#39;l&#39;,beg，len)    指定位置开始查找
-        rfind()            从右开始找
-        lfind()
-        index()            同find但如果没找到会报异常
-        rindex()
-        replace(&#39;找&#39;,&#39;需要替换的&#39;)    返回一个
-
-
-        encode(&#39;编码形式&#39;) 编码      返回编码字节
-        decode(&#39;解码形式&#39;) 解码  返回解码
-
-        startswith()        判断是否是xxx开头的
-        endswith()        判断是是否xxx结尾的
-        例如(判断扩展名)
-
-        isalpha()        判断是否是字母
-        isdigit()        判断是否是数字
-
-
-        &#39;连接符&#39;.join(&#39;列表&#39;)            连接一个字符
-
-        join()            把指定字符串或者列表作为整体分别插入该字符串的每两个数中间
-        strip()            返回忽略空格的字符串
-        lstrip()        返回忽略左空格的字符串
-        rstrip()        返回忽略右空格的字符串
-
-        split(&#39;分隔符&#39;)            按指定字符分割到列表，并返回该列表
-        split(&#39;分隔符&#39;，2)        每过两个分隔符切割一下
-
-        count(&#39;&#39;)        求字符串中的某个字符串出现的次数  </code></pre>
-<h1 id="python-集合类型"><a href="#python-集合类型" class="headerlink" title="python 集合类型"></a>python 集合类型</h1><h2 id="列表list"><a href="#列表list" class="headerlink" title="列表list"></a>列表list</h2><p><strong>py中列表可以类型混合</strong></p>
-<pre><code>name = [s,s,s,s,s]        下表0，1，2....&amp;&amp;-1,-2-,3....
-
-直接打印：
-    print(name)
-
-遍历:
-    for i in name:
-        print(i)</code></pre>
-<h3 id="枚举遍历"><a href="#枚举遍历" class="headerlink" title="枚举遍历"></a>枚举遍历</h3><pre><code>enumerate(list)     --该函数返回两个值---&gt; index,value  
-
-for index,value in enumerate(list):     
-    print(index,value)</code></pre>
-<h3 id="判断字符串是否在该列表中："><a href="#判断字符串是否在该列表中：" class="headerlink" title="判断字符串是否在该列表中："></a>判断字符串是否在该列表中：</h3><pre><code>    &#39;s&#39;  in  name            </code></pre>
-<h3 id="删除："><a href="#删除：" class="headerlink" title="删除："></a>删除：</h3><pre><code>    del name[i]</code></pre>
 <blockquote>
-<p>注意：每删除一个列表就自动缩短一个，会引起下标改变所以存在陋删问题<br><strong>解决方法：while</strong>  </p>
+<p>要从图例中去除⼀个或多个元素，不传⼊label或传⼊ label=’nolegend’即可。  </p>
 </blockquote>
-<pre><code>i=0；
-while i&lt;l:
-    if &#39;ss&#39; in name:
-        del name[i]
-        l-=1
-        continue
-    i+=1</code></pre>
-<blockquote>
-<p><strong>删除函数：</strong>   </p>
-<p>remove(e)  ：删除指定元素，没有返回值，py默认返回值None如果被删除元素不存在报错。<br>opp()    ：弹栈，没有参数的时候默认弹栈，删除列表中的最后一个元素。并返回删除元素有参数的时候，删除指定的索引元素，并返回删除元素。clear()    ：清除列表</p>
-</blockquote>
-<h3 id="列表切片"><a href="#列表切片" class="headerlink" title="列表切片"></a>列表切片</h3><pre><code>    name[1:2]
-    与字符串切片相似</code></pre>
-<h3 id="列表的增加："><a href="#列表的增加：" class="headerlink" title="列表的增加："></a>列表的增加：</h3><pre><code>    append()  末尾追加
-    extend()    将该字符串拆分合并到指定字符串  或  |将该列表合并到指定列表|
-    insert(1,&#39;内容&#39;)   指定位置插入数据
-
-    列表的嵌套（多维）
-    list[3,4,6,[5,8],8]
-            表示 5 ：
-            list[3][0]</code></pre>
-<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><blockquote>
-<p>反转：reverse()<br>排序：list.sort(reverse = True|False)<br>list_1 = sorted(list)       对所指定的列表进行排序到一个新列表并返回</p>
-</blockquote>
-<h3 id="选择排序法：（直接交换）-list-2-24-2-42-1-25-3"><a href="#选择排序法：（直接交换）-list-2-24-2-42-1-25-3" class="headerlink" title="选择排序法：（直接交换）  list = [2,24,2,42,1,25,3]"></a>选择排序法：（直接交换）  list = [2,24,2,42,1,25,3]</h3><pre><code>list_1 = [1,3,4,2,5,6,6,2]
-for i in range(len(list)):
-    for j in range(i+1,len(list)):
-    if list_1[j]&lt;list_1[i]:
-        list_1[i],list_1[j] = list_1[j],list_1[i]
-print(list_1)</code></pre>
-<h3 id="冒泡排序法："><a href="#冒泡排序法：" class="headerlink" title="冒泡排序法："></a>冒泡排序法：</h3><pre><code>list_2 = [1,25,2,1,5,1,25,2]
-for i in range(len(list_2)-1):
-    for j in range(len(list_2)-1-i):
-    if list_2[j]&gt;list_2[j+1]:
-        list_2[j],list_2[j+1] = list_2[j+1],list_2[j]
-print(list_2)</code></pre>
-<blockquote>
-<p>列表    list()   把能迭代的类型转化成列表类型（整型不能迭代）(for … in  …）语句中也只能放可迭代的</p>
-</blockquote>
-<h2 id="元组tuple"><a href="#元组tuple" class="headerlink" title="元组tuple"></a>元组tuple</h2><blockquote>
-<p>元组里的元素是不可变的   只能实现 查<br>适用于切片查找，sum()求和，len()求长度，max(),min()求最值</p>
-</blockquote>
-<pre><code>list = tuple(list)  可以将元组转化为列表并返回
-tuple.count(2)   查找2元素在元组中出现的个数
-tuple.index(2)     查找2元素在元组中索引值 </code></pre>
-<h3 id="拆包装包（星号分配）（星号分配目标必须在列表或元组中）"><a href="#拆包装包（星号分配）（星号分配目标必须在列表或元组中）" class="headerlink" title="拆包装包（星号分配）（星号分配目标必须在列表或元组中）"></a>拆包装包（星号分配）（星号分配目标必须在列表或元组中）</h3><blockquote>
-<p>装包，系统底层可以实现多个元素赋值给一个*变量，把多个变量包装成一列表储存  </p>
-</blockquote>
-<pre><code>for...in..    可拆包  
-
-
-拆包，*列表可以将列表分为多个变量打印输出
-t1 = (4,7,3)
-*y,a = t1
-print(y)
-print(*y)
-
-    [4, 7]
-    4 7</code></pre>
-<h2 id="字典dict"><a href="#字典dict" class="headerlink" title="字典dict"></a>字典dict</h2><blockquote>
-<p>key：value键值对存在</p>
-</blockquote>
-<pre><code>    dict = &#123;key：value&#125;
-    dict()只能将两两成对元素的列表或元组转换为字典</code></pre>
-<p><strong>in</strong>  可以用于字典操作<br>            用来判断指定key是否在该字典中</p>
-<h3 id="字典的增改"><a href="#字典的增改" class="headerlink" title="字典的增改"></a>字典的增改</h3><pre><code>    dict[key] = value 
-    如果key不存在就把key和value都加入字典
-    如果key已经存在就把value改为新value</code></pre>
-<h3 id="字典的查找（遍历）"><a href="#字典的查找（遍历）" class="headerlink" title="字典的查找（遍历）"></a>字典的查找（遍历）</h3><pre><code>    print(dict[key])  
-    此处注意用简单的key查找的时候如果key不存在则会报错由此有一个内置函数get()它包装处理异常操作。  
-
-    dict.get(key,default)  
-    如果没有key就返回default即自己设置找不到情况下的返回值
-    遍历筛选（key方法）
-
-  例如：
-    dict = &#123;&#39;劳务&#39;:22,&#39;经理&#39;:99&#125;
-    for i in dict:
-        if dict[i] &gt; 60:
-            print(i)</code></pre>
-<blockquote>
-<p>遍历(此方法遍历会出现多空格问题——也就是说，这样遍历虽然有两给变量但是并没有遍历出value，只是将key分解为两个元素输出，如果只用一个变量的话就只能打印输出key的一个符号所以这样遍历只能遍历key)  </p>
-</blockquote>
-<pre><code>        for i,j in dict:
-        print(i,j)
-        劳 务
-        经 理
-        for i in dict:
-        print(i)
-
-        解决办法
-        for i in dict:
-        print(i，dict[i])</code></pre>
-<h3 id="字典函数查找："><a href="#字典函数查找：" class="headerlink" title="字典函数查找："></a>字典函数查找：</h3><pre><code>  items()    values()     keys()    get()↑
-
-    items()  
-    遍历  该函数可以将字典以键值对为单位转化为元组并将其存入列表中——涉及到双**（为遍历提供了方便）
-
-    for key,value in dict.items():
-        print(key) 
-    values()取所以value的值到一个新的列表中  
-    key()取所有key的值到一个新的列表中</code></pre>
-<h3 id="字典的删除"><a href="#字典的删除" class="headerlink" title="字典的删除"></a>字典的删除</h3><pre><code>    del dict[key]   </code></pre>
-<blockquote>
-<p>注意该方法如果没有key的话也会报错</p>
-</blockquote>
-<p><strong>相应的函数为:</strong>  </p>
-<pre><code>    dict.pop(key[,default])   和get()一样
-
-    dict.popitem()    删除字典中最后一个键值对
-
-    dict.clear    清除字典</code></pre>
-<h3 id="字典的常用内置函数"><a href="#字典的常用内置函数" class="headerlink" title="字典的常用内置函数"></a>字典的常用内置函数</h3><pre><code>    dict.update()    
-    两个字典合并，将指定字典与该字典合并  
-
-    dict = dict_1.update(dict_2)
-    dict.fromkeys(列表或元组或集合[,default])    
-    将指定的序列以key的方式储存到一个新字典中并指定统一value，默认为None</code></pre>
-<h2 id="集合set"><a href="#集合set" class="headerlink" title="集合set"></a>集合set</h2><p><strong>不能存在重复元素</strong>  </p>
-<pre><code>    s1 = set()
-    s2 = &#123;2,4,5,1&#125;</code></pre>
-<h3 id="集合的增加"><a href="#集合的增加" class="headerlink" title="集合的增加"></a>集合的增加</h3><pre><code>    add()
-    update(序列)     
-    将指定序列与该集合合并</code></pre>
-<h3 id="集合删除"><a href="#集合删除" class="headerlink" title="集合删除"></a>集合删除</h3><pre><code>    s1.remove()    
-    当没有指定元素时会报错</code></pre>
-<p><strong>相对应的封装函数为</strong>  </p>
-<pre><code>    dicard()
-
-    pop()        
-    随机删除（一般为删除第一个）
-
-    clear()        
-    清楚集合</code></pre>
-<h3 id="集合的差交并"><a href="#集合的差交并" class="headerlink" title="集合的差交并"></a>集合的差交并</h3><blockquote>
-<p>差集就是set_1中和set_2不一样的有什么  </p>
-</blockquote>
-<pre><code>    set = set_1 - set_2
-
-    set=set_1.difference(set_2)</code></pre>
-<blockquote>
-<p>交集就是set_1中和set_2一样的  </p>
-</blockquote>
-<pre><code>    set = set_1 &amp; set_2
-
-    set=set_1.intersection(set_2)</code></pre>
-<blockquote>
-<p>并集就是set_1中和set_2的并集  </p>
-</blockquote>
-<pre><code>    set = set_1 | set_2
-
-    set=set_1.union(set_2)</code></pre>
+<h2 id="注解以及在Subplot上绘图"><a href="#注解以及在Subplot上绘图" class="headerlink" title="注解以及在Subplot上绘图"></a>注解以及在Subplot上绘图</h2><p>除标准的绘图类型，你可能还希望绘制⼀些⼦集的注解，可能是 ⽂本、箭头或其他图形等。注解和⽂字可以通过text、arrow和 annotate函数进⾏添加。text可以将⽂本绘制在图表的指定坐标 (x,y)，还可以加上⼀些⾃定义格式：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2hhuu82d54o0.png">  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1bew0rugmdnk.png">  </p>
+<pre><code>这张图中有⼏个重要的点要强调：ax.annotate⽅法可以在指定的 x和y坐标轴绘制标签。我们使⽤set_xlim和set_ylim⼈⼯设定起 始和结束边界，⽽不使⽤matplotlib的默认⽅法。最后，⽤ ax.set_title添加图标标题。 </code></pre>
+<h1 id="将图表保存到⽂件"><a href="#将图表保存到⽂件" class="headerlink" title="将图表保存到⽂件"></a>将图表保存到⽂件</h1><p>利⽤plt.savefig可以将当前图表保存到⽂件。该⽅法相当于 Figure对象的实例⽅法savefig。例如，要将图表保存为SVG⽂ 件，你只需输⼊：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.khphy37wwps.png"><br>⽂件类型是通过⽂件扩展名推断出来的。因此，如果你使⽤的 是.pdf，就会得到⼀个PDF⽂件。  </p>
+<p>我在发布图⽚时最常⽤到两个 重要的选项是dpi（控制“每英⼨点数”分辨率）和 bbox_inches（可以剪除当前图表周围的空⽩部分）。要得到⼀ 张带有最⼩⽩边且分辨率为400DPI的PNG图⽚：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5xjow9nf69c0.png">  </p>
+<pre><code>savefig并⾮⼀定要写⼊磁盘，也可以写⼊任何⽂件型的对象</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.ccvjqp7yob4.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.fxv3zmbzl8o.png">  </p>
+<h1 id="matplotlib配置"><a href="#matplotlib配置" class="headerlink" title="matplotlib配置"></a>matplotlib配置</h1><p>matplotlib⾃带⼀些配⾊⽅案，以及为⽣成出版质量的图⽚⽽设 定的默认配置信息。幸运的是，⼏乎所有默认⾏为都能通过⼀组 全局参数进⾏⾃定义，它们可以管理图像⼤⼩、subplot边距、配 ⾊⽅案、字体⼤⼩、⽹格类型等。  </p>
+<p>⼀种Python编程⽅式配置系统 的⽅法是使⽤rc⽅法。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6wpcsjj8kb.png"><br>    rc的第⼀个参数是希望⾃定义的对象， 如’figure’、’axes’、’xtick’、’ytick’、’grid’、’legend’等。其后可以 跟上⼀系列的关键字参数。⼀个简单的办法是将这些选项写成⼀ 个字典：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1jon7g2az334.png"></p>
 
       
 
@@ -520,7 +365,7 @@ print(*y)
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/语法基础//" class="article-tag-list-link color5">语法基础</a>
+        			<a href="/categories/matplotlib//" class="article-tag-list-link color1">matplotlib</a>
         		</li>
       		
 		</ul>
@@ -575,7 +420,7 @@ print(*y)
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/04/13/21523%E7%BB%98%E5%9B%BE%E5%92%8C%E5%8F%AF%E8%A7%86%E5%8C%96-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -589,18 +434,18 @@ print(*y)
   
 <nav id="article-nav">
   
-    <a href="/2020/01/02/2021523pyhton%E5%9F%BA%E7%A1%80-2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/15/21525SQL%E5%9F%BA%E7%A1%80-1/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Python基础——(二)
+          SQL基础——(一) 查询语句
         
       </div>
     </a>
   
   
-    <a href="/2019/11/26/hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo博客创建</div>
+    <a href="/2020/03/15/21523Pandas-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pandas——(三) 层次化索引</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -627,7 +472,7 @@ print(*y)
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E5%9F%BA%E7%A1%80%E2%80%94%E2%80%94-%E4%BA%8C"><span class="toc-number">1.</span> <span class="toc-text">##  Python基础——(二)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">语言类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#python-%E4%B8%BA%E8%A7%A3%E9%87%8A%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">python 为解释型语言</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number"></span> <span class="toc-text">python的优缺点 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">优点：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">缺点:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">python数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%86%E4%B8%BA%EF%BC%9A%E5%8F%AF%E5%8F%98%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E4%B8%8D%E5%8F%AF%E5%8F%98%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">数据类型分为：可变数据类型和不可变数据类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python-%E5%9C%A8%E8%AF%AD%E6%B3%95%E4%B8%8A"><span class="toc-number"></span> <span class="toc-text">python 在语法上</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E8%AF%AD%E5%8F%A5%EF%BC%9Aprint-s-s-s-sep-%E2%80%99%E2%80%99-end-%E2%80%99-n%E2%80%99"><span class="toc-number">1.</span> <span class="toc-text">输出语句：print(s+s+s,sep&#x3D;’’,end&#x3D;’\n’)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%AF%AD%E5%8F%A5%EF%BC%9Ainput-%E2%80%98%E5%90%8C%E6%97%B6%E8%BE%93%E5%87%BA%E4%B8%80%E5%8F%A5%E8%AF%9D%E2%80%99"><span class="toc-number">2.</span> <span class="toc-text">输入语句：input(‘同时输出一句话’)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">赋值运算：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">逻辑运算符：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">三目运算符：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">6.</span> <span class="toc-text">条件语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">7.</span> <span class="toc-text">循环语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E4%BA%A7%E7%94%9F"><span class="toc-number">8.</span> <span class="toc-text">随机数的产生</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number"></span> <span class="toc-text">python字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%87%E7%89%87"><span class="toc-number">1.</span> <span class="toc-text">字符串切片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">字符串相关函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python-%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">python 集合类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8list"><span class="toc-number">1.</span> <span class="toc-text">列表list</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE%E9%81%8D%E5%8E%86"><span class="toc-number">1.1.</span> <span class="toc-text">枚举遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E5%9C%A8%E8%AF%A5%E5%88%97%E8%A1%A8%E4%B8%AD%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">判断字符串是否在该列表中：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">删除：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E5%88%87%E7%89%87"><span class="toc-number">1.4.</span> <span class="toc-text">列表切片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E5%A2%9E%E5%8A%A0%EF%BC%9A"><span class="toc-number">1.5.</span> <span class="toc-text">列表的增加：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-number">1.6.</span> <span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E6%B3%95%EF%BC%9A%EF%BC%88%E7%9B%B4%E6%8E%A5%E4%BA%A4%E6%8D%A2%EF%BC%89-list-2-24-2-42-1-25-3"><span class="toc-number">1.7.</span> <span class="toc-text">选择排序法：（直接交换）  list &#x3D; [2,24,2,42,1,25,3]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E6%B3%95%EF%BC%9A"><span class="toc-number">1.8.</span> <span class="toc-text">冒泡排序法：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%BB%84tuple"><span class="toc-number">2.</span> <span class="toc-text">元组tuple</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%86%E5%8C%85%E8%A3%85%E5%8C%85%EF%BC%88%E6%98%9F%E5%8F%B7%E5%88%86%E9%85%8D%EF%BC%89%EF%BC%88%E6%98%9F%E5%8F%B7%E5%88%86%E9%85%8D%E7%9B%AE%E6%A0%87%E5%BF%85%E9%A1%BB%E5%9C%A8%E5%88%97%E8%A1%A8%E6%88%96%E5%85%83%E7%BB%84%E4%B8%AD%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">拆包装包（星号分配）（星号分配目标必须在列表或元组中）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E5%85%B8dict"><span class="toc-number">3.</span> <span class="toc-text">字典dict</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E5%A2%9E%E6%94%B9"><span class="toc-number">3.1.</span> <span class="toc-text">字典的增改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E6%9F%A5%E6%89%BE%EF%BC%88%E9%81%8D%E5%8E%86%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">字典的查找（遍历）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E5%87%BD%E6%95%B0%E6%9F%A5%E6%89%BE%EF%BC%9A"><span class="toc-number">3.3.</span> <span class="toc-text">字典函数查找：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E5%88%A0%E9%99%A4"><span class="toc-number">3.4.</span> <span class="toc-text">字典的删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0"><span class="toc-number">3.5.</span> <span class="toc-text">字典的常用内置函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E5%90%88set"><span class="toc-number">4.</span> <span class="toc-text">集合set</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%A2%9E%E5%8A%A0"><span class="toc-number">4.1.</span> <span class="toc-text">集合的增加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E5%88%A0%E9%99%A4"><span class="toc-number">4.2.</span> <span class="toc-text">集合删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%B7%AE%E4%BA%A4%E5%B9%B6"><span class="toc-number">4.3.</span> <span class="toc-text">集合的差交并</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#matplotlib-%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">matplotlib 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#matplotlib%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-number">1.0.1.</span> <span class="toc-text">matplotlib官方文档</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%8E%A8%E8%8D%90"><span class="toc-number">1.2.</span> <span class="toc-text">使用推荐 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87"><span class="toc-number">1.2.1.</span> <span class="toc-text">显示中文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E6%95%B4%E5%9B%BE%E7%89%87%E5%A4%A7%E5%B0%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text">调整图片大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87"><span class="toc-number">1.2.3.</span> <span class="toc-text">保存图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E4%BA%92%E5%BC%8F"><span class="toc-number">1.2.4.</span> <span class="toc-text">交互式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Figure%E5%92%8CSubplot"><span class="toc-number">2.</span> <span class="toc-text">Figure和Subplot</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%BB%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text">画图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E5%9B%BE%E6%96%B9%E5%BC%8F%E4%B8%80"><span class="toc-number">3.1.</span> <span class="toc-text">画图方式一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E5%9B%BE%E6%96%B9%E5%BC%8F%E4%BA%8C"><span class="toc-number">3.2.</span> <span class="toc-text">画图方式二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E5%9B%BE%E6%96%B9%E5%BC%8F%E4%B8%89"><span class="toc-number">3.3.</span> <span class="toc-text">画图方式三</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E6%95%B4subplot%E5%91%A8%E5%9B%B4%E7%9A%84%E9%97%B4%E8%B7%9D"><span class="toc-number">3.4.</span> <span class="toc-text">调整subplot周围的间距</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9C%E2%BE%8A%E3%80%81%E6%A0%87%E8%AE%B0%E5%92%8C%E7%BA%BF%E5%9E%8B"><span class="toc-number">3.5.</span> <span class="toc-text">颜⾊、标记和线型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A"><span class="toc-number">3.5.1.</span> <span class="toc-text">方法一：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A"><span class="toc-number">3.5.2.</span> <span class="toc-text">方法二：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%BB%E5%BA%A6%E3%80%81%E6%A0%87%E7%AD%BE"><span class="toc-number">3.6.</span> <span class="toc-text">刻度、标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%BB%E5%BA%A6"><span class="toc-number">3.6.1.</span> <span class="toc-text">刻度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%9B%BE%E4%BE%8B"><span class="toc-number">3.6.2.</span> <span class="toc-text">添加图例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3%E4%BB%A5%E5%8F%8A%E5%9C%A8Subplot%E4%B8%8A%E7%BB%98%E5%9B%BE"><span class="toc-number">3.7.</span> <span class="toc-text">注解以及在Subplot上绘图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%86%E5%9B%BE%E8%A1%A8%E4%BF%9D%E5%AD%98%E5%88%B0%E2%BD%82%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">将图表保存到⽂件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#matplotlib%E9%85%8D%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">matplotlib配置</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -769,6 +614,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tensorflow2</a>
               </li>
              
@@ -790,10 +639,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>

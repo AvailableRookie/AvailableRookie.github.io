@@ -6,20 +6,59 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python基础——(二) | JCJunBlog</title>
+  <title>tensorflow2——(二) 模型搭建 | JCJunBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Python基础——(一)python函数函数的定义def 函数名（形参）:     函数体     [return 返回值] 形参">
+  <meta name="description" content="自定义训练模型初始化参数、优化算法、评估标准 epoch（也就是所有数据训练完一次） batch  每次存现的数据量 steps  一个epoch的batch个数  &#x3D;  总数据量&#x2F;batch     训练">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python基础——(二)">
-<meta property="og:url" content="http://yoursite.com/2020/01/02/2021523pyhton%E5%9F%BA%E7%A1%80-2/index.html">
+<meta property="og:title" content="tensorflow2——(二) 模型搭建">
+<meta property="og:url" content="http://yoursite.com/2021/02/08/21528tensorflow2-2/index.html">
 <meta property="og:site_name" content="JCJunBlog">
-<meta property="og:description" content="Python基础——(一)python函数函数的定义def 函数名（形参）:     函数体     [return 返回值] 形参">
+<meta property="og:description" content="自定义训练模型初始化参数、优化算法、评估标准 epoch（也就是所有数据训练完一次） batch  每次存现的数据量 steps  一个epoch的batch个数  &#x3D;  总数据量&#x2F;batch     训练">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-01-01T23:53:17.000Z">
-<meta property="article:modified_time" content="2021-05-28T14:04:12.430Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5058yw4suk00.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ebyquftg400.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5l2p1mud1740.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5pkv68e28p80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4cceyc0itvk0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3l3pp7oemie0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6saiwyqruzw0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.10it0cdrfwds.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.56v6b2b6faw0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ewchzb7sz80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.527ork6rm3g0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2t4tk07llmy0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5em4gcn3ia80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5bx4x53zdug0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.snbt0yvogi8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2eyjr8afrvx.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ohnrywbmy80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.11pcbkzgrbao.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2l06p0p1ntc0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1izfrgapieao.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.jzl9tr8mj5o.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.70ka3mymnag0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.28ntg0wrrolc.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3lb73iuwh020.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5dmktdjbe700.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ys6hy8ydgg0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.77aej10g66c0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.46j6ggs6jdq0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2tuiq1nqcj00.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.29gdeqioi2sk.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5a0lt191sqo0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6endxj30nk00.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.kulurs2yhb4.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.n7he1415p5s.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5m47ksoj8yg0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.64406pfvsjs0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3f8pedl67nw0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4evlclae3rm0.png">
+<meta property="article:published_time" content="2021-02-08T05:53:17.000Z">
+<meta property="article:modified_time" content="2021-05-28T12:41:52.156Z">
 <meta property="article:author" content="Jia Caijun">
-<meta property="article:tag" content="Python">
+<meta property="article:tag" content="tensorflow2">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5058yw4suk00.png">
   
     <link rel="alternative" href="/atom.xml" title="JCJunBlog" type="application/atom+xml">
   
@@ -146,14 +185,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-2021523pyhton基础-2" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-21528tensorflow2-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Python基础——(二)
+      tensorflow2——(二) 模型搭建
     </h1>
   
 
@@ -161,8 +200,8 @@
           |阅读量(<span id="busuanzi_value_page_pv"></span>)
         </span>
         
-        <a href="/2020/01/02/2021523pyhton%E5%9F%BA%E7%A1%80-2/" class="archive-article-date">
-  	<time datetime="2020-01-01T23:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-02</time>
+        <a href="/2021/02/08/21528tensorflow2-2/" class="archive-article-date">
+  	<time datetime="2021-02-08T05:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-08</time>
 </a>
         
       </header>
@@ -170,456 +209,77 @@
     <div class="article-entry" itemprop="articleBody">
 
       
-        <h2 id="Python基础——-一"><a href="#Python基础——-一" class="headerlink" title="Python基础——(一)"></a><a target="_blank" rel="noopener" href="http://jiacaijun.cn/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/#more">Python基础——(一)</a></h2><h1 id="python函数"><a href="#python函数" class="headerlink" title="python函数"></a>python函数</h1><h2 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h2><pre><code>def 函数名（形参）:
-    函数体
-    [return 返回值]</code></pre>
-<h3 id="形参"><a href="#形参" class="headerlink" title="形参   "></a>形参   <a id="more"></a></h3><h4 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h4><h4 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h4><pre><code>形参：（c,b=10）  
-实参：（2）默认b为10 \ (2,3)</code></pre>
-<h4 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h4><pre><code>    形参：（b,*c）   
-    实参：（2，4，5）/（2）  
-    涉及到拆包装包，此处会默认将2给b，而（4，5）会以元组形式传给函数，当函数体用的时候会自动拆包此处注意如果实参时一个列表或元组的时候会自动以该序列为单位传参，如果想分开的话就必须把*列表（拆包）</code></pre>
-<blockquote>
-<p>形参：（b,*c,**d）<br> 实参：（2，3，4，c=2,d=2）<br>此处涉及到字典的拆装包 (详细内容见<a target="_blank" rel="noopener" href="http://jiacaijun.cn/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/#more">Python基础——(上)</a>   )</p>
-</blockquote>
-<h3 id="全局变量（作用域）："><a href="#全局变量（作用域）：" class="headerlink" title="全局变量（作用域）："></a>全局变量（作用域）：</h3><p>区分可变数据类型与不可变数据类型<br>也就是说如果变量为可变变量的话就可以直接改变不用使用关键字  </p>
-<p>global        修改全局变量  </p>
-<p>nonlocal        修改局部变量</p>
-<h2 id="嵌套函数："><a href="#嵌套函数：" class="headerlink" title="嵌套函数："></a>嵌套函数：</h2><blockquote>
-<p>python允许创建嵌套函数。也就是说我们可以在函数里面定义函数，而且现有的作用域和变量生存周期依旧不变。</p>
-</blockquote>
-<pre><code>def outer():
-    name=&quot;python&quot;
-
-    def inner():   #outer函数内部定义的函数
-        print name
-    return inner() #返回该内部函数
-
-outer()</code></pre>
-<blockquote>
-<p>结果： python    </p>
-</blockquote>
-<p><strong>理解：</strong> 在inner函数中，python解析器需要找一个叫name的本地变量，查找失败后会继续在上层的作用域里面寻找，这个上层作用域定义在outer函数里，python函数可以访问封闭作用域。<br>对于outer函数中最后一句，返回inner函数调用的结果，需要知道非常重要一点就是，inner也仅仅是一个遵循python变量解析规则的变量名，python解释器会优先在outer的作用域里面对变量名inner查找匹配的变量。<br>把恰好是函数标识符的变量inner作为返回值返回回来，每次函数outer被调用的时候，函数inner都会<strong>被重新定义</strong>，如果它不被当做变量返回的话，每次执行过后它将不复存在。<br><strong>在python里，函数就是对象，它也只是一些普通的值而已。也就是说你可以把函数像参数一样传递给其他的函数或者说从函数了里面返回函数</strong></p>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><blockquote>
-<p>闭包并不只是一个python中的概念，在函数式编程语言中应用较为广泛。理解python中的闭包一方面是能够正确的使用闭包，另一方面可以好好体会和思考闭包的设计思想。</p>
-</blockquote>
-<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">In [33]: def test_1():</span><br><span class="line">    ...:     name &#x3D; &#39;Tom&#39;</span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [35]: name</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">NameError        Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input-35-9bc0cb2ed6de&gt; in &lt;module&gt;</span><br><span class="line">----&gt; 1 name</span><br><span class="line">NameError: name &#39;name&#39; is not defined</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">In [48]: def test_2():</span><br><span class="line">    ...:     name &#x3D; &#39;Tom&#39;</span><br><span class="line">    ...:     def test_3():</span><br><span class="line">    ...:         print(name)</span><br><span class="line">    ...:     return test_3</span><br><span class="line"></span><br><span class="line">In [49]: test &#x3D; test_2()</span><br><span class="line"></span><br><span class="line">In [50]: test</span><br><span class="line">Out[50]: &lt;function __main__.test_2.&lt;locals&gt;.test_3()&gt;</span><br><span class="line"></span><br><span class="line">In [51]: print(test)</span><br><span class="line">&lt;function test_2.&lt;locals&gt;.test_3 at 0x000001F9195D5EE8&gt;</span><br><span class="line"></span><br><span class="line">In [52]: test()</span><br><span class="line">Tom  </span><br></pre></td></tr></table></figure>
-<p>可以看到第一个例子中，是没办法获取到name的值的；</p>
-<p>第二个例子中，就可以得到name的值，当然，也不是直接访问的。</p>
-<p>实现的原理就是利用了局部变量的作用域，既然外面访问不到局部变量name，那么就从函数里去访问，间接的得到这个值。</p>
-<p>在第二个例子中，调用test_2()的时候，就产生了一个闭包：test_3()。这个地方其实是闭包的一个典型的表现形式，然而看起来依然晦涩。所以私以为，从作用上来讲，逻辑更顺畅。</p>
-<p>所以也有人这么称呼闭包：</p>
-<blockquote>
-<p>闭包就是携带状态的函数，并且它的状态可以完全对外隐藏起来。  </p>
-</blockquote>
-<p>让我们看一下维基上对闭包的解释：</p>
-<blockquote>
-<p>在计算机科学中，闭包（英语：Closure），又称词法闭包（Lexical Closure）或函数闭包（function closures），是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为闭包是由函数和与其相关的引用环境组合而成的实体。闭包在运行时可以有多个实例，不同的引用环境和相同的函数组合可以产生不同的实例。</p>
-</blockquote>
-<p><strong>引用了自由变量的函数是什么？</strong>  </p>
-<pre><code>def print_msg():
-    msg = &quot;python&quot;
-    def printer():
-        print(msg)
-    return printer
-
-test = print_msg()
-test()</code></pre>
-<p>这个例子中的printer其实就是一个引用了自由变量/外部临时变量的函数。</p>
-<p>通常情况来讲，msg属于print_msg的局部变量，只能再print_msg()执行的时候调用。</p>
-<p>但上面的例子中，test声明的时候，就是print_msg()执行的时候；但当test()执行的时候，我们依然拿到了msg的值。这就是闭包的一个特点，现在看是不是上面的例子更清楚些了？</p>
-<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><pre><code>1. 作用域没有那么直观
-2. 因为变量不会被垃圾回收所以有一定的内存占用问题</code></pre>
-<h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><pre><code>1. 可以使用同级的作用域
-2. 读取其他元素的内部变量
-3. 延长作用域</code></pre>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><pre><code>1. 闭包优化了变量，原来需要类对象完成的工作，闭包也能完成
-2. 由于闭包引用了外部函数的局部变量，则外部函数的局部变量没有及时释放，消耗内存
-3. 闭包的好处，是代码变得简洁，便于阅读代码
-3. 闭包是了解装饰器的基础</code></pre>
-<h3 id="闭包应用，计数器"><a href="#闭包应用，计数器" class="headerlink" title="闭包应用，计数器"></a>闭包应用，计数器</h3><p>由于内部函数每次调用都会应用外部函数的变量，所以外部函数结束时，该被调用的变量不会被回收，所以可以达到计数目的  </p>
-<p>def generate_count():<br>    container = [0]</p>
-<pre><code>def add_one():
-    container[0] = container[0] + 1
-    print(&#39;当是第&#123;&#125;次&#39;.format(container[0]))
-    return add_one</code></pre>
-<h4 id="调用："><a href="#调用：" class="headerlink" title="调用："></a>调用：</h4><pre><code>counter = generate_count()
-
-counter()    #当是第一次
-counter()    #当是第二次</code></pre>
-<h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><p>装饰器步骤：<br>    存在一个被修饰函数<br>    及那个被修饰函数作为参数传递给装饰器函数<br>    执行装饰器函数<br>    将返回值赋值给被修饰函数</p>
-<h3 id="单层装饰器："><a href="#单层装饰器：" class="headerlink" title="单层装饰器："></a>单层装饰器：</h3><pre><code>    def decorate(func):
-
-        def wrapper(*args,**kwargs):
-            #装饰代码逻辑
-            func()    #被装饰函数
-
-        return wrapper</code></pre>
-<p>调用：  </p>
-<pre><code>@decorate   #装饰器函数名
-func()        #被装饰函数调用 此处该装饰器的参数为万能即被调用函数可以传递任意实参</code></pre>
-<h3 id="多层装饰器："><a href="#多层装饰器：" class="headerlink" title="多层装饰器："></a>多层装饰器：</h3><p>一个函数可以被不同装饰器多次装饰</p>
-<p>调用:  </p>
-<pre><code>    @decorate2
-    @decorate1
-    func()
-
-    先执行decorate1</code></pre>
-<h3 id="带参数装饰器："><a href="#带参数装饰器：" class="headerlink" title="带参数装饰器："></a>带参数装饰器：</h3><p>带参数的装饰器为三层的函数嵌套最外层函数负责接受装饰器参数里面的内容还是原装饰器内容</p>
-<pre><code>    def outer(a):                    #第一层：负责接收装饰器参数
-        def decorate(func):            #第二场：负责接收被调用函数
-
-            def wrapper(*args,**kwargs):    #第三层：负责接收被调用函数的参数
-                #装饰代码逻辑(可用装饰器传递过来的参数a)
-                func()    #被装饰函数
-
-            return wrapper            返回出来第三层
-        return decorate                返回出来第二层</code></pre>
-<p>调用：  </p>
-<pre><code>    @outer(2)   #装饰器函数名
-    func()        #被装饰函数调用 此处该装饰器的参数为万能即被调用函数可以传递任意实参</code></pre>
-<h2 id="匿名函数："><a href="#匿名函数：" class="headerlink" title="匿名函数："></a>匿名函数：</h2><pre><code>    lambda 参数：返回值
-
-    配合一些内置函数使用
-    map(func,list)
-    filter(func,list)   lambda x : x%2==0   返回值为布尔类型
-    reduce(func,list)    函数的参数为两个</code></pre>
-<h1 id="文件操作："><a href="#文件操作：" class="headerlink" title="文件操作："></a>文件操作：</h1><pre><code>    open(path,mode)内置函数实现
-    path：可以是相对路径也可以是绝对路径
-    mode：    读： rb（二进制）     r（文本文件）
-            写： wb（二进制）     w（文本文件）</code></pre>
-<h2 id="文件读"><a href="#文件读" class="headerlink" title="文件读"></a>文件读</h2><pre><code>    stream = open(path,&#39;r&#39;)
-        str = stream.read()
-        print(str)
-
-        stream.close()</code></pre>
-<h2 id="文件写"><a href="#文件写" class="headerlink" title="文件写"></a>文件写</h2><pre><code>        stream = open(path,&#39;w&#39;)
-            str = stream.write(&#39;内容&#39;)
-            print(str)
-
-            stream.close()</code></pre>
-<h2 id="文件复制"><a href="#文件复制" class="headerlink" title="文件复制"></a>文件复制</h2><pre><code>    import os
-
-
-    src = &#39;C:\\ppp&#39;
-    target = &#39;C:\pppp&#39;
-    def copy(src,target):
-
-        if os.path.isdir(src) and os.path.isdir(target):
-        print(&#39;复制开始&#39;)
-        filelist = os.listdir(src)
-
-        for file in filelist:
-
-            path1 = os.path.join(src,file)
-            with open(path1,&#39;rb&#39;) as rstream:
-            container = rstream.read()
-
-            path2 = os.path.join(target,file)
-            with open(path2,&#39;wb&#39;) as wstream:
-                wstream.write(container)
-
-        else:
-            print(&#39;复制完成&#39;)
-
-        else:
-        print(&#39;请输入正确路径&#39;)</code></pre>
-<h1 id="异常处理："><a href="#异常处理：" class="headerlink" title="异常处理："></a>异常处理：</h1><pre><code>    try:
-        可能发生异常代码
-    wxcept:
-        有一场才会进入的代码
-    [
-    except 异常类型 as err:
-    ...
-    ]
-    [
-    else:
-        没有一次才会进入代码
-    ]
-    [
-    finally:
-        无论有没有异常都会执行的代码
-    ]</code></pre>
-<h1 id="推导式"><a href="#推导式" class="headerlink" title="推导式"></a>推导式</h1><p>通过推导式将旧列表推导出新列表，与数据库的查询语句作用类似</p>
-<h2 id="列表推导式"><a href="#列表推导式" class="headerlink" title="列表推导式"></a>列表推导式</h2><pre><code>格式：
-    [表达式 for 变量 in 旧列表] 或
-    [表达式 for 变量 in 旧列表 if 条件]
-    [结果A if 条件 else 结果B for x in list1]
-
-
-例如：
-    过滤掉长度小于或等于3 的人名
-    names = [&#39;tom&#39;,&#39;lily&#39;,&#39;abc&#39;,&#39;jack&#39;]
-
-    result = [name for name in names if len(name) &gt; 3]
-        此处的name处为最后要的，即使是表达式（x+2）的时候也是成立的时候</code></pre>
-<h2 id="集合推导式"><a href="#集合推导式" class="headerlink" title="集合推导式"></a>集合推导式</h2><pre><code>    与列表推导式类似
-    &#123;&#125;</code></pre>
-<h2 id="字典推导式"><a href="#字典推导式" class="headerlink" title="字典推导式"></a>字典推导式</h2><pre><code>    &#123;key，value for k,v in 字典.items()&#125;</code></pre>
-<h1 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h1><h2 id="定义生成器方式"><a href="#定义生成器方式" class="headerlink" title="定义生成器方式"></a>定义生成器方式</h2><p>定义一个函数，函数中使用yield关键字，或者 把推导式用()括起来不用[]了就会返回一个生成器<br>调用函数，接收调用的结果<br>得到的结果就是生成器<br>借助于next(),__next__()的到元素</p>
-<p>应用就是py中的：携程</p>
-<p>由此就可以控制同一线程在不同任务之中来回切换  </p>
-<pre><code>    函数定义：
-        def func():
-            n=0
-                while Ture:
-                    n += 1
-                    yidld n
-
-    调用：
-        g = func()      返回一个生成器
-        print(next(g))    每调用一次就执行一轮
-
-
-    生成器send
-
-        g.send(value)————————&gt;与之配套的生成器是  v = yidld n </code></pre>
-<blockquote>
-<p>每次调用除了返回一个值还会向上生成器中传入一个值<br>                但要注意第一次调用要传递None<br>                这是因为第一次调用的时候由于复制语句是从右往左执行，先执行yidld，也就是到这边<br>                就停止了，传递其他参数的话无法被接收就会报错。</p>
-</blockquote>
-<h1 id="迭代器与可迭代的："><a href="#迭代器与可迭代的：" class="headerlink" title="迭代器与可迭代的："></a>迭代器与可迭代的：</h1><pre><code>    迭代是访问集合元素的一种方式。迭代器是一个可以记住遍历的位置的对象
-    迭代器对象从集合的第一个元素开始访问，知道所有的元素被访问完结束。
-    迭代器只能往前不能后退
-
-    可以被next()函数调用并返回下一个值的对象成为迭代器： Iterator
-
-    列表，字符串等是可迭代的但不是迭代器
-    可以用iter()函数将可迭代的变成一个迭代器</code></pre>
-<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><p>对于python来说面向对象不同的是，python可以动态给成员赋值，也就是说不用在类中的成员处定义，而在init方法中或者<br>    在外部都可以直接定义成员，这也跟py的弱类型有关，应为他不用单独定义某个成员的类型</p>
-<p>py的继承访问顺序：</p>
-<pre><code>    单继承:
-        子类——&gt;父类——&gt;object
-    多继承：
-        （A,B）括号中的为广度，从左往右
-        py2中，从左到右，深度优先
-        py3中，广度优先</code></pre>
-<p>对于py来说没有真正的多态，没有了类型限定，当一个”想让”父类作为形式参数的时候，在java中自动就只允许传入<br>            对应的类型或子类，但在py中没有这个限定，即可以随意传入任何类型，所以在方法中就必须用isinstance()<br>            手动来判断是不是属于该类或该类的子类，然后再可以通过一层判断来区分例如java中的多态（区分狗与猫）</p>
-<pre><code>        class 类名：
-            属性..
-            __(私有符号)属性名 = 值
-
-            del __init__(self):
-                魔术方法体</code></pre>
-<h2 id="魔术方法-函数"><a href="#魔术方法-函数" class="headerlink" title="魔术方法/函数"></a>魔术方法/函数</h2><h3 id="init-初始化魔法函数"><a href="#init-初始化魔法函数" class="headerlink" title="__init__  初始化魔法函数"></a>__init__  初始化魔法函数</h3><p>参考博客: <a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhangboblogs/p/7860929.html">魔法函数</a>   </p>
-<p>魔术方法与其他方法不同的是，普通方法需要调用，而魔术方法是在特殊时刻自动触发<br><strong>触发时机：</strong>初始化对象时触发（不是实例化触发，单数和实例化在一个操作中<br><strong>参数：</strong>至少有一个self<br><strong>返回值：</strong>无<br><strong>作用：</strong>初始化对象的成员</p>
-<blockquote>
-<p>注意：使用该方法初始化的成员都是直接写入对象当中，类中无法具有</p>
-</blockquote>
-<p>当我们需要重写该方法的时候，我们必须super().<strong>init</strong>(参数) 父类的方法<br>当创建对象的是出现参数的时候，<strong>init</strong>(self,参数)相应的参数</p>
-<h3 id="new-实例化魔术方法"><a href="#new-实例化魔术方法" class="headerlink" title="__new__ 实例化魔术方法"></a>__new__ 实例化魔术方法</h3><p><strong>触发时机：</strong> 在实例化对时触发<br><strong>参数：</strong> 至少一个cls 接收当前类<br><strong>返回值：</strong> 必须返回一个对象实例<br><strong>作用：</strong> 实例化对象（开辟地址，然后将返回的对象实例传给__init__）</p>
-<blockquote>
-<p>注意：实例化对象是Object类底层实现，其他类继承了Object的<strong>new__才能够实现实例化对象。没事别碰这个魔术方法，先触发__new__才会触发__init</strong></p>
-</blockquote>
-<p>笔者认为：<br>    这两个魔法方法组合一起就相当于java的构造方法</p>
-<h3 id="call-调用对象的魔术方法"><a href="#call-调用对象的魔术方法" class="headerlink" title="__call__ 调用对象的魔术方法"></a>__call__ 调用对象的魔术方法</h3><p><strong>触发时机：</strong> 将对象当作函数调用时触发 对象()<br><strong>参数：</strong> 至少一个self接收对象，其余根据调用时参数决定<br><strong>返回值：</strong> 根据情况而定<br><strong>作用：</strong> 可以将复杂的步骤进行合并操作，减少调用的步骤，方便使用  </p>
-<h3 id="del-析构魔术方法"><a href="#del-析构魔术方法" class="headerlink" title="__del__ 析构魔术方法"></a>__del__ 析构魔术方法</h3><p><strong>触发时机：</strong> 当对象没有用（没有任何变量引用）的时候被触发<br><strong>参数：</strong> 一个self 结婚搜对象<br><strong>返回值：</strong> 无<br><strong>作用：</strong> 使用完对象是回收资源<br><strong>注意：</strong> del不一定会触发当前方法，只有当前对象没有任何变量接收时才会触发</p>
-<h2 id="定义get-set-方法："><a href="#定义get-set-方法：" class="headerlink" title="定义get set 方法："></a>定义get set 方法：</h2><p> py提供了一种装饰器，可以使我们在外部直接以“类似”访问属性的方式访问<br>        了解（py中私有化不是真的隐藏，而是把其该属性以其他名字包装）  </p>
-<pre><code>    @property
-    def age(self):
-        return self.__age
-
-    @age.setter
-    def age(self,age):
-        if age &gt; 0 and age &lt; 100:
-            self.__age = age
-        else:
-            print(&#39;不在规定范围内&#39;)
-
-
-def  方法名(self):    
-    普通方法体</code></pre>
-<blockquote>
-<p>python中严格区分对象与类在普通方法中形参自动为self即只有实例化的时候对象调用方法时，会自动传递该对象的地址</p>
-</blockquote>
-<pre><code>@classmethod
-def 方法名(cls):
-    类方法方法体
-
-    形参中的cls可知此处传递的为类，所以该方法不用实例化即可使用，但是该方法中无法放任何
-    与self参数有关的内容，因为当该方法加载的时候（也就是类加载的时候）还没有实例化也就是
-    没有对象来调用这个self
-
-    特点：
-    定义需要依赖装饰器@classmethod
-    类方法中参数不是一个对象，而是一个类
-    类方法中只可以实用类属性
-    类方法中不能使用普通方法
-
-    作用：
-        此处的类方法类似于java中的静态方法
-        完成在创建对象之前需要完成的内容
-
-@staticmethod
-def 方法名():
-    静态方法体
-
-    静态方法与类方法类似
-
-    不同点：
-        装饰器不同
-        类方法是有参数的，静态方法是没有参数的
-
-    相同
-        只能访问类的属性和方法，对象是无法访问的
-        否可以通过类名调用访问
-        都可以在创建对象之前使用，因为是不依赖对象的
-
-        当然也可以通过对象调用与java静态方法相同但不提倡也没必要</code></pre>
-<h2 id="单例设计模式"><a href="#单例设计模式" class="headerlink" title="单例设计模式:"></a>单例设计模式:</h2><pre><code>    用此方法来定义一个类，这个类所通过的任何方式创建的对象仅有一个，也就是说他们都指向一个对象引用
-
-    class Singleton:
-        __instance = None
-
-        #此处涉及到__new__开辟内存问题
-        def __new__(cls):
-
-            if cls.__instance is None:
-                cls.__instance = object.__new__(cls)
-                return cls.__instance
-
-            else:
-                return cls.__instance</code></pre>
-<h1 id="模块："><a href="#模块：" class="headerlink" title="模块："></a>模块：</h1><p>py在文件机制中比java多了一个模块，其文件关系是：<br>包含关系：    项目 &gt; 包 &gt; 模块 &gt; 类 函数 变量</p>
-<p>对于py来将一个py文件包含多个类或函数这个py文件就叫做模块<br>而要导入模块关键字就是import  </p>
-<pre><code>    import 模块名
-
-    调用：
-        模块名.函数   模块名.变量    模块名.类</code></pre>
-<p>py又提供了一种导入方法可以</p>
-<pre><code>    from 模块名 import 函数/类/变量        （推荐）
-        这样就会使调用变得简单直接像本模块中的一样使用即可
-
-
-    from 模块名  import *
-        代表导入该模块中的所有内容
-            由此py提供了一个列表：__all__ = [&#39;想被访问的内容&#39;] （只针对该导入语句）
-
-   ####</code></pre>
-<p>在py中任意一个导入都会在底层执行被导入部分，即便被导入模块有其他运行的代码（例如：print语句等）也都会被执行所以导入其他模块的时候，其他模块可能影响执行模块，于是py提供了一种可以判断执行的模块是不是主模块的机制，只用被执行模块在执行的时候显示<strong>name</strong> = __main__而其他的都是其模块名，所以我们在定义模块的时候就可以加一个if判断控制其是否执行：  </p>
-<pre><code>        if __name__ == __main__:
-            执行语句</code></pre>
-<h1 id="包"><a href="#包" class="headerlink" title="包:"></a>包:</h1><p>在py中每个包都包含一个<strong>init</strong>.py文件，这个文件在导入该包的时候就会在底层运行，而此py模块所定义的类，函数，变量等<br>    内容可以通过“  包名.  ”  的形式调用使用 </p>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><pre><code>    在导包的时候可以执行以下在使用包时必要的一些内容</code></pre>
-<h2 id="包的导入"><a href="#包的导入" class="headerlink" title="包的导入"></a>包的导入</h2><pre><code>from 包 import 模块
-
-    此种导入方法，访问模块中内容与直接采用 “import 模块” 导入模块的调用方法一样
-
-from 包.模块 import 类/函数/变量    （推荐）
-
-    ##同包之下也需要写出包名 或者  （.模块名）
-    此类则也可以直接把导入的当自己模块里的中介用
-
-from 包.模块 import *
-    子类导入方法与导模块不同，此类导入的内容   ###必须###  在 __init__.py 中用__all__ = [] 的方式
-        允许以后才能访问，否则无法访问。（而上面的时都能访问）</code></pre>
-<h2 id="循环导入"><a href="#循环导入" class="headerlink" title="循环导入"></a>循环导入</h2><pre><code>A模块：
-    导入B
-
-
-B模块：
-    导入A
-
-(一般架构错误，架构出现问题)
-
-根据py导入的运行机制（自动运行被导入内容）该写发会报错
-
-解决方法：
-    重新架构（大成本...)
-    及那个导入语句放入使用该模块地方的函数中</code></pre>
-<h2 id="time模块"><a href="#time模块" class="headerlink" title="time模块"></a>time模块</h2><pre><code>    import time
-
-    t = time.time()
-    返回一个秒数 计时用
-
-    s = time.ctime()
-    返回一个字符串时间
-
-    s = time.strftime(&#39;%Y-%m—%d %H:%M:%S&#39;)
-
-
-    time.sleep(2)
-    停止2秒</code></pre>
-<h2 id="函数："><a href="#函数：" class="headerlink" title="函数："></a>函数：</h2><pre><code>    chr()    数字转字母
-
-    ord()    字母转数字Unicode码
-
-    str.encode(&#39;UTF-8&#39;)
-
-    import hashlib    (加密算法)
-
-    md5 = hashlib.md5(msg.)</code></pre>
-<h2 id="模块hashlib："><a href="#模块hashlib：" class="headerlink" title="模块hashlib："></a>模块hashlib：</h2><pre><code>    进行加密操作
-
-    加密分为可逆和非可逆的
-
-    不可逆常见的加密算法:
-        SHA1   SHA224  SHA256  SHA512  MD5...
-
-    密码加密——验证：
-        不可逆加密方法只能将输入的密码拿过来加密
-        再与之前加密过后的比较
-
-        list = []  #储存秘密
-        sha256 = hashlib.sha256(str.encode(&#39;utf-8&#39;))
-        list.append(sha256.hexdigest())
-
-        pwd = input(&#39;输入密码：&#39;)
-        sha256 = hashlib.sha256(pwd.encode(&#39;utf-8&#39;))
-        pwd = sha256.hexdigest()
-        print(pwd)
-
-        for i in list:
-            if i == pwd
-                print(&#39;登录成功&#39;)</code></pre>
-<h1 id="正则表达式："><a href="#正则表达式：" class="headerlink" title="正则表达式："></a>正则表达式：</h1><p>用一定的法则去对字符串进行过滤</p>
-<h2 id="基础符号"><a href="#基础符号" class="headerlink" title="基础符号:"></a>基础符号:</h2><pre><code>    &#39;.&#39; 用于匹配除换行符（\n）之外的所有符号
-    &#39;^&#39;用于匹配字符串的开始
-    &#39;$&#39;用于匹配字符串的末尾（末尾如果有换行\n，就匹配\n之前的字符）
-
-    量词：
-    &#39;*&#39;用于及将前面的模式汽配0次或多次&gt;=0次 （贪婪模式，在py中涉及到量词的都默认为贪婪模式
-            贪婪模式就是尽可能多的获取符合要求的字符串，若想关闭就在量词后面加&#39;?&#39;）
-    &#39;+&#39;用于及将前面的模式匹配1次或多次&gt;=1次
-    &#39;?&#39;用于及将前面的模式匹配0次或1次（有一个或没有）
-    &#39;&#123;m&#125;&#39;用于将前面的模式匹配m次
-    &#39;&#123;m,&#125;&#39;用于将前面的模式匹配m次或更多
-    &#39;&#123;m,n&#125;&#39;用于将前面的模式匹配m到n次
-
-
-
-    &#39;\&#39;转义
-    &#39;[]&#39;用于表示一组字符，匹配符合表达式的一个字符
-    &#39;|&#39; 或
-    &#39;(..|..)&#39;分组
-
-
-
-    \A：表示从符串的开始匹配
-    \z：表示从字符串的结束匹配
-    \b：匹配一个单词边界，也就是指和空格间的位置
-    \d：匹配任意数字。等价于[0-9]
-    \s：匹配任意空白字符。等价[\t\n\r\f]
-    \w: 匹配任意字母数字及下划线。等价于[a-zA-Z0-9]
-    \\: 匹配原义的反斜杠</code></pre>
-<p>验证邮箱输入:允许  163  126 qq</p>
-<pre><code>    email = &#39;213123@qq.com&#39;
-    result = re.match(r&#39;\w&#123;5,20&#125;@(163|126|qq)\.(com|cn)$&#39;,email)
-    print(result)
-
-    print(result.group())
-    分别提取：
-    print(result.group(1))  分别提取第n给括号里的
-    print(result.group(2))</code></pre>
-<h2 id="分组取名"><a href="#分组取名" class="headerlink" title="分组取名:"></a>分组取名:</h2><pre><code>    在涉及到前后要求的是要配对的时候使用：
-            便于书写区分配对
-            (?P&lt;名字&gt;正则)   引用：（?P=名字）
-        例如：
-            （r&#39;&lt;(?P&lt;name1&gt;\w+)&gt;&lt;(?P&lt;name2&gt;\w+)&gt;(.+)&lt;/(?P=name2)&gt;&lt;/(?P=name1)&gt;&#39;,msg）</code></pre>
-<h2 id="re模块函数："><a href="#re模块函数：" class="headerlink" title="re模块函数："></a>re模块函数：</h2><pre><code>        match()            从开头匹配
-        search()        全局匹配仅匹配一个
-        findall()        全局匹配匹配所有
-
-        sub(正则,&#39;新内容&#39;,string)   替换返回替换后的String
-        split(r&#39;[，：]&#39;,string)     根据[]中的多个自定义分割符取分割并返回到列表中</code></pre>
+        <h1 id="自定义训练模型"><a href="#自定义训练模型" class="headerlink" title="自定义训练模型"></a>自定义训练模型</h1><h2 id="初始化参数、优化算法、评估标准"><a href="#初始化参数、优化算法、评估标准" class="headerlink" title="初始化参数、优化算法、评估标准"></a>初始化参数、优化算法、评估标准</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5058yw4suk00.png"></p>
+<pre><code>epoch（也就是所有数据训练完一次）
+batch  每次存现的数据量
+steps  一个epoch的batch个数  =  总数据量/batch    </code></pre>
+<h2 id="训练"><a href="#训练" class="headerlink" title="训练 "></a>训练 <a id="more"></a></h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ebyquftg400.png"></p>
+<p>每结束一个epoch（也就是所有数据训练完一次）进行一个预测并计算预测值的loss</p>
+<h1 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h1><h2 id="自定义损失函数"><a href="#自定义损失函数" class="headerlink" title="自定义损失函数"></a>自定义损失函数</h2><pre><code>仅需将我们定义好的函数传给loss即可</code></pre>
+<h2 id="自定义MSE损失函数"><a href="#自定义MSE损失函数" class="headerlink" title="自定义MSE损失函数"></a>自定义MSE损失函数</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5l2p1mud1740.png"></p>
+<h3 id="加权交叉熵损失函数"><a href="#加权交叉熵损失函数" class="headerlink" title="加权交叉熵损失函数"></a>加权交叉熵损失函数</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5pkv68e28p80.png"></p>
+<h1 id="参数训练"><a href="#参数训练" class="headerlink" title="参数训练"></a>参数训练</h1><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4cceyc0itvk0.png"></p>
+<h2 id="梯度跟踪器"><a href="#梯度跟踪器" class="headerlink" title="梯度跟踪器"></a>梯度跟踪器</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3l3pp7oemie0.png"><br>GradientTape()   梯度跟踪器（求导器），  然后使用tape 的gradient（）方法对整个跟踪的参数进行求导  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6saiwyqruzw0.png"></p>
+<h2 id="tape"><a href="#tape" class="headerlink" title="tape"></a>tape</h2><p>设置该参数后 tape在该过程结束后不会自动释放资源，需要自己释放<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.10it0cdrfwds.png"></p>
+<h2 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h2><p>然后在将其传入到优化器中，对参数进行更新优化<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.56v6b2b6faw0.png"></p>
+<h2 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ewchzb7sz80.png">  </p>
+<p>w ，b 不是 Variable 类型所以我们如果想记录w，b的梯度我们需要讲其放入到watch（）中  </p>
+<h2 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.527ork6rm3g0.png"></p>
+<p>loss对于 w b 共同的导数  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2t4tk07llmy0.png"><br>z1对于 x的导数+z2对于x的导数  </p>
+<p>求二阶导数<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5em4gcn3ia80.png"></p>
+<h1 id="自定义层和网络"><a href="#自定义层和网络" class="headerlink" title="自定义层和网络"></a>自定义层和网络</h1><p>需要自己实现自定义网络需要继承keras.layers.Layer   或  keras.Model  </p>
+<p>Sequential  中无法 放其他操作，只能使用现成的层，而我们的自定义层或网络即可以实现自己的逻辑，再放入到Sequential中  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5bx4x53zdug0.png"></p>
+<h2 id="自定义网络"><a href="#自定义网络" class="headerlink" title="自定义网络"></a>自定义网络</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.snbt0yvogi8.png"></p>
+<h2 id="Sequential构建网络"><a href="#Sequential构建网络" class="headerlink" title="Sequential构建网络"></a>Sequential构建网络</h2><h3 id="创建网络"><a href="#创建网络" class="headerlink" title="创建网络"></a>创建网络</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2eyjr8afrvx.png"></p>
+<h3 id="初始化网络"><a href="#初始化网络" class="headerlink" title="初始化网络"></a>初始化网络</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ohnrywbmy80.png"></p>
+<p><img src=""></p>
+<h3 id="训练网络-并返回训练指标和loss的记录"><a href="#训练网络-并返回训练指标和loss的记录" class="headerlink" title="训练网络,并返回训练指标和loss的记录"></a>训练网络,并返回训练指标和loss的记录</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.11pcbkzgrbao.png"></p>
+<h3 id="可视化-history"><a href="#可视化-history" class="headerlink" title="可视化 history"></a>可视化 history</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2l06p0p1ntc0.png"></p>
+<p>代码：  </p>
+<pre><code>def visualize_training(history, lw = 3):
+plt.figure(figsize=(10,6))
+plt.plot(history.history[&#39;accuracy&#39;], label = &#39;training&#39;, marker = &#39;*&#39;, linewidth = lw)
+plt.plot(history.history[&#39;val_accuracy&#39;], label = &#39;validation&#39;, marker = &#39;o&#39;, linewidth = lw)
+plt.title(&#39;Training Accuracy vs Validation Accuracy&#39;)
+plt.xlabel(&#39;Epochs&#39;)
+plt.ylabel(&#39;Accuracy&#39;)
+plt.legend(fontsize = &#39;x-large&#39;)
+plt.show()
+
+plt.figure(figsize=(10,6))
+plt.plot(history.history[&#39;loss&#39;], label = &#39;training&#39;, marker = &#39;*&#39;, linewidth = lw)
+plt.plot(history.history[&#39;val_loss&#39;], label = &#39;validation&#39;, marker = &#39;o&#39;, linewidth = lw)
+plt.title(&#39;Training Loss vs Validation Loss&#39;)
+plt.xlabel(&#39;Epochs&#39;)
+plt.ylabel(&#39;Loss&#39;)
+plt.legend(fontsize = &#39;x-large&#39;)
+plt.show()</code></pre>
+<h3 id="模型预测"><a href="#模型预测" class="headerlink" title="模型预测"></a>模型预测</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.1izfrgapieao.png"></p>
+<h2 id="自定义层"><a href="#自定义层" class="headerlink" title="自定义层"></a>自定义层</h2><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.jzl9tr8mj5o.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.70ka3mymnag0.png"><br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.28ntg0wrrolc.png"> </p>
+<h3 id="无参数的层"><a href="#无参数的层" class="headerlink" title="无参数的层"></a>无参数的层</h3><p>使用lambda表达式（仅有一个激活函数）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3lb73iuwh020.png"> </p>
+<h4 id="另一种写发"><a href="#另一种写发" class="headerlink" title="另一种写发"></a>另一种写发</h4><p>使用方法如下：（该方法和下面注释的两种表时也是等价的）<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5dmktdjbe700.png">   </p>
+<h1 id="动量与学习率"><a href="#动量与学习率" class="headerlink" title="动量与学习率"></a>动量与学习率</h1><h2 id="动量的设置"><a href="#动量的设置" class="headerlink" title="动量的设置"></a>动量的设置</h2><p>学习器的 momentum 参数为为优化器设置动量<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6ys6hy8ydgg0.png"></p>
+<h2 id="学习率的动态调整"><a href="#学习率的动态调整" class="headerlink" title="学习率的动态调整"></a>学习率的动态调整</h2><p>直接手动再循环中改变  或者 使用keras的回调函数<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.77aej10g66c0.png"></p>
+<h1 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h1><p>数据切分 ， 将大的 x和y 切割分 5：1   出来一个x_val  和 y_val<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.46j6ggs6jdq0.png"></p>
+<p>训练评估<br>    validation_data = db_val   指定在哪个数据集进行评测<br>    validation_freq = 5    每多少个进行一次评测  一般为5或10<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.2tuiq1nqcj00.png"></p>
+<h2 id="验证集"><a href="#验证集" class="headerlink" title="验证集"></a>验证集</h2><p>最后实测则不会使用db_val 了<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.29gdeqioi2sk.png"></p>
+<h2 id="快速实现"><a href="#快速实现" class="headerlink" title="快速实现"></a>快速实现</h2><p>自定进行交叉验证评测，不需要认为切割数据集，可代替上述所有步骤，其中validation_split = 0.1  则说明 db_val和db_train 为9：1<br>当输入数据input为 numpy 或 tenor 时才能设置经验切割，否则使用迭代器时需要如上自行分割</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5a0lt191sqo0.png"></p>
+<h1 id="正则惩罚项"><a href="#正则惩罚项" class="headerlink" title="正则惩罚项"></a>正则惩罚项</h1><p>在创建 层的时候可以直接定义  kernel_regularizer= keras.regularizers.l2(0.001)<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.6endxj30nk00.png"></p>
+<p>手动在训练的时候loss计算时 添加计算过程进行求和计算<br><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.kulurs2yhb4.png"></p>
+<h1 id="模型的保存与加载"><a href="#模型的保存与加载" class="headerlink" title="模型的保存与加载"></a>模型的保存与加载</h1><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.n7he1415p5s.png"></p>
+<h2 id="save-load-weights"><a href="#save-load-weights" class="headerlink" title="save/load weights"></a>save/load weights</h2><p>仅保存参数，轻量级，适合自己有源码的情况下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.5m47ksoj8yg0.png"></p>
+<h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.64406pfvsjs0.png"></p>
+<h2 id="save-load-entire-model"><a href="#save-load-entire-model" class="headerlink" title="save/load entire model"></a>save/load entire model</h2><p>简单粗暴，将所有状态和参数都保存，可以恢复</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.3f8pedl67nw0.png"></p>
+<h2 id="saved-model"><a href="#saved-model" class="headerlink" title="saved_model"></a>saved_model</h2><p>保存为通用文件，可以使用C++进行解析使用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/AvailableRookie/image-hosting@master/hexo-images/image.4evlclae3rm0.png"></p>
 
       
 
@@ -664,7 +324,7 @@ B模块：
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tensorflow2</a>
         		</li>
       		
 		</ul>
@@ -676,7 +336,7 @@ B模块：
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/语法基础//" class="article-tag-list-link color5">语法基础</a>
+        			<a href="/categories/模型搭建//" class="article-tag-list-link color5">模型搭建</a>
         		</li>
       		
 		</ul>
@@ -731,7 +391,7 @@ B模块：
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2020/01/02/2021523pyhton%E5%9F%BA%E7%A1%80-2/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://availablerookie.github.io/2021/02/08/21528tensorflow2-2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -745,18 +405,9 @@ B模块：
   
 <nav id="article-nav">
   
-    <a href="/2020/02/15/2021523Numpy/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Numpy
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/23/2021523python%E5%9F%BA%E7%A1%80-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Python基础——(一)</div>
+    <a href="/2021/01/23/21528tensorflow2-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">tensorflow2——(一) 基础语法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -783,7 +434,7 @@ B模块：
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E5%9F%BA%E7%A1%80%E2%80%94%E2%80%94-%E4%B8%80"><span class="toc-number">1.</span> <span class="toc-text">Python基础——(一)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python%E5%87%BD%E6%95%B0"><span class="toc-number"></span> <span class="toc-text">python函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.</span> <span class="toc-text">函数的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E5%8F%82"><span class="toc-number">1.1.</span> <span class="toc-text">形参   </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">可变参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">默认参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="toc-number">1.1.3.</span> <span class="toc-text">关键字参数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%EF%BC%88%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%89%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">全局变量（作用域）：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">嵌套函数：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-number">3.</span> <span class="toc-text">闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-number">3.1.</span> <span class="toc-text">举例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9%EF%BC%9A"><span class="toc-number">3.2.</span> <span class="toc-text">缺点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%EF%BC%9A"><span class="toc-number">3.3.</span> <span class="toc-text">作用：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">3.4.</span> <span class="toc-text">总结：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E5%BA%94%E7%94%A8%EF%BC%8C%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="toc-number">3.5.</span> <span class="toc-text">闭包应用，计数器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%EF%BC%9A"><span class="toc-number">3.5.1.</span> <span class="toc-text">调用：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">装饰器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%B1%82%E8%A3%85%E9%A5%B0%E5%99%A8%EF%BC%9A"><span class="toc-number">4.1.</span> <span class="toc-text">单层装饰器：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%B1%82%E8%A3%85%E9%A5%B0%E5%99%A8%EF%BC%9A"><span class="toc-number">4.2.</span> <span class="toc-text">多层装饰器：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%A6%E5%8F%82%E6%95%B0%E8%A3%85%E9%A5%B0%E5%99%A8%EF%BC%9A"><span class="toc-number">4.3.</span> <span class="toc-text">带参数装饰器：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">匿名函数：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">文件操作：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB"><span class="toc-number">1.</span> <span class="toc-text">文件读</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%86%99"><span class="toc-number">2.</span> <span class="toc-text">文件写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6"><span class="toc-number">3.</span> <span class="toc-text">文件复制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">异常处理：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="toc-number"></span> <span class="toc-text">推导式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">列表推导式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">集合推导式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">字典推导式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%99%A8"><span class="toc-number"></span> <span class="toc-text">生成器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E7%94%9F%E6%88%90%E5%99%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">定义生成器方式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E5%8F%AF%E8%BF%AD%E4%BB%A3%E7%9A%84%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">迭代器与可迭代的：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-number"></span> <span class="toc-text">面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95-%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">魔术方法&#x2F;函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#init-%E5%88%9D%E5%A7%8B%E5%8C%96%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text">__init__  初始化魔法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#new-%E5%AE%9E%E4%BE%8B%E5%8C%96%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">__new__ 实例化魔术方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#call-%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E7%9A%84%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">__call__ 调用对象的魔术方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#del-%E6%9E%90%E6%9E%84%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.</span> <span class="toc-text">__del__ 析构魔术方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89get-set-%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">定义get set 方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">单例设计模式:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">模块：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8C%85"><span class="toc-number"></span> <span class="toc-text">包:</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E7%9A%84%E5%AF%BC%E5%85%A5"><span class="toc-number">2.</span> <span class="toc-text">包的导入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E5%AF%BC%E5%85%A5"><span class="toc-number">3.</span> <span class="toc-text">循环导入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#time%E6%A8%A1%E5%9D%97"><span class="toc-number">4.</span> <span class="toc-text">time模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">函数：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97hashlib%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">模块hashlib：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">正则表达式：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.</span> <span class="toc-text">基础符号:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E5%8F%96%E5%90%8D"><span class="toc-number">2.</span> <span class="toc-text">分组取名:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#re%E6%A8%A1%E5%9D%97%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">re模块函数：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">自定义训练模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%82%E6%95%B0%E3%80%81%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%E3%80%81%E8%AF%84%E4%BC%B0%E6%A0%87%E5%87%86"><span class="toc-number">1.1.</span> <span class="toc-text">初始化参数、优化算法、评估标准</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83"><span class="toc-number">1.2.</span> <span class="toc-text">训练 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">自定义损失函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89MSE%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">自定义MSE损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E6%9D%83%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.1.</span> <span class="toc-text">加权交叉熵损失函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AE%AD%E7%BB%83"><span class="toc-number">3.</span> <span class="toc-text">参数训练</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E8%B7%9F%E8%B8%AA%E5%99%A8"><span class="toc-number">3.1.</span> <span class="toc-text">梯度跟踪器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tape"><span class="toc-number">3.2.</span> <span class="toc-text">tape</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text">优化器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Variable"><span class="toc-number">3.4.</span> <span class="toc-text">Variable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E5%AF%BC"><span class="toc-number">3.5.</span> <span class="toc-text">求导</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%82%E5%92%8C%E7%BD%91%E7%BB%9C"><span class="toc-number">4.</span> <span class="toc-text">自定义层和网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C"><span class="toc-number">4.1.</span> <span class="toc-text">自定义网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sequential%E6%9E%84%E5%BB%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">4.2.</span> <span class="toc-text">Sequential构建网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">4.2.1.</span> <span class="toc-text">创建网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E7%BD%91%E7%BB%9C"><span class="toc-number">4.2.2.</span> <span class="toc-text">初始化网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E7%BD%91%E7%BB%9C-%E5%B9%B6%E8%BF%94%E5%9B%9E%E8%AE%AD%E7%BB%83%E6%8C%87%E6%A0%87%E5%92%8Closs%E7%9A%84%E8%AE%B0%E5%BD%95"><span class="toc-number">4.2.3.</span> <span class="toc-text">训练网络,并返回训练指标和loss的记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96-history"><span class="toc-number">4.2.4.</span> <span class="toc-text">可视化 history</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B"><span class="toc-number">4.2.5.</span> <span class="toc-text">模型预测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%82"><span class="toc-number">4.3.</span> <span class="toc-text">自定义层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%8F%82%E6%95%B0%E7%9A%84%E5%B1%82"><span class="toc-number">4.3.1.</span> <span class="toc-text">无参数的层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%A6%E4%B8%80%E7%A7%8D%E5%86%99%E5%8F%91"><span class="toc-number">4.3.1.1.</span> <span class="toc-text">另一种写发</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E4%B8%8E%E5%AD%A6%E4%B9%A0%E7%8E%87"><span class="toc-number">5.</span> <span class="toc-text">动量与学习率</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.1.</span> <span class="toc-text">动量的设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E5%8A%A8%E6%80%81%E8%B0%83%E6%95%B4"><span class="toc-number">5.2.</span> <span class="toc-text">学习率的动态调整</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"><span class="toc-number">6.</span> <span class="toc-text">交叉验证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E9%9B%86"><span class="toc-number">6.1.</span> <span class="toc-text">验证集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0"><span class="toc-number">6.2.</span> <span class="toc-text">快速实现</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E6%83%A9%E7%BD%9A%E9%A1%B9"><span class="toc-number">7.</span> <span class="toc-text">正则惩罚项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%BF%9D%E5%AD%98%E4%B8%8E%E5%8A%A0%E8%BD%BD"><span class="toc-number">8.</span> <span class="toc-text">模型的保存与加载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#save-load-weights"><span class="toc-number">8.1.</span> <span class="toc-text">save&#x2F;load weights</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-number">8.1.1.</span> <span class="toc-text">测试代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#save-load-entire-model"><span class="toc-number">8.2.</span> <span class="toc-text">save&#x2F;load entire model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#saved-model"><span class="toc-number">8.3.</span> <span class="toc-text">saved_model</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -925,6 +576,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tensorflow2</a>
               </li>
              
@@ -946,10 +601,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>
